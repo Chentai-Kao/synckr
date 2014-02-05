@@ -1,4 +1,4 @@
-lab4
+Synckr
 ====
 
-Lab 4: Programming with Javascript
+Synckr: Next generation event scheduler
