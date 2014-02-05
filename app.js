@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var project = require('./routes/project');
@@ -29,6 +30,7 @@ app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('mongoose', mongoose);
 
 // development only
 if ('development' == app.get('env')) {
@@ -36,11 +38,19 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
-app.get('/project/:name', project.viewProject);
 // Example route
 // app.get('/users', user.list);
+app.get('/', index.view);
+app.get('/project/:name', project.viewProject);
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+// MongoDB
+mongoose.connect('mongodb://localhost/synckr');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('MongoDB opened');
 });
