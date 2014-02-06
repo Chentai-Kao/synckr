@@ -1,0 +1,53 @@
+/* line 6, synckr.scss */
+#placeholder {
+  width: 100%;
+  font-size: 25px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+}
+
+/* line 13, synckr.scss */
+#navbar {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 18, synckr.scss */
+#edit {
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+/* line 24, synckr.scss */
+#title {
+  text-align: center;
+}
+
+/* line 28, synckr.scss */
+#create {
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+
+/* line 34, synckr.scss */
+.event {
+  min-height: 60px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  border-top: 1px solid #aaa;
+  padding: 0 30px;
+}
+
+/* line 42, synckr.scss */
+.event:last-child {
+  border-bottom: 1px solid #aaa;
+}
