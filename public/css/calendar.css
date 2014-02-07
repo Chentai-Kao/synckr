@@ -54,9 +54,19 @@
   width: 15%;
 }
 
-/* line 20, calendar.scss */
+/* line 21, calendar.scss */
 .hour {
   box-sizing: border-box;
-  border-left: 1px solid #aaa;
-  border-top: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+/* line 27, calendar.scss */
+.hour:last-child {
+  border-right: none;
+}
+
+/* line 31, calendar.scss */
+.grid_row:last-child .hour {
+  border-bottom: none;
 }
