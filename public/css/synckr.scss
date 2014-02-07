@@ -14,17 +14,17 @@ $left-right-margin: 30px;
 	@include clearfix;
 }
 
-#edit {
+#nav-left {
 	position: absolute;
 	top: 0;
 	left: $left-right-margin;
 }
 
-#title {
+#nav-middle {
 	text-align: center;
 }
 
-#create {
+#nav-right {
 	position: absolute;
 	top: 0;
 	right: $left-right-margin;

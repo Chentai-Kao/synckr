@@ -14,19 +14,19 @@
 }
 
 /* line 17, synckr.scss */
-#edit {
+#nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
 /* line 23, synckr.scss */
-#title {
+#nav-middle {
   text-align: center;
 }
 
 /* line 27, synckr.scss */
-#create {
+#nav-right {
   position: absolute;
   top: 0;
   right: 30px;
