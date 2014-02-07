@@ -15,19 +15,18 @@
 
 .handle {
 	width: 15%;
-	// border-bottom: 1px solid #aaa;
 }
 
 .hour {
 	box-sizing: border-box;
-	border-right: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
+	border-right: 1px solid $line-color;
+	border-bottom: 1px solid $line-color;
 }
 
-.hour:last-child{
+.hour:last-child {
 	border-right: none;
 }
 
-.grid_row:last-child .hour{
+.grid_row:last-child .hour {
 	border-bottom: none;
 }

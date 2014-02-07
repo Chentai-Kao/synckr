@@ -9,6 +9,6 @@
 	padding: 0 $left-right-margin;
 }
 
-.event:last-child {
-	border-bottom: 1px solid #aaa;
+a:last-child .event {
+	border-bottom: 1px solid $line-color;
 }

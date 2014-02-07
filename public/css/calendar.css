@@ -1,4 +1,4 @@
-/* line 5, synckr.scss */
+/* line 7, synckr.scss */
 #placeholder {
   width: 100%;
   font-size: 25px;
@@ -6,26 +6,26 @@
   font-weight: lighter;
 }
 
-/* line 12, synckr.scss */
+/* line 14, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 17, synckr.scss */
+/* line 19, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
-/* line 23, synckr.scss */
+/* line 25, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 27, synckr.scss */
+/* line 29, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -54,19 +54,19 @@
   width: 15%;
 }
 
-/* line 21, calendar.scss */
+/* line 20, calendar.scss */
 .hour {
   box-sizing: border-box;
-  border-right: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 27, calendar.scss */
+/* line 26, calendar.scss */
 .hour:last-child {
   border-right: none;
 }
 
-/* line 31, calendar.scss */
+/* line 30, calendar.scss */
 .grid_row:last-child .hour {
   border-bottom: none;
 }
