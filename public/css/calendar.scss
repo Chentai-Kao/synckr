@@ -1,0 +1,24 @@
+@import "synckr.scss";
+
+#day-bar, .grid-row {
+	@include clearfix;
+}
+
+.grid, .handle {
+	float: left;
+	text-align: center;
+}
+
+.grid {
+	width: 17%;
+}
+
+.handle {
+	width: 15%
+}
+
+.hour {
+	box-sizing: border-box;
+	border-left: 1px solid #aaa;
+	border-top: 1px solid #aaa;
+}

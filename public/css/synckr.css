@@ -31,23 +31,3 @@
   top: 0;
   right: 30px;
 }
-
-/* line 4, list.scss */
-.event {
-  min-height: 60px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: box;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-box-align: center;
-  box-align: center;
-  border-top: 1px solid #aaa;
-  padding: 0 30px;
-}
-
-/* line 12, list.scss */
-.event:last-child {
-  border-bottom: 1px solid #aaa;
-}

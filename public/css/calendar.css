@@ -32,22 +32,31 @@
   right: 30px;
 }
 
-/* line 4, list.scss */
-.event {
-  min-height: 60px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: box;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-box-align: center;
-  box-align: center;
-  border-top: 1px solid #aaa;
-  padding: 0 30px;
+/* line 3, calendar.scss */
+#day-bar, .grid-row {
+  overflow: hidden;
+  *zoom: 1;
 }
 
-/* line 12, list.scss */
-.event:last-child {
-  border-bottom: 1px solid #aaa;
+/* line 7, calendar.scss */
+.grid, .handle {
+  float: left;
+  text-align: center;
+}
+
+/* line 12, calendar.scss */
+.grid {
+  width: 17%;
+}
+
+/* line 16, calendar.scss */
+.handle {
+  width: 15%;
+}
+
+/* line 20, calendar.scss */
+.hour {
+  box-sizing: border-box;
+  border-left: 1px solid #aaa;
+  border-top: 1px solid #aaa;
 }

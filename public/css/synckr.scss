@@ -1,0 +1,31 @@
+@import "compass/utilities/general/clearfix";
+
+$left-right-margin: 30px;
+
+#placeholder {
+	width: 100%;
+	font-size: 25px;
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: lighter;
+}
+
+#navbar {
+	position: relative;
+	@include clearfix;
+}
+
+#edit {
+	position: absolute;
+	top: 0;
+	left: $left-right-margin;
+}
+
+#title {
+	text-align: center;
+}
+
+#create {
+	position: absolute;
+	top: 0;
+	right: $left-right-margin;
+}
