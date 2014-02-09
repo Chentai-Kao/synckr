@@ -1,5 +1,5 @@
   $(document).ready(function() {
-    $("#start-date").datepicker();
-    $("#end-date").datepicker();
+    $("#st-date").datepicker();
+    $("#en-date").datepicker();
   });
 

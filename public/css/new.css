@@ -81,3 +81,23 @@ input, select {
   border-bottom: 1px solid #aaaaaa;
   height: 5%;
 }
+
+/* line 44, new.scss */
+.dates {
+  float: left;
+  width: 50%;
+}
+
+/* line 49, new.scss */
+#startdate, #enddate {
+  border-bottom: 1px solid #aaaaaa;
+  height: 5%;
+  margin: 10px 0;
+}
+
+/* line 55, new.scss */
+#st-date, #en-date {
+  margin: 0;
+  padding: 0;
+  border: 0px;
+}

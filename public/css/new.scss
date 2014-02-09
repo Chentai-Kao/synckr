@@ -40,3 +40,20 @@ input, select{
 	border-bottom: 1px solid $line-color;
 	height:5%;
 }
+
+.dates{
+	float: left;
+	width:50%;
+}
+
+#startdate, #enddate{
+	border-bottom: 1px solid $line-color;
+	height: 5%;
+	margin: 10px 0;
+}
+
+#st-date, #en-date{
+	margin: 0;
+	padding: 0;
+	border: 0px;
+}
