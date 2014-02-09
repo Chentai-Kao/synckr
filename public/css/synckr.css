@@ -1,7 +1,7 @@
 /* line 7, synckr.scss */
 #placeholder {
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
 }
@@ -11,21 +11,22 @@
   position: relative;
   overflow: hidden;
   *zoom: 1;
+  font-weight: normal;
 }
 
-/* line 19, synckr.scss */
+/* line 20, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
-/* line 25, synckr.scss */
+/* line 26, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 29, synckr.scss */
+/* line 30, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
