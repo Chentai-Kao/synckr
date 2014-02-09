@@ -31,3 +31,9 @@
   top: 0;
   right: 30px;
 }
+
+/* line 3, new.scss */
+fieldset {
+  padding: 30px;
+  background-color: #efefef;
+}
