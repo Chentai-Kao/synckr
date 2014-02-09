@@ -16,18 +16,37 @@
 			</div>
 			<form id="mainform" method="post">
 				<fieldset class="field" id="title-form">
-					<input class="inputs" type="text" name="title" placeholder="Title"/>
-					<input class="inputs" type="text" name="description" placeholder="Description"/>
+					<input type="text" name="title" placeholder="Title"/>
+					<input type="text" name="description" placeholder="Description"/>
 				</fieldset>
 				<fieldset class="field" id="date-form">
-					<input class="inputs" id="start-date" name="start-date" placeholder="Start Date"/>
-					<input class="inputs" id="end-date" name="end-date" placeholder="End Date"/>
+					<input id="start-date" name="start-date" placeholder="Start Date"/>
+					<input id="end-date" name="end-date" placeholder="End Date"/>
 				</fieldset>
 				<fieldset class="field" id="dur-form">
-					<input class="inputs" name="duration" placeholder="Duration"/>
+					<div id="duration">
+						<div class="dur" id="dur-text">
+							Duration
+						</div>
+						<div class="dur" id="dur-hr">
+							<select name="duration-hr" id="duration-hr" placeholder="hr">
+								<option>hr</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+						</div>
+						<div class="dur" id="dur-min">
+							<select name="duration-min" id="duration-min" placeholder="min">
+								<option>min</option>
+								<option>00</option>
+								<option>30</option>
+							</select>
+						</div>
+					</div>
 				</fieldset>
 				<fieldset class="field" id="invite-form">
-					<input class="inputs" name="invitee" placeholder="Invitee"/>
+					<input name="invitees" placeholder="Invitees"/>
 				</fieldset>
 			</form>
 		</div>

@@ -15,6 +15,7 @@ $left-right-margin: 30px;
 	position: relative;
 	@include clearfix;
 	font-weight: normal;
+	border-bottom: 1px solid $line-color;
 }
 
 #nav-left {
@@ -31,4 +32,8 @@ $left-right-margin: 30px;
 	position: absolute;
 	top: 0;
 	right: $left-right-margin;
+}
+
+a {
+	text-decoration: none;
 }

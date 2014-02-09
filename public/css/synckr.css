@@ -12,23 +12,29 @@
   overflow: hidden;
   *zoom: 1;
   font-weight: normal;
+  border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 20, synckr.scss */
+/* line 21, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
-/* line 26, synckr.scss */
+/* line 27, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 30, synckr.scss */
+/* line 31, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
   right: 30px;
+}
+
+/* line 37, synckr.scss */
+a {
+  text-decoration: none;
 }

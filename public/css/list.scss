@@ -5,10 +5,10 @@
 	min-height: 60px;
 	@include display-box;
 	@include box-align(center);
-	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
 	padding: 0 $left-right-margin;
 }
 
-a:last-child .event {
-	border-bottom: 1px solid $line-color;
-}
+// a:last-child .event {
+// 	border-bottom: 1px solid $line-color;
+// }
