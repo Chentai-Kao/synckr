@@ -5,6 +5,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/new.css">
+		<link rel="stylesheet" href="css/datepicker.css">
 	</head>
 	<body>
 		<div id="placeholder">
@@ -14,36 +15,28 @@
 				<div id="nav-right">Done</div>
 			</div>
 			<form id="mainform" method="post">
-				<fieldset id="title-form">
-					<input class="inputs" type="text" name="title" text="Title"/>
-					<input class="inputs" type="text" name="description" text="Description"/>
+				<fieldset class="field" id="title-form">
+					<input class="inputs" type="text" name="title" placeholder="Title"/>
+					<input class="inputs" type="text" name="description" placeholder="Description"/>
 				</fieldset>
-				<fieldset id="date-form">
-					<input class="inputs" name="start-date" text="Start Date"/>
-					<input class="inputs" name="end-date" text="End Date"/>
+				<fieldset class="field" id="date-form">
+					<input class="inputs" id="start-date" name="start-date" placeholder="Start Date"/>
+					<input class="inputs" id="end-date" name="end-date" placeholder="End Date"/>
 				</fieldset>
-				<fieldset id="dur-form">
-					<input class="inputs" name="duration" text="Duration"/>
+				<fieldset class="field" id="dur-form">
+					<input class="inputs" name="duration" placeholder="Duration"/>
 				</fieldset>
-				<fieldset id="invite-form">
-					<input class="inputs" name="invitee"/>
+				<fieldset class="field" id="invite-form">
+					<input class="inputs" name="invitee" placeholder="Invitee"/>
 				</fieldset>
 			</form>
-<!-- 			<div id="list">
-				<div class="event">
-					<a href="calendar.html">Event 1</a>
-				</div>
-				<div class="event">
-					Event 2
-				</div>
-				<div class="event">
-					Event 3
-				</div>
-			</div> -->
 		</div>
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/synckr.js"></script>
+  		<script src="js/new.js"></script>
+  		<script src="js/bootstrap-datepicker.js"></script>
+  		
 	</body>
 </html>
