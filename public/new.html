@@ -25,7 +25,7 @@
 							Start Date
 						</div>
 						<div class="dates">
-							<input id="st-date" readonly/>
+							<input id="st-date" name="st-date" readonly/>
 						</div>							
 					</div>
 					<div id="enddate">
@@ -33,7 +33,7 @@
 							End Date
 						</div>
 						<div class="dates">
-							<input id="en-date" readonly/>
+							<input id="en-date" name="en-date" readonly/>
 						</div>							
 					</div>
 					
@@ -65,7 +65,51 @@
 				</fieldset>
 			</form>
 		</div>
-
+		<div id="friendList">
+			<div id="navbar">
+				<div id="nav-left"><a href="#" id="back-new">Cancel</a></div>
+				<div id="nav-middle">Invite Friends</div>
+				<div id="nav-right"><a href="#" id="ok-new">Done</div>
+			</div>
+			<div id="search-bar">
+				<input type="text" placeholder="Search">
+			</div>
+			<div id="list">
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="images/lorempixel.people.1.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Anna</br></p>
+					</div>
+				</div>
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="images/lorempixel.people.2.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Ben</br></p>
+					</div>
+				</div>
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="images/lorempixel.city.1.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Carol</br></p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/synckr.js"></script>

@@ -1,12 +1,13 @@
 /* line 7, synckr.scss */
 #placeholder {
+  position: absolute;
   width: 100%;
   font-size: 20px;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
 }
 
-/* line 14, synckr.scss */
+/* line 15, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -15,37 +16,37 @@
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 21, synckr.scss */
+/* line 22, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
-/* line 27, synckr.scss */
+/* line 28, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 31, synckr.scss */
+/* line 32, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
   right: 30px;
 }
 
-/* line 37, synckr.scss */
+/* line 38, synckr.scss */
 a {
   text-decoration: none;
 }
 
-/* line 7, new.scss */
+/* line 4, new.scss */
 .field {
   padding: 0 30px;
   margin: 30px 0;
 }
 
-/* line 13, new.scss */
+/* line 10, new.scss */
 .field input {
   width: 100%;
   margin: 5px 0;
@@ -53,19 +54,19 @@ a {
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 20, new.scss */
+/* line 17, new.scss */
 input, select {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
 }
 
-/* line 24, new.scss */
+/* line 21, new.scss */
 .dur {
   float: left;
   width: 33.3%;
 }
 
-/* line 29, new.scss */
+/* line 26, new.scss */
 #duration-min, #duration-hr {
   width: 100%;
   margin: 0;
@@ -76,29 +77,77 @@ input, select {
   direction: rtl;
 }
 
-/* line 39, new.scss */
+/* line 36, new.scss */
 #duration {
   border-bottom: 1px solid #aaaaaa;
-  height: 5%;
+  height: 30px;
 }
 
-/* line 44, new.scss */
+/* line 41, new.scss */
 .dates {
   float: left;
   width: 50%;
 }
 
-/* line 49, new.scss */
+/* line 46, new.scss */
 #startdate, #enddate {
   border-bottom: 1px solid #aaaaaa;
-  height: 5%;
+  height: 30px;
   margin: 10px 0;
 }
 
-/* line 55, new.scss */
+/* line 52, new.scss */
 #st-date, #en-date {
   margin: 0;
   padding: 0;
   border: 0px;
   text-align: right;
+}
+
+/* line 59, new.scss */
+#friendList {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+}
+
+/* line 71, new.scss */
+#search-bar input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* line 76, new.scss */
+.friends {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #aaa;
+  padding: 0 30px;
+  margin-top: 10px;
+}
+
+/* line 84, new.scss */
+.friend-intro {
+  float: left;
+  height: 30px;
+}
+
+/* line 89, new.scss */
+#friend-check {
+  width: 10%;
+}
+
+/* line 92, new.scss */
+#friend-pic {
+  width: 15%;
+}
+
+/* line 96, new.scss */
+#friend-name {
+  width: 75%;
 }

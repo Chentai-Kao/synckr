@@ -1,12 +1,13 @@
 /* line 7, synckr.scss */
 #placeholder {
+  position: absolute;
   width: 100%;
   font-size: 20px;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
 }
 
-/* line 14, synckr.scss */
+/* line 15, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -15,26 +16,26 @@
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 21, synckr.scss */
+/* line 22, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
   left: 30px;
 }
 
-/* line 27, synckr.scss */
+/* line 28, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 31, synckr.scss */
+/* line 32, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
   right: 30px;
 }
 
-/* line 37, synckr.scss */
+/* line 38, synckr.scss */
 a {
   text-decoration: none;
 }
