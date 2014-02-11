@@ -7,6 +7,10 @@ $row-height: 40px;
 	@include clearfix;
 }
 
+#scroll-pane {
+	overflow-y: scroll;
+}
+
 #day-bar {
 	margin-top: 30px;
 }
@@ -47,6 +51,7 @@ $row-height: 40px;
 }
 
 .grid-column {
+	position: relative;
 	float: left;
 	width: 20%;
 }
@@ -67,4 +72,28 @@ $row-height: 40px;
 
 .grid-column:last-child div {
 	border-right: none;
+}
+
+.slot {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+@for $i from 1 through 5 {
+	.heatmap-#{$i} {
+		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridtop-#{$i} {
+		top: $row-height / 2 * $i;
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridheight-#{$i} {
+		height: $row-height / 2 * $i;
+	}
 }
