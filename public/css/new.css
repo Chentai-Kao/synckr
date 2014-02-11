@@ -40,13 +40,13 @@ a {
   text-decoration: none;
 }
 
-/* line 4, new.scss */
+/* line 5, new.scss */
 .field {
   padding: 0 30px;
   margin: 30px 0;
 }
 
-/* line 10, new.scss */
+/* line 11, new.scss */
 .field input {
   width: 100%;
   margin: 5px 0;
@@ -54,19 +54,24 @@ a {
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 17, new.scss */
+/* line 18, new.scss */
 input, select {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  padding: 0;
 }
 
-/* line 21, new.scss */
+/* line 26, new.scss */
 .dur {
   float: left;
   width: 33.3%;
 }
 
-/* line 26, new.scss */
+/* line 31, new.scss */
 #duration-min, #duration-hr {
   width: 100%;
   margin: 0;
@@ -74,29 +79,30 @@ input, select {
   border: 0px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   direction: rtl;
 }
 
-/* line 36, new.scss */
+/* line 40, new.scss */
 #duration {
   border-bottom: 1px solid #aaaaaa;
   height: 30px;
 }
 
-/* line 41, new.scss */
+/* line 45, new.scss */
 .dates {
   float: left;
   width: 50%;
 }
 
-/* line 46, new.scss */
+/* line 50, new.scss */
 #startdate, #enddate {
   border-bottom: 1px solid #aaaaaa;
   height: 30px;
   margin: 10px 0;
 }
 
-/* line 52, new.scss */
+/* line 56, new.scss */
 #st-date, #en-date {
   margin: 0;
   padding: 0;
@@ -104,7 +110,7 @@ input, select {
   text-align: right;
 }
 
-/* line 59, new.scss */
+/* line 63, new.scss */
 #friendList {
   float: left;
   width: 100%;
@@ -116,13 +122,13 @@ input, select {
   font-weight: lighter;
 }
 
-/* line 71, new.scss */
+/* line 75, new.scss */
 #search-bar input {
   width: 100%;
   margin: 10px 0;
 }
 
-/* line 76, new.scss */
+/* line 80, new.scss */
 .friends {
   width: 100%;
   height: 40px;
@@ -131,23 +137,23 @@ input, select {
   margin-top: 10px;
 }
 
-/* line 84, new.scss */
+/* line 88, new.scss */
 .friend-intro {
   float: left;
   height: 30px;
 }
 
-/* line 89, new.scss */
+/* line 93, new.scss */
 #friend-check {
   width: 10%;
 }
 
-/* line 92, new.scss */
+/* line 96, new.scss */
 #friend-pic {
   width: 15%;
 }
 
-/* line 96, new.scss */
+/* line 100, new.scss */
 #friend-name {
   width: 75%;
 }

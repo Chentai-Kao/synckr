@@ -18,7 +18,11 @@
 input, select{
 	font-family: "Helvetica Neue", sans-serif;
 	font-weight: lighter;
+	@include appearance(none);
+	border-radius: 0;
+	padding: 0;
 }
+
 .dur{
 	float: left;
 	width:33.3%;
@@ -29,9 +33,8 @@ input, select{
 	margin: 0;
 	padding: 0;
 	border: 0px;
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    direction:rtl;
+	@include appearance(none);
+  direction:rtl;
 }
 
 #duration{
