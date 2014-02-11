@@ -3,7 +3,7 @@
 
 $row-height: 40px;
 
-#day-bar, .grid-row, #scroll-pane {
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
 	@include clearfix;
 }
 
@@ -46,10 +46,13 @@ $row-height: 40px;
 	width: 85%;
 }
 
-.grid {
+.grid-column {
 	float: left;
-	text-align: center;
 	width: 20%;
+}
+
+.grid {
+	text-align: center;
 }
 
 .hour {
@@ -59,9 +62,9 @@ $row-height: 40px;
 }
 
 .hour:last-child {
-	border-right: none;
+	border-bottom: none;
 }
 
-.grid-row:last-child .hour {
-	border-bottom: none;
+.grid-column:last-child div {
+	border-right: none;
 }

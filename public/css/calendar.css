@@ -41,7 +41,7 @@ a {
 }
 
 /* line 6, calendar.scss */
-#day-bar, .grid-row, #scroll-pane {
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
   overflow: hidden;
   *zoom: 1;
 }
@@ -94,25 +94,29 @@ a {
 }
 
 /* line 49, calendar.scss */
-.grid {
+.grid-column {
   float: left;
-  text-align: center;
   width: 20%;
 }
 
-/* line 55, calendar.scss */
+/* line 54, calendar.scss */
+.grid {
+  text-align: center;
+}
+
+/* line 58, calendar.scss */
 .hour {
   box-sizing: border-box;
   border-right: 1px solid #aaaaaa;
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 61, calendar.scss */
+/* line 64, calendar.scss */
 .hour:last-child {
-  border-right: none;
+  border-bottom: none;
 }
 
-/* line 65, calendar.scss */
-.grid-row:last-child .hour {
-  border-bottom: none;
+/* line 68, calendar.scss */
+.grid-column:last-child div {
+  border-right: none;
 }
