@@ -40,46 +40,79 @@ a {
   text-decoration: none;
 }
 
-/* line 3, calendar.scss */
-#day-bar, .grid-row {
+/* line 6, calendar.scss */
+#day-bar, .grid-row, #scroll-pane {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 7, calendar.scss */
+/* line 10, calendar.scss */
 #day-bar {
   margin-top: 30px;
 }
 
-/* line 11, calendar.scss */
-.grid, .handle {
+/* line 14, calendar.scss */
+#overlay-toggle {
   float: left;
   text-align: center;
-}
-
-/* line 16, calendar.scss */
-.grid {
-  width: 17%;
-}
-
-/* line 20, calendar.scss */
-.handle {
   width: 15%;
 }
 
+/* line 20, calendar.scss */
+#handle-bar, #grid-holder {
+  float: left;
+}
+
 /* line 24, calendar.scss */
+#handle-bar {
+  margin-top: 20px;
+  padding-right: 5px;
+  width: 15%;
+}
+
+/* line 30, calendar.scss */
+.handle, .grid {
+  height: 40px;
+}
+
+/* line 34, calendar.scss */
+.handle {
+  line-height: 40px;
+  text-align: right;
+}
+
+/* line 39, calendar.scss */
+.day {
+  float: left;
+  text-align: center;
+  width: 17%;
+}
+
+/* line 45, calendar.scss */
+#grid-holder {
+  width: 85%;
+}
+
+/* line 49, calendar.scss */
+.grid {
+  float: left;
+  text-align: center;
+  width: 20%;
+}
+
+/* line 55, calendar.scss */
 .hour {
   box-sizing: border-box;
   border-right: 1px solid #aaaaaa;
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 30, calendar.scss */
+/* line 61, calendar.scss */
 .hour:last-child {
   border-right: none;
 }
 
-/* line 34, calendar.scss */
-.grid_row:last-child .hour {
+/* line 65, calendar.scss */
+.grid-row:last-child .hour {
   border-bottom: none;
 }
