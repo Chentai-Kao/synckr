@@ -1,41 +1,53 @@
-/* line 7, synckr.scss */
+/* line 9, synckr.scss */
 #placeholder {
   position: absolute;
   width: 100%;
   font-size: 20px;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
+  height: 100%;
 }
 
-/* line 15, synckr.scss */
+/* line 18, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
   *zoom: 1;
   font-weight: normal;
   border-bottom: 1px solid #aaaaaa;
+  height: 40px;
+  line-height: 40px;
 }
 
-/* line 22, synckr.scss */
+/* line 27, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 10px;
+  font-size: 15px;
 }
 
-/* line 28, synckr.scss */
+/* line 34, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 32, synckr.scss */
+/* line 38, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 10px;
+  font-size: 15px;
 }
 
-/* line 38, synckr.scss */
+/* line 45, synckr.scss */
 a {
   text-decoration: none;
+  color: black;
+}
+
+/* line 50, synckr.scss */
+a:hover {
+  text-decoration: none;
+  color: black;
 }
