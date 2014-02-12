@@ -47,3 +47,30 @@ exports.create = function(req, res) {
     }
   });
 };
+
+/*
+ * AJAX add slot
+ */
+
+exports.addSlot = function(req, res) {
+  var eventId = req.params.eventId;
+  var facebookId = req.params.facebookId;
+  var data = req.body;
+
+  var Event = req.app.get('models')('events_model');
+  Event.update({ _id: eventId, 'participants.facebookId': facebookId },
+    { $push: { 'participants.0.slot': data } },
+    function(error) {
+      if (error) {
+        console.log(error);
+      }
+    }
+  );
+    /*
+  newEvent.save(function(error) {
+    if (error) {
+      console.log(error);
+    }
+  });
+  */
+};

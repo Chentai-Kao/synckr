@@ -6,6 +6,8 @@ $first-end-height: 15px;
 $day-bar-height: 30px;
 $navbar-top-margin: 30px;
 
+$draw-color: #1AD6AD;
+
 #placeholder, #pane {
 	height: 100%;
 	overflow: hidden;
@@ -59,6 +61,7 @@ $navbar-top-margin: 30px;
 
 #grid-holder {
 	width: 85%;
+	position: relative;
 }
 
 .grid-column {
@@ -95,19 +98,24 @@ $navbar-top-margin: 30px;
 	width: 100%;
 }
 
+.draw {
+	background-color: $draw-color;
+	opacity: 0.5;
+}
+
 @for $i from 1 through 5 {
 	.heatmap-#{$i} {
 		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
 	}
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through 50 {
 	.gridtop-#{$i} {
-		top: $row-height / 2 * $i + $first-end-height;
+		top: $row-height / 2 * ($i - 1) + $first-end-height;
 	}
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through 50 {
 	.gridheight-#{$i} {
 		height: $row-height / 2 * $i;
 	}
