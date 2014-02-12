@@ -2,13 +2,28 @@
 @import "synckr.scss";
 
 $row-height: 40px;
+$first-end-height: 15px;
+$day-bar-height: 30px;
+$navbar-top-margin: 30px;
 
-#day-bar, .grid-row, #scroll-pane {
+#placeholder, #pane {
+	height: 100%;
+	overflow: hidden;
+}
+
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
 	@include clearfix;
 }
 
+#scroll-pane {
+	height: 100%;
+	padding-bottom: $navbar-top-margin + $day-bar-height + $navbar-margin;
+	overflow-y: scroll;
+}
+
 #day-bar {
-	margin-top: 30px;
+	margin-top: $navbar-top-margin;
+	height: $day-bar-height;
 }
 
 #overlay-toggle {
@@ -22,7 +37,7 @@ $row-height: 40px;
 }
 
 #handle-bar {
-	margin-top: $row-height / 2;
+	margin-top: $first-end-height - $row-height / 2;
 	padding-right: 5px;
 	width: 15%;
 }
@@ -46,10 +61,14 @@ $row-height: 40px;
 	width: 85%;
 }
 
-.grid {
+.grid-column {
+	position: relative;
 	float: left;
-	text-align: center;
 	width: 20%;
+}
+
+.grid {
+	text-align: center;
 }
 
 .hour {
@@ -58,10 +77,38 @@ $row-height: 40px;
 	border-bottom: 1px solid $line-color;
 }
 
+.hour:first-of-type, .hour:last-of-type {
+	height: $first-end-height;
+}
+
 .hour:last-child {
+	border-bottom: none;
+}
+
+.grid-column:last-child div {
 	border-right: none;
 }
 
-.grid-row:last-child .hour {
-	border-bottom: none;
+.slot {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+@for $i from 1 through 5 {
+	.heatmap-#{$i} {
+		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridtop-#{$i} {
+		top: $row-height / 2 * $i + $first-end-height;
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridheight-#{$i} {
+		height: $row-height / 2 * $i;
+	}
 }

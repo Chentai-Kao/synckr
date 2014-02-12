@@ -52,79 +52,255 @@ a:hover {
   color: black;
 }
 
-/* line 6, calendar.scss */
-#day-bar, .grid-row, #scroll-pane {
+/* line 9, calendar.scss */
+#placeholder, #pane {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 14, calendar.scss */
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 10, calendar.scss */
-#day-bar {
-  margin-top: 30px;
+/* line 18, calendar.scss */
+#scroll-pane {
+  height: 100%;
+  padding-bottom: 100px;
+  overflow-y: scroll;
 }
 
-/* line 14, calendar.scss */
+/* line 24, calendar.scss */
+#day-bar {
+  margin-top: 30px;
+  height: 30px;
+}
+
+/* line 29, calendar.scss */
 #overlay-toggle {
   float: left;
   text-align: center;
   width: 15%;
 }
 
-/* line 20, calendar.scss */
+/* line 35, calendar.scss */
 #handle-bar, #grid-holder {
   float: left;
 }
 
-/* line 24, calendar.scss */
+/* line 39, calendar.scss */
 #handle-bar {
-  margin-top: 20px;
+  margin-top: -5px;
   padding-right: 5px;
   width: 15%;
 }
 
-/* line 30, calendar.scss */
+/* line 45, calendar.scss */
 .handle, .grid {
   height: 40px;
 }
 
-/* line 34, calendar.scss */
+/* line 49, calendar.scss */
 .handle {
   line-height: 40px;
   text-align: right;
 }
 
-/* line 39, calendar.scss */
+/* line 54, calendar.scss */
 .day {
   float: left;
   text-align: center;
   width: 17%;
 }
 
-/* line 45, calendar.scss */
+/* line 60, calendar.scss */
 #grid-holder {
   width: 85%;
 }
 
-/* line 49, calendar.scss */
-.grid {
+/* line 64, calendar.scss */
+.grid-column {
+  position: relative;
   float: left;
-  text-align: center;
   width: 20%;
 }
 
-/* line 55, calendar.scss */
+/* line 70, calendar.scss */
+.grid {
+  text-align: center;
+}
+
+/* line 74, calendar.scss */
 .hour {
   box-sizing: border-box;
   border-right: 1px solid #aaaaaa;
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 61, calendar.scss */
+/* line 80, calendar.scss */
+.hour:first-of-type, .hour:last-of-type {
+  height: 15px;
+}
+
+/* line 84, calendar.scss */
 .hour:last-child {
+  border-bottom: none;
+}
+
+/* line 88, calendar.scss */
+.grid-column:last-child div {
   border-right: none;
 }
 
-/* line 65, calendar.scss */
-.grid-row:last-child .hour {
-  border-bottom: none;
+/* line 92, calendar.scss */
+.slot {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+/* line 99, calendar.scss */
+.heatmap-1 {
+  background-color: rgba(145, 145, 145, 0.5);
+}
+
+/* line 99, calendar.scss */
+.heatmap-2 {
+  background-color: rgba(94, 94, 94, 0.5);
+}
+
+/* line 99, calendar.scss */
+.heatmap-3 {
+  background-color: rgba(43, 43, 43, 0.5);
+}
+
+/* line 99, calendar.scss */
+.heatmap-4 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 99, calendar.scss */
+.heatmap-5 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 105, calendar.scss */
+.gridtop-1 {
+  top: 35px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-2 {
+  top: 55px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-3 {
+  top: 75px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-4 {
+  top: 95px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-5 {
+  top: 115px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-6 {
+  top: 135px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-7 {
+  top: 155px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-8 {
+  top: 175px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-9 {
+  top: 195px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-10 {
+  top: 215px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-11 {
+  top: 235px;
+}
+
+/* line 105, calendar.scss */
+.gridtop-12 {
+  top: 255px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-1 {
+  height: 20px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-2 {
+  height: 40px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-3 {
+  height: 60px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-4 {
+  height: 80px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-5 {
+  height: 100px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-6 {
+  height: 120px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-7 {
+  height: 140px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-8 {
+  height: 160px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-9 {
+  height: 180px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-10 {
+  height: 200px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-11 {
+  height: 220px;
+}
+
+/* line 111, calendar.scss */
+.gridheight-12 {
+  height: 240px;
 }

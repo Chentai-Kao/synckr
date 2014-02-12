@@ -10,11 +10,11 @@ var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose');
 var models = require('./models')
 
-var index = require('./routes/index');
-var project = require('./routes/project');
-var newevent = require('./routes/newevent');
 // Example route
 // var user = require('./routes/user');
+var index = require('./routes/index');
+var project = require('./routes/project');
+var events = require('./routes/events');
 
 var app = express();
 
@@ -46,7 +46,9 @@ if ('development' == app.get('env')) {
 // app.get('/users', user.list);
 app.get('/', index.view);
 app.get('/project/:name', project.viewProject);
-app.post('/newevent', newevent.create);
+app.get('/getevent/:eventId', events.getEvent);
+app.get('/eventlist/:facebookId', events.eventList);
+app.post('/newevent', events.create);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
