@@ -41,7 +41,7 @@ $(function() {
 	};
 
 	var drawGrid = function(date) {
-		var $holder = $("#grid-holder"),
+		var $holder = $("#grid-stretch"),
 		    $column = $('<div class="grid-column" id="' + date + '"></div>');
 		for (var i = 0; i < 26; ++i) {
 			$column.append('<div class="grid hour">&nbsp;</div>');
@@ -64,6 +64,38 @@ $(function() {
 			var touchmove = function(e) {
 				if (!mouseStart) return false;
 				$scroll.scrollTop(starty - (e.originalEvent.touches[0].pageY - mousey));
+				e.preventDefault();
+			};
+
+			var touchend = function(e) {
+				mouseStart = false;
+				$(document).off("touchmove", touchmove).off("touchend", touchend);
+			};
+
+			$(document).on("touchmove", touchmove).on("touchend", touchend);
+		}).click(function(e) {
+			e.stopImmediatePropagation();
+			return false;
+		});
+	};
+
+	var dayHookup = function() {
+		var $handle = $("#day-scroll"),
+		    $scrollTop = $("#day-scroll"),
+		    $scrollBottom = $("#grid-holder"),
+		    mouseMove = false,
+		    startx, mousex;
+
+		$handle.on("touchstart", function(e) {
+			mouseStart = true;
+			startx = $scrollTop.scrollLeft();
+			mousex = e.originalEvent.touches[0].pageX;
+			e.preventDefault();
+
+			var touchmove = function(e) {
+				if (!mouseStart) return false;
+				$scrollTop.scrollLeft(startx - (e.originalEvent.touches[0].pageX - mousex));
+				$scrollBottom.scrollLeft(startx - (e.originalEvent.touches[0].pageX - mousex));
 				e.preventDefault();
 			};
 
@@ -136,7 +168,9 @@ $(function() {
 	drawGrid("2014-02-12");
 	drawGrid("2014-02-13");
 	drawGrid("2014-02-14");
+	drawGrid("2014-02-15");
 	drawHeatmap(heatmap);
 	scrollHookup();
+	dayHookup();
 	slotHookup();
 });

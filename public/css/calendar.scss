@@ -34,6 +34,17 @@ $draw-color: #1AD6AD;
 	width: 15%;
 }
 
+#day-scroll, #grid-holder {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 85%;
+}
+
+#day-stretch, #grid-stretch {
+	width: auto;
+	white-space: nowrap;
+}
+
 #handle-bar, #grid-holder {
 	float: left;
 }
@@ -54,19 +65,14 @@ $draw-color: #1AD6AD;
 }
 
 .day {
-	float: left;
+	display: inline-block;
 	text-align: center;
-	width: 17%;
-}
-
-#grid-holder {
-	width: 85%;
-	position: relative;
+	width: 20%;
 }
 
 .grid-column {
 	position: relative;
-	float: left;
+	display: inline-block;
 	width: 20%;
 }
 
