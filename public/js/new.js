@@ -20,8 +20,8 @@
     $('#ok-new').click(function(e){
     	e.preventDefault();
      	$('#friendList').animate({left: width}, 200);
-    	$('#placeholder').animate({left: 0}, 200);});   	
-    
+    	$('#placeholder').animate({left: 0}, 200);});  
+
 });
 
 
