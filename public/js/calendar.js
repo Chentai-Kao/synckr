@@ -77,7 +77,59 @@ $(function() {
 			e.stopImmediatePropagation();
 			return false;
 		});
-	}
+	};
+
+	var slotID = 0;
+	var slotHookup = function() {
+		var $column = $(".grid-column"),
+		    mouseMove = false,
+		    starty, mousey,
+		    ygrid = function(y) {
+		    	return Math.floor((y - 15) / 20) + 1;
+		    },
+		    drawSlot = function(y1, y2) {
+		    	if (y1 > y2) {
+		    		var tmp = y2;
+		    		y2 = y1;
+		    		y1 = tmp;
+		    	}
+		    	if (ygrid(y1) < 1 || ygrid(y2) > 48) {
+		    		$("#slot-" + slotID).hide();
+		    		return;
+		    	}
+		    	$("#slot-" + slotID).removeClass().addClass("slot draw gridtop-" + ygrid(y1) +
+		    		" gridheight-" + (ygrid(y2) - ygrid(y1) + 1));
+		    };
+
+		$column.on("touchstart", function(e) {
+			slotID++;
+			mouseStart = true;
+			var parentOffset = $(this).parent().offset();
+			mousey = e.originalEvent.touches[0].pageY - parentOffset.top;
+			e.preventDefault();
+
+			var $slot = $('<p id="slot-' + slotID + '"></p>');
+			$(this).prepend($slot);
+			drawSlot(mousey, mousey);
+
+			var touchmove = function(e) {
+				if (!mouseStart) return false;
+				var currenty = e.originalEvent.touches[0].pageY - parentOffset.top;
+				drawSlot(mousey, currenty);
+				e.preventDefault();
+			};
+
+			var touchend = function(e) {
+				mouseStart = false;
+				$(document).off("touchmove", touchmove).off("touchend", touchend);
+			};
+
+			$(document).on("touchmove", touchmove).on("touchend", touchend);
+		}).click(function(e) {
+			e.stopImmediatePropagation();
+			return false;
+		});
+	};
 
 	drawGrid("2014-02-10");
 	drawGrid("2014-02-11");
@@ -86,4 +138,5 @@ $(function() {
 	drawGrid("2014-02-14");
 	drawHeatmap(heatmap);
 	scrollHookup();
+	slotHookup();
 });
