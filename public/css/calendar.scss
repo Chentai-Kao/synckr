@@ -2,6 +2,9 @@
 @import "synckr.scss";
 
 $row-height: 40px;
+$first-end-height: 15px;
+$day-bar-height: 30px;
+$navbar-top-margin: 30px;
 
 #placeholder, #pane {
 	height: 100%;
@@ -14,12 +17,13 @@ $row-height: 40px;
 
 #scroll-pane {
 	height: 100%;
-	padding-bottom: 78px;
+	padding-bottom: $navbar-top-margin + $day-bar-height + $navbar-margin;
 	overflow-y: scroll;
 }
 
 #day-bar {
-	margin-top: 30px;
+	margin-top: $navbar-top-margin;
+	height: $day-bar-height;
 }
 
 #overlay-toggle {
@@ -33,7 +37,7 @@ $row-height: 40px;
 }
 
 #handle-bar {
-	margin-top: $row-height / 2;
+	margin-top: $first-end-height - $row-height / 2;
 	padding-right: 5px;
 	width: 15%;
 }
@@ -73,6 +77,10 @@ $row-height: 40px;
 	border-bottom: 1px solid $line-color;
 }
 
+.hour:first-of-type, .hour:last-of-type {
+	height: $first-end-height;
+}
+
 .hour:last-child {
 	border-bottom: none;
 }
@@ -95,7 +103,7 @@ $row-height: 40px;
 
 @for $i from 1 through 12 {
 	.gridtop-#{$i} {
-		top: $row-height / 2 * $i;
+		top: $row-height / 2 * $i + $first-end-height;
 	}
 }
 

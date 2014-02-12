@@ -35,8 +35,8 @@ $(function() {
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
 			var $day = $("#" + slot.date);
-			$day.prepend('<div class="slot gridtop-' + parseInt(slot.start)+ ' gridheight-'
-				+ parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '"></div>');
+			$day.prepend('<p class="slot gridtop-' + parseInt(slot.start)+ ' gridheight-'
+				+ parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '"></p>');
 		})
 	};
 
