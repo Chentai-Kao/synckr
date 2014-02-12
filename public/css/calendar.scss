@@ -3,8 +3,19 @@
 
 $row-height: 40px;
 
-#day-bar, .grid-row, #scroll-pane {
+#placeholder, #pane {
+	height: 100%;
+	overflow: hidden;
+}
+
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
 	@include clearfix;
+}
+
+#scroll-pane {
+	height: 100%;
+	padding-bottom: 78px;
+	overflow-y: scroll;
 }
 
 #day-bar {
@@ -46,10 +57,14 @@ $row-height: 40px;
 	width: 85%;
 }
 
-.grid {
+.grid-column {
+	position: relative;
 	float: left;
-	text-align: center;
 	width: 20%;
+}
+
+.grid {
+	text-align: center;
 }
 
 .hour {
@@ -59,9 +74,33 @@ $row-height: 40px;
 }
 
 .hour:last-child {
+	border-bottom: none;
+}
+
+.grid-column:last-child div {
 	border-right: none;
 }
 
-.grid-row:last-child .hour {
-	border-bottom: none;
+.slot {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+@for $i from 1 through 5 {
+	.heatmap-#{$i} {
+		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridtop-#{$i} {
+		top: $row-height / 2 * $i;
+	}
+}
+
+@for $i from 1 through 12 {
+	.gridheight-#{$i} {
+		height: $row-height / 2 * $i;
+	}
 }

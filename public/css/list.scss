@@ -2,13 +2,63 @@
 @import "synckr.scss";
 
 .event {
-	min-height: 60px;
+	min-height: 80px;
 	@include display-box;
 	@include box-align(center);
 	border-bottom: 1px solid #aaa;
 	padding: 0 $left-right-margin;
 }
+.event-title{
+	width:70%;	
+}
 
+.event-info{
+	position:relative;
+	width:30%;
+	line-height: 60px;
+	min-height: 60px;
+	font-size: 18px;
+}
+.event-deadline{
+	position: absolute;
+	left:0;
+	height: 50%;
+	width: 100%;
+	line-height: 30px;
+}
+.event-people{
+	position: absolute;
+	left:0;
+	height: 50%;
+	width:100%;
+	top:50%;
+	line-height: 30px;
+}
+.event-people img{
+	width:30px;
+	margin: 0 0 0 -5px;
+}
+#nav-right{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 40px;
+}
+
+#user-info{
+	position: absolute;
+	width: 100%;
+	height: $bottom-margin;
+	bottom: 0;
+	border-top: 1px solid #aaa;
+}
+#user-pic{
+	width:15%;
+	float:left;
+}
+#user-name{
+	width:85%;
+	float:left;
+}
 // a:last-child .event {
 // 	border-bottom: 1px solid $line-color;
 // }

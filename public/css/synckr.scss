@@ -2,7 +2,9 @@
 
 $line-color: #aaa;
 
-$left-right-margin: 30px;
+$left-right-margin: 20px;
+$navbar-margin: 40px;
+$bottom-margin: 30px;
 
 #placeholder {
 	position:absolute;
@@ -10,6 +12,7 @@ $left-right-margin: 30px;
 	font-size: 20px;
 	font-family: "Helvetica Neue", sans-serif;
 	font-weight: lighter;
+	height: 100%;
 }
 
 #navbar {
@@ -17,12 +20,15 @@ $left-right-margin: 30px;
 	@include clearfix;
 	font-weight: normal;
 	border-bottom: 1px solid $line-color;
+	height: $navbar-margin;
+	line-height: $navbar-margin;
 }
 
 #nav-left {
 	position: absolute;
 	top: 0;
-	left: $left-right-margin;
+	left: $left-right-margin/2;
+	font-size:15px;
 }
 
 #nav-middle {
@@ -32,9 +38,16 @@ $left-right-margin: 30px;
 #nav-right {
 	position: absolute;
 	top: 0;
-	right: $left-right-margin;
+	right: $left-right-margin/2;
+	font-size: 15px;
 }
 
 a {
 	text-decoration: none;
+	color:black;
+
+}
+a:hover{
+	text-decoration: none;
+	color:black;
 }

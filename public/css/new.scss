@@ -17,10 +17,13 @@
 
 input, select{
 	font-family: "Helvetica Neue", sans-serif;
-	font-weight: lighter;
-	@include appearance(none);
+	font-weight: lighter;	
 	border-radius: 0;
 	padding: 0;
+}
+
+input[type="text"]{
+	@include appearance(none);
 }
 
 .dur{
@@ -34,7 +37,7 @@ input, select{
 	padding: 0;
 	border: 0px;
 	@include appearance(none);
-  direction:rtl;
+  	direction:rtl;
 }
 
 #duration{
@@ -48,16 +51,20 @@ input, select{
 }
 
 #startdate, #enddate{
+	position:relative;
 	border-bottom: 1px solid $line-color;
 	height: 30px;
 	margin: 10px 0;
 }
 
 #st-date, #en-date{
+	position:absolute;
+	left:0;
 	margin: 0;
 	padding: 0;
 	border: 0px;
 	text-align: right;
+	background-color: transparent;
 }
 
 #friendList{
@@ -73,8 +80,8 @@ input, select{
 }
 
 #search-bar input{
-	width:100%;
-	margin: 10px 0;
+	width:90%;
+	margin: 10px 5%;
 }
 
 .friends{
