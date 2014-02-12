@@ -10,11 +10,13 @@ var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose');
 var models = require('./models')
 
+// Example route
+// var user = require('./routes/user');
 var index = require('./routes/index');
 var project = require('./routes/project');
 var newevent = require('./routes/newevent');
-// Example route
-// var user = require('./routes/user');
+var getevent = require('./routes/getevent');
+var eventlist = require('./routes/eventlist');
 
 var app = express();
 
@@ -46,6 +48,8 @@ if ('development' == app.get('env')) {
 // app.get('/users', user.list);
 app.get('/', index.view);
 app.get('/project/:name', project.viewProject);
+app.get('/getevent/:eventId', getevent.get);
+app.get('/eventlist/:facebookId', eventlist.get);
 app.post('/newevent', newevent.create);
 
 http.createServer(app).listen(app.get('port'), function() {
