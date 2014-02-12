@@ -23,7 +23,7 @@
 #nav-left {
   position: absolute;
   top: 0;
-  left: 10px;
+  left: 12.5px;
   font-size: 15px;
 }
 
@@ -36,7 +36,7 @@
 #nav-right {
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 12.5px;
   font-size: 15px;
 }
 
@@ -52,7 +52,7 @@ a:hover {
   color: black;
 }
 
-/* line 4, list.scss */
+/* line 6, list.scss */
 .event {
   min-height: 80px;
   display: -webkit-box;
@@ -64,24 +64,35 @@ a:hover {
   -ms-box-align: center;
   box-align: center;
   border-bottom: 1px solid #aaa;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
-/* line 11, list.scss */
+/* line 13, list.scss */
 .event-title {
-  width: 70%;
+  width: 60%;
 }
 
-/* line 15, list.scss */
+/* line 17, list.scss */
 .event-info {
   position: relative;
-  width: 30%;
+  width: 35%;
   line-height: 60px;
   min-height: 60px;
   font-size: 18px;
 }
 
-/* line 22, list.scss */
+/* line 24, list.scss */
+.arrow {
+  width: 5%;
+  display: none;
+}
+
+/* line 28, list.scss */
+.arrow-move {
+  display: block;
+}
+
+/* line 32, list.scss */
 .event-deadline {
   position: absolute;
   left: 0;
@@ -90,7 +101,7 @@ a:hover {
   line-height: 30px;
 }
 
-/* line 29, list.scss */
+/* line 39, list.scss */
 .event-people {
   position: absolute;
   left: 0;
@@ -100,20 +111,20 @@ a:hover {
   line-height: 30px;
 }
 
-/* line 37, list.scss */
+/* line 47, list.scss */
 .event-people img {
   width: 30px;
   margin: 0 0 0 -5px;
 }
 
-/* line 41, list.scss */
+/* line 51, list.scss */
 #nav-right {
   font-size: 30px;
   font-weight: 200;
   line-height: 40px;
 }
 
-/* line 47, list.scss */
+/* line 57, list.scss */
 #user-info {
   position: absolute;
   width: 100%;
@@ -122,14 +133,30 @@ a:hover {
   border-top: 1px solid #aaa;
 }
 
-/* line 54, list.scss */
+/* line 64, list.scss */
 #user-pic {
   width: 15%;
   float: left;
 }
 
-/* line 58, list.scss */
+/* line 68, list.scss */
 #user-name {
   width: 85%;
   float: left;
+}
+
+/* line 73, list.scss */
+.event-title-move {
+  padding: 0 0 0 10px;
+}
+
+/* line 83, list.scss */
+.cancel-icon {
+  display: none;
+}
+
+/* line 87, list.scss */
+.cancel-icon-move {
+  margin: 0 10 0 -10;
+  display: block;
 }
