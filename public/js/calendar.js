@@ -34,7 +34,6 @@ $(function() {
 
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
-			console.log(slot);
 			var $day = $("#" + slot.date);
 			$day.prepend('<div class="slot gridtop-' + parseInt(slot.start)+ ' gridheight-'
 				+ parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '"></div>');
@@ -44,10 +43,40 @@ $(function() {
 	var drawGrid = function(date) {
 		var $holder = $("#grid-holder"),
 		    $column = $('<div class="grid-column" id="' + date + '"></div>');
-		for (var i = 0; i < 25; ++i) {
+		for (var i = 0; i < 26; ++i) {
 			$column.append('<div class="grid hour">&nbsp;</div>');
 		}
 		$holder.append($column);
+	}
+
+	var scrollHookup = function() {
+		var $handle = $("#handle-bar"),
+		    $scroll = $("#scroll-pane"),
+		    mouseMove = false,
+		    starty, mousey;
+
+		$handle.on("touchstart", function(e) {
+			mouseStart = true;
+			starty = $scroll.scrollTop();
+			mousey = e.originalEvent.touches[0].pageY;
+			e.preventDefault();
+
+			var touchmove = function(e) {
+				if (!mouseStart) return false;
+				$scroll.scrollTop(starty - (e.originalEvent.touches[0].pageY - mousey));
+				e.preventDefault();
+			};
+
+			var touchend = function(e) {
+				mouseStart = false;
+				$(document).off("touchmove", touchmove).off("touchend", touchend);
+			};
+
+			$(document).on("touchmove", touchmove).on("touchend", touchend);
+		}).click(function(e) {
+			e.stopImmediatePropagation();
+			return false;
+		});
 	}
 
 	drawGrid("2014-02-10");
@@ -56,4 +85,5 @@ $(function() {
 	drawGrid("2014-02-13");
 	drawGrid("2014-02-14");
 	drawHeatmap(heatmap);
+	scrollHookup();
 });

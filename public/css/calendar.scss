@@ -3,11 +3,18 @@
 
 $row-height: 40px;
 
+#placeholder, #pane {
+	height: 100%;
+	overflow: hidden;
+}
+
 #day-bar, .grid-row, #scroll-pane, #grid-holder {
 	@include clearfix;
 }
 
 #scroll-pane {
+	height: 100%;
+	padding-bottom: 78px;
 	overflow-y: scroll;
 }
 
