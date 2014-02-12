@@ -53,6 +53,14 @@ a:hover {
 }
 
 /* line 6, list.scss */
+.out-event {
+  min-height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  padding: 0 25px;
+}
+
+/* line 13, list.scss */
 .event {
   min-height: 80px;
   display: -webkit-box;
@@ -63,68 +71,67 @@ a:hover {
   -moz-box-align: center;
   -ms-box-align: center;
   box-align: center;
-  border-bottom: 1px solid #aaa;
-  padding: 0 25px;
 }
 
-/* line 13, list.scss */
+/* line 21, list.scss */
 .event-title {
-  width: 60%;
+  width: 65%;
 }
 
-/* line 17, list.scss */
+/* line 25, list.scss */
 .event-info {
   position: relative;
   width: 35%;
-  line-height: 60px;
-  min-height: 60px;
+  line-height: 80px;
+  min-height: 80px;
   font-size: 18px;
 }
 
-/* line 24, list.scss */
+/* line 32, list.scss */
 .arrow {
   width: 5%;
   display: none;
+  margin-left: 10px;
 }
 
-/* line 28, list.scss */
+/* line 37, list.scss */
 .arrow-move {
   display: block;
 }
 
-/* line 32, list.scss */
+/* line 41, list.scss */
 .event-deadline {
   position: absolute;
   left: 0;
   height: 50%;
   width: 100%;
-  line-height: 30px;
+  line-height: 40px;
 }
 
-/* line 39, list.scss */
+/* line 48, list.scss */
 .event-people {
   position: absolute;
   left: 0;
   height: 50%;
   width: 100%;
   top: 50%;
-  line-height: 30px;
+  line-height: 40px;
 }
 
-/* line 47, list.scss */
+/* line 56, list.scss */
 .event-people img {
   width: 30px;
   margin: 0 0 0 -5px;
 }
 
-/* line 51, list.scss */
+/* line 60, list.scss */
 #nav-right {
   font-size: 30px;
   font-weight: 200;
   line-height: 40px;
 }
 
-/* line 57, list.scss */
+/* line 66, list.scss */
 #user-info {
   position: absolute;
   width: 100%;
@@ -133,30 +140,29 @@ a:hover {
   border-top: 1px solid #aaa;
 }
 
-/* line 64, list.scss */
+/* line 73, list.scss */
 #user-pic {
   width: 15%;
   float: left;
 }
 
-/* line 68, list.scss */
+/* line 77, list.scss */
 #user-name {
   width: 85%;
   float: left;
 }
 
-/* line 73, list.scss */
-.event-title-move {
-  padding: 0 0 0 10px;
-}
-
-/* line 83, list.scss */
+/* line 82, list.scss */
 .cancel-icon {
   display: none;
 }
 
 /* line 87, list.scss */
 .cancel-icon-move {
-  margin: 0 10 0 -10;
+  margin: 0 25px 0 0;
   display: block;
+  width: 5%;
+  float: left;
+  height: 80px;
+  padding-top: 30px;
 }
