@@ -190,12 +190,14 @@ $(function() {
 
 	var blockHookup = function($block) {
 		var mouseMove = false,
-		    starty, mousey, fixed = false;
+		    starty, mousey;
 		    ygrid = function(y) {
 		    	return Math.floor((y - 15) / 20) + 1;
 		    },
-		    drawSlot = function($block, y) {
-		    	var gy = ygrid(y), start = $block.attr("start"), end = $block.attr("end");
+		    drawSlot = function($block, y, fixed) {
+		    	var gy = ygrid(y), start = parseInt($block.attr("start")),
+		    	    end = parseInt($block.attr("end"));
+		    	console.log(fixed);
 		    	if (!fixed) {
 		    		fixed = (gy == start) ? end : start;
 		    	}
@@ -203,8 +205,10 @@ $(function() {
 		    			g2 = (gy > fixed) ? gy : fixed;
 		    	if (g1 < 1) g1 = 1;
 		    	if (g2 > 48) g2 = 48;
+		    	console.log(gy, start, end, g1, g2, fixed);
 		    	$block.removeClass().addClass("slot draw gridtop-" + g1 +
 		    		" gridheight-" + (g2 - g1 + 1)).attr("start", g1).attr("end", g2);
+		    	return fixed;
 		    };
 
 		$block.on("touchstart", function(e) {
@@ -214,13 +218,13 @@ $(function() {
 			e.stopImmediatePropagation();
 
 			var y = e.originalEvent.touches[0].pageY - parentOffset.top;
-			if (ygrid(y) != that.attr("start") && ygrid(y) != that.attr("end")) return;
-			fixed = false;
-			drawSlot(that, y);
+			if (ygrid(y) != parseInt(that.attr("start")) &&
+				  ygrid(y) != parseInt(that.attr("end"))) return;
+			var fixed = drawSlot(that, y, false);
 
 			var touchmove = function(e) {
 				if (!mouseStart) return false;
-				drawSlot(that, e.originalEvent.touches[0].pageY - parentOffset.top);
+				drawSlot(that, e.originalEvent.touches[0].pageY - parentOffset.top, fixed);
 				e.preventDefault();
 			};
 
@@ -233,6 +237,8 @@ $(function() {
 		}).click(function(e) {
 			e.stopImmediatePropagation();
 			return false;
+		}).dblclick(function(e) {
+			$(this).remove();
 		});
 	}
 
