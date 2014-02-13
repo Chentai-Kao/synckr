@@ -11,14 +11,15 @@
 
 $row-height: 40px;
 $first-end-height: 15px;
-$day-bar-height: 30px;
-$navbar-top-margin: 30px;
+$day-bar-height: 45px;
+$navbar-top-margin: 5px;
 
 $draw-color: #1AD6AD;
 
 #placeholder, #pane {
 	height: 100%;
 	overflow: hidden;
+	font-size: 20px;
 }
 
 #day-bar, .grid-row, #scroll-pane, #grid-holder {
@@ -40,13 +41,14 @@ $draw-color: #1AD6AD;
 #overlay-toggle {
 	float: left;
 	text-align: center;
-	width: 15%;
+	width: 12%;
+	font-size: 15px;
 }
 
 #day-scroll, #grid-holder {
 	overflow-x: scroll;
 	overflow-y: hidden;
-	width: 85%;
+	width: 88%;
 	@include hide-scrollbar;
 }
 
@@ -62,7 +64,8 @@ $draw-color: #1AD6AD;
 #handle-bar {
 	margin-top: $first-end-height - $row-height / 2;
 	padding-right: 5px;
-	width: 15%;
+	width: 12%;
+	font-size: 15px;
 }
 
 .handle, .grid {
@@ -75,10 +78,21 @@ $draw-color: #1AD6AD;
 }
 
 .day {
-	display: inline-block;
-	text-align: center;
+	// position: relative;
+	height: $row-height;
 	width: 20%;
+	display: inline-block;
 }
+
+.date-day, .date {
+	// position: absolute;
+	height: $row-height/2;
+	text-align: center;
+	width: 100%;	
+	float: left;
+	font-size: 15px;
+}
+
 
 .grid-column {
 	position: relative;
