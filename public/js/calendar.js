@@ -125,15 +125,15 @@ $(function() {
 		    		y2 = y1;
 		    		y1 = tmp;
 		    	}
-		    	if (ygrid(y1) < 1 || ygrid(y2) > 48) {
-		    		$("#slot-" + slotID).hide();
-		    		return;
-		    	}
-		    	$("#slot-" + slotID).removeClass().addClass("slot draw gridtop-" + ygrid(y1) +
-		    		" gridheight-" + (ygrid(y2) - ygrid(y1) + 1));
+		    	var g1 = ygrid(y1), g2 = ygrid(y2);
+		    	if (g1 < 1) g1 = 1;
+		    	if (g2 > 48) g2 = 48;
+		    	$("#slot-" + slotID).removeClass().addClass("slot draw gridtop-" + g1 +
+		    		" gridheight-" + (g2 - g1 + 1)).attr("start", g1).attr("end", g2);
 		    };
 
 		$column.on("touchstart", function(e) {
+			console.log("column drag start");
 			slotID++;
 			mouseStart = true;
 			var parentOffset = $(this).parent().offset();
@@ -141,6 +141,7 @@ $(function() {
 			e.preventDefault();
 
 			var $slot = $('<p id="slot-' + slotID + '"></p>');
+			blockHookup($slot);
 			$(this).prepend($slot);
 			drawSlot(mousey, mousey);
 
@@ -162,6 +163,54 @@ $(function() {
 			return false;
 		});
 	};
+
+	var blockHookup = function($block) {
+		var mouseMove = false,
+		    starty, mousey, fixed = false;
+		    ygrid = function(y) {
+		    	return Math.floor((y - 15) / 20) + 1;
+		    },
+		    drawSlot = function($block, y) {
+		    	var gy = ygrid(y), start = $block.attr("start"), end = $block.attr("end");
+		    	if (!fixed) {
+		    		fixed = (gy == start) ? end : start;
+		    	}
+		    	var g1 = (gy > fixed) ? fixed : gy,
+		    			g2 = (gy > fixed) ? gy : fixed;
+		    	if (g1 < 1) g1 = 1;
+		    	if (g2 > 48) g2 = 48;
+		    	$block.removeClass().addClass("slot draw gridtop-" + g1 +
+		    		" gridheight-" + (g2 - g1 + 1)).attr("start", g1).attr("end", g2);
+		    };
+
+		$block.on("touchstart", function(e) {
+			console.log("touch start at slot");
+			mouseStart = true;
+			var that = $(this), parentOffset = $(this).parent().offset();
+			e.stopImmediatePropagation();
+
+			var y = e.originalEvent.touches[0].pageY - parentOffset.top;
+			if (ygrid(y) != that.attr("start") && ygrid(y) != that.attr("end")) return;
+			fixed = false;
+			drawSlot(that, y);
+
+			var touchmove = function(e) {
+				if (!mouseStart) return false;
+				drawSlot(that, e.originalEvent.touches[0].pageY - parentOffset.top);
+				e.preventDefault();
+			};
+
+			var touchend = function(e) {
+				mouseStart = false;
+				$(document).off("touchmove", touchmove).off("touchend", touchend);
+			};
+
+			$(document).on("touchmove", touchmove).on("touchend", touchend);
+		}).click(function(e) {
+			e.stopImmediatePropagation();
+			return false;
+		});
+	}
 
 	drawGrid("2014-02-10");
 	drawGrid("2014-02-11");
