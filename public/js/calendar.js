@@ -4,39 +4,63 @@ $(function() {
 			"date": "2014-02-11",
 			"start": "1",
 			"duration": "2",
-			"level": 1
+			"level": 1,
+			"count": 2
 		},
 		{
 			"date": "2014-02-11",
 			"start": "3",
 			"duration": "2",
-			"level": 3
+			"level": 3,
+			"count": 6
 		},
 		{
 			"date": "2014-02-11",
 			"start": "10",
 			"duration": "4",
-			"level": 5
+			"level": 5,
+			"count": 10
 		},
 		{
 			"date": "2014-02-12",
 			"start": "3",
 			"duration": "2",
-			"level": 2
+			"level": 2,
+			"count": 4
 		},
 		{
 			"date": "2014-02-12",
 			"start": "5",
 			"duration": "2",
-			"level": 4
+			"level": 4,
+			"count": 8
 		}
 	];
+
+
+	$("#overlay-toggle").click(function(){
+		var $slot = $(".data");
+		$.each($slot, function(i, s){
+			if($(s).hasClass("clicked")){
+				$(s).removeClass("clicked");
+				$(s).find(".count").remove();
+			}
+			else{
+				$(s).addClass("clicked");
+				var level = $(s).attr("count");
+				$(s).append("<p class='count'>"+level+"</p>");
+			}		
+		})
+		
+	});
+	
 
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
 			var $day = $("#" + slot.date);
-			$day.prepend('<p class="slot gridtop-' + parseInt(slot.start)+ ' gridheight-'
-				+ parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '"></p>');
+			$day.prepend('<p class="slot data gridtop-' + parseInt(slot.start)+ ' gridheight-'
+				+ parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '" count="'
+				+ parseInt(slot.count) + '"></p>');
 		})
 	};
 
