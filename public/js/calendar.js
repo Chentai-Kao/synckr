@@ -213,6 +213,8 @@ $(function() {
 		}).click(function(e) {
 			e.stopImmediatePropagation();
 			return false;
+		}).dblclick(function(e) {
+			$(this).remove();
 		});
 	}
 
