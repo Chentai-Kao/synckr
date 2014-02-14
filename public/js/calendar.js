@@ -2,35 +2,35 @@ $(function() {
 	var heatmap = [
 		{
 			"date": "2014-02-11",
-			"start": "1",
+			"start": "30",
 			"duration": "2",
 			"level": 1,
 			"count": 2
 		},
 		{
 			"date": "2014-02-11",
-			"start": "3",
+			"start": "32",
 			"duration": "2",
 			"level": 3,
 			"count": 6
 		},
 		{
 			"date": "2014-02-11",
-			"start": "10",
+			"start": "20",
 			"duration": "4",
 			"level": 5,
 			"count": 10
 		},
 		{
 			"date": "2014-02-12",
-			"start": "3",
+			"start": "23",
 			"duration": "2",
 			"level": 2,
 			"count": 4
 		},
 		{
 			"date": "2014-02-12",
-			"start": "5",
+			"start": "20",
 			"duration": "2",
 			"level": 4,
 			"count": 8
@@ -53,18 +53,18 @@ $(function() {
 		})
 	});
 
-	$("#nav-right").click(function(){
-		var data = [];
-		$.each($(".draw"), function(i, d) {
-			var $d = $(d);
-			data.push({
-				"date": $d.parent().attr("id"),
-				"start": parseInt($d.attr("start")),
-				"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
-			});
-		});
-		console.log(data);
-	});
+	// $("#nav-right").click(function(){
+	// 	var data = [];
+	// 	$.each($(".draw"), function(i, d) {
+	// 		var $d = $(d);
+	// 		data.push({
+	// 			"date": $d.parent().attr("id"),
+	// 			"start": parseInt($d.attr("start")),
+	// 			"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
+	// 		});
+	// 	});
+	// 	console.log(data);
+	// });
 
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
@@ -288,6 +288,7 @@ $(function() {
 	drawGrid("2014-02-14");
 	drawGrid("2014-02-15");
 	drawHeatmap(heatmap);
+	$("#scroll-pane").scrollTop(360);
 	scrollHookup();
 	dayHookup();
 	slotHookup();

@@ -44,7 +44,7 @@ if ('development' == app.get('env')) {
 // Add routes here
 // Example route
 // app.get('/users', user.list);
-app.get('/', index.view);
+app.get('/', function(req, res) {res.redirect('list.html');});
 app.get('/project/:name', project.viewProject);
 app.get('/getevent/:eventId', events.getEvent);
 app.get('/eventlist/:facebookId', events.eventList);
