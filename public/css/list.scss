@@ -14,12 +14,12 @@ $event-height: 80px;
 	min-height: $event-height;
 	@include display-box;
 	@include box-align(center);
-	
-	
+
+
 	//float:left;
 }
 .event-title{
-	width:65%;	
+	width:65%;
 }
 
 .event-info{
@@ -60,7 +60,7 @@ $event-height: 80px;
 #nav-right{
 	font-size: 30px;
 	font-weight: 200;
-	line-height: 40px;
+	line-height: 30px;
 }
 
 #user-info{
