@@ -53,18 +53,18 @@ $(function() {
 		})
 	});
 
-	$("#nav-right").click(function(){
-		var data = [];
-		$.each($(".draw"), function(i, d) {
-			var $d = $(d);
-			data.push({
-				"date": $d.parent().attr("id"),
-				"start": parseInt($d.attr("start")),
-				"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
-			});
-		});
-		console.log(data);
-	});
+	// $("#nav-right").click(function(){
+	// 	var data = [];
+	// 	$.each($(".draw"), function(i, d) {
+	// 		var $d = $(d);
+	// 		data.push({
+	// 			"date": $d.parent().attr("id"),
+	// 			"start": parseInt($d.attr("start")),
+	// 			"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
+	// 		});
+	// 	});
+	// 	console.log(data);
+	// });
 
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
