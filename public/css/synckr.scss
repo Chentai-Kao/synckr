@@ -1,4 +1,5 @@
 @import "compass/utilities/general/clearfix";
+@import "compass/css3/user-interface";
 
 $line-color: #aaa;
 
@@ -13,6 +14,7 @@ $bottom-margin: 30px;
 	font-family: "Helvetica Neue", sans-serif;
 	font-weight: lighter;
 	height: 100%;
+	@include user-select(none);
 }
 
 #navbar {

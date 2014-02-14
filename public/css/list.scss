@@ -1,17 +1,25 @@
 @import "compass/css3/box";
 @import "synckr.scss";
 
-$event-height: 60px;
+$event-height: 80px;
 
-.event {
-	min-height: 80px;
-	@include display-box;
-	@include box-align(center);
+.out-event{
+	min-height: $event-height;
+	width: 100%;
 	border-bottom: 1px solid #aaa;
 	padding: 0 $left-right-margin;
 }
+
+.event {
+	min-height: $event-height;
+	@include display-box;
+	@include box-align(center);
+	
+	
+	//float:left;
+}
 .event-title{
-	width:60%;	
+	width:65%;	
 }
 
 .event-info{
@@ -24,6 +32,7 @@ $event-height: 60px;
 .arrow{
 	width:5%;
 	display: none;
+	margin-left:10px;
 }
 .arrow-move{
 	display:block;
@@ -70,24 +79,29 @@ $event-height: 60px;
 	float:left;
 }
 
-.event-title-move{
-	padding: 0 0 0 10px;
-	//width: 65%;
-}
-
-.event-info-move{
-	//width: 30%;
-}
-
-
 .cancel-icon{
 	display: none;
 }
 
+
 .cancel-icon-move{
-	margin:0 10 0 -10;
+	margin:0 $left-right-margin 0 0;
 	display: block;
+	width: 5%;
+	float:left;
+	height: $event-height;
+	padding-top:30px;
 }
+
+// .cancel-icon-move{
+// 	margin:0 10 0 -10;
+// 	display: block;
+// }
+
+
+
+
+
 // a:last-child .event {
 // 	border-bottom: 1px solid $line-color;
 // }

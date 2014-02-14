@@ -1,14 +1,25 @@
 @import "compass/css3/box";
 @import "synckr.scss";
 
+@mixin hide-scrollbar {
+	overflow: -moz-scrollbars-none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 $row-height: 40px;
 $first-end-height: 15px;
-$day-bar-height: 30px;
-$navbar-top-margin: 30px;
+$day-bar-height: 45px;
+$navbar-top-margin: 5px;
+
+$draw-color: #1AD6AD;
 
 #placeholder, #pane {
 	height: 100%;
 	overflow: hidden;
+	font-size: 20px;
 }
 
 #day-bar, .grid-row, #scroll-pane, #grid-holder {
@@ -19,6 +30,7 @@ $navbar-top-margin: 30px;
 	height: 100%;
 	padding-bottom: $navbar-top-margin + $day-bar-height + $navbar-margin;
 	overflow-y: scroll;
+	@include hide-scrollbar;
 }
 
 #day-bar {
@@ -29,7 +41,20 @@ $navbar-top-margin: 30px;
 #overlay-toggle {
 	float: left;
 	text-align: center;
-	width: 15%;
+	width: 12%;
+	font-size: 15px;
+}
+
+#day-scroll, #grid-holder {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 88%;
+	@include hide-scrollbar;
+}
+
+#day-stretch, #grid-stretch {
+	width: auto;
+	white-space: nowrap;
 }
 
 #handle-bar, #grid-holder {
@@ -39,7 +64,8 @@ $navbar-top-margin: 30px;
 #handle-bar {
 	margin-top: $first-end-height - $row-height / 2;
 	padding-right: 5px;
-	width: 15%;
+	width: 12%;
+	font-size: 15px;
 }
 
 .handle, .grid {
@@ -52,18 +78,25 @@ $navbar-top-margin: 30px;
 }
 
 .day {
-	float: left;
-	text-align: center;
-	width: 17%;
+	// position: relative;
+	height: $row-height;
+	width: 20%;
+	display: inline-block;
 }
 
-#grid-holder {
-	width: 85%;
+.date-day, .date {
+	// position: absolute;
+	height: $row-height/2;
+	text-align: center;
+	width: 100%;
+	float: left;
+	font-size: 15px;
 }
+
 
 .grid-column {
 	position: relative;
-	float: left;
+	display: inline-block;
 	width: 20%;
 }
 
@@ -95,19 +128,37 @@ $navbar-top-margin: 30px;
 	width: 100%;
 }
 
+.draw {
+	background-color: $draw-color;
+	opacity: 0.5;
+	z-index: 10;
+}
+
+.clicked {
+	display: table;
+	text-align: center;
+}
+
+.count {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	margin: 0;
+}
+
 @for $i from 1 through 5 {
 	.heatmap-#{$i} {
 		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
 	}
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through 50 {
 	.gridtop-#{$i} {
-		top: $row-height / 2 * $i + $first-end-height;
+		top: $row-height / 2 * ($i - 1) + $first-end-height;
 	}
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through 50 {
 	.gridheight-#{$i} {
 		height: $row-height / 2 * $i;
 	}

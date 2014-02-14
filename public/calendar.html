@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Synckr</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/calendar.css">
@@ -15,16 +15,19 @@
 			</div>
 			<div id="pane">
 				<div id="day-bar">
-					<div id="overlay-toggle">O</div>
-					<div class="day">M</div>
-					<div class="day">T</div>
-					<div class="day">W</div>
-					<div class="day">T</div>
-					<div class="day">F</div>
+					<div id="overlay-toggle">
+						<div id="month">Feb</div>
+						<div id="overlay-icon">O</div>
+					</div>
+					<div id="day-scroll">
+						<div id="day-stretch">
+							<div class="day"><div class="date">10</div><div class="date-day">M</div></div><div class="day"><div class="date">11</div><div class="date-day">T</div></div><div class="day"><div class="date">12</div><div class="date-day">W</div></div><div class="day"><div class="date">13</div><div class="date-day">T</div></div><div class="day"><div class="date">14</div><div class="date-day">F</div></div><div class="day"><div class="date">15</div><div class="date-day">S</div></div>
+						</div>
+					</div>
 				</div>
 				<div id="scroll-pane">
 					<div id="handle-bar">
-						<div class="handle">12</div>
+						<div class="handle">12am</div>
 						<div class="handle">1</div>
 						<div class="handle">2</div>
 						<div class="handle">3</div>
@@ -36,7 +39,7 @@
 						<div class="handle">9</div>
 						<div class="handle">10</div>
 						<div class="handle">11</div>
-						<div class="handle">12</div>
+						<div class="handle">12pm</div>
 						<div class="handle">1</div>
 						<div class="handle">2</div>
 						<div class="handle">3</div>
@@ -50,12 +53,15 @@
 						<div class="handle">11</div>
 						<div class="handle">12</div>
 					</div>
-					<div id="grid-holder"></div>
+					<div id="grid-holder">
+						<div id="grid-stretch"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/jquery.hammer-full.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/synckr.js"></script>
 		<script src="js/calendar.js"></script>

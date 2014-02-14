@@ -7,6 +7,10 @@ $(document).ready(function(){
 
 	});
 
+	$(".cancel-icon").click(function(e){
+		console.log("clicked");
+		$(this).parent().remove();
 
+	});
 
 });
