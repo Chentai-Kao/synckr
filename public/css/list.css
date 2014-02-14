@@ -1,4 +1,4 @@
-/* line 9, synckr.scss */
+/* line 10, synckr.scss */
 #placeholder {
   position: absolute;
   width: 100%;
@@ -6,9 +6,12 @@
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
   height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-/* line 18, synckr.scss */
+/* line 20, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -19,7 +22,7 @@
   line-height: 40px;
 }
 
-/* line 27, synckr.scss */
+/* line 29, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
@@ -27,12 +30,12 @@
   font-size: 15px;
 }
 
-/* line 34, synckr.scss */
+/* line 36, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 38, synckr.scss */
+/* line 40, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -40,13 +43,13 @@
   font-size: 15px;
 }
 
-/* line 45, synckr.scss */
+/* line 47, synckr.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 50, synckr.scss */
+/* line 52, synckr.scss */
 a:hover {
   text-decoration: none;
   color: black;
