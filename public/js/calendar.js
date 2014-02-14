@@ -115,7 +115,7 @@ $(function() {
 	var ygrid = function(y) {
 		return Math.floor((y - 15) / 20) + 1;
 	};
-	var collide = function($column, y1, y2) {
+	var collide = function($column, y1, y2, starty) {
 		// console.log($column, y1, y2);
 		$.each($column.find(".draw:not(.drawing)"), function(i, s) {
 			var $s = $(s),
@@ -123,7 +123,13 @@ $(function() {
 			// console.log($s, s1, s2);
 			if (y1 >= s1 && y1 <= s2) y1 = s2 + 1;
 			if (y2 >= s1 && y2 <= s2) y2 = s1 - 1;
-			//if (y1 >= s1 )
+			if (y1 <= s1 && y2 >= s2) {
+				if (starty == y1) {
+					y2 = s1 - 1;
+				} else {
+					y1 = s2 + 1;
+				}
+			}
 		});
 		return [y1, y2];
 	};
@@ -133,6 +139,7 @@ $(function() {
 		    mouseMove = false,
 		    starty, mousey,
 		    drawSlot = function(y1, y2) {
+		    	var my = y1;
 		    	if (y1 > y2) {
 		    		var tmp = y2;
 		    		y2 = y1;
@@ -141,7 +148,7 @@ $(function() {
 		    	var $slot = $("#slot-" + slotID), $col = $slot.parent();
 		    	$slot.addClass("drawing");
 		    	var g1 = ygrid(y1), g2 = ygrid(y2);
-		    	var col = collide($col, g1, g2);
+		    	var col = collide($col, g1, g2, ygrid(my));
 		    	g1 = col[0];
 		    	g2 = col[1];
 		    	if (g1 < 1) g1 = 1;
@@ -156,7 +163,7 @@ $(function() {
 			mouseStart = true;
 			var parentOffset = $(this).parent().offset();
 			mousey = e.originalEvent.touches[0].pageY - parentOffset.top;
-			var gy = ygrid(mousey), col = collide($(this), gy, gy);
+			var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
 			console.log(col, gy);
 			if (col[0] != gy) return;
 			e.preventDefault();
@@ -198,7 +205,7 @@ $(function() {
 		    	var g1 = (gy > fixed) ? fixed : gy,
 		    			g2 = (gy > fixed) ? gy : fixed;
 		    	$block.addClass("drawing");
-		    	var col = collide($block.parent(), g1, g2);
+		    	var col = collide($block.parent(), g1, g2, fixed);
 		    	g1 = col[0];
 		    	g2 = col[1];
 		    	if (g1 < 1) g1 = 1;
