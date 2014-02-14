@@ -112,23 +112,41 @@ $(function() {
 	};
 
 	var slotID = 0;
+	var ygrid = function(y) {
+		return Math.floor((y - 15) / 20) + 1;
+	};
+	var collide = function($column, y1, y2) {
+		// console.log($column, y1, y2);
+		$.each($column.find(".draw:not(.drawing)"), function(i, s) {
+			var $s = $(s),
+			    s1 = parseInt($s.attr("start")), s2 = parseInt($s.attr("end"));
+			// console.log($s, s1, s2);
+			if (y1 >= s1 && y1 <= s2) y1 = s2 + 1;
+			if (y2 >= s1 && y2 <= s2) y2 = s1 - 1;
+			//if (y1 >= s1 )
+		});
+		return [y1, y2];
+	};
+
 	var slotHookup = function() {
 		var $column = $(".grid-column"),
 		    mouseMove = false,
 		    starty, mousey,
-		    ygrid = function(y) {
-		    	return Math.floor((y - 15) / 20) + 1;
-		    },
 		    drawSlot = function(y1, y2) {
 		    	if (y1 > y2) {
 		    		var tmp = y2;
 		    		y2 = y1;
 		    		y1 = tmp;
 		    	}
+		    	var $slot = $("#slot-" + slotID), $col = $slot.parent();
+		    	$slot.addClass("drawing");
 		    	var g1 = ygrid(y1), g2 = ygrid(y2);
+		    	var col = collide($col, g1, g2);
+		    	g1 = col[0];
+		    	g2 = col[1];
 		    	if (g1 < 1) g1 = 1;
 		    	if (g2 > 48) g2 = 48;
-		    	$("#slot-" + slotID).removeClass().addClass("slot draw gridtop-" + g1 +
+		    	$slot.removeClass().addClass("slot draw gridtop-" + g1 +
 		    		" gridheight-" + (g2 - g1 + 1)).attr("start", g1).attr("end", g2);
 		    };
 
@@ -138,6 +156,9 @@ $(function() {
 			mouseStart = true;
 			var parentOffset = $(this).parent().offset();
 			mousey = e.originalEvent.touches[0].pageY - parentOffset.top;
+			var gy = ygrid(mousey), col = collide($(this), gy, gy);
+			console.log(col, gy);
+			if (col[0] != gy) return;
 			e.preventDefault();
 
 			var $slot = $('<p id="slot-' + slotID + '"></p>');
@@ -166,10 +187,7 @@ $(function() {
 
 	var blockHookup = function($block) {
 		var mouseMove = false,
-		    starty, mousey;
-		    ygrid = function(y) {
-		    	return Math.floor((y - 15) / 20) + 1;
-		    },
+		    starty, mousey,
 		    drawSlot = function($block, y, fixed) {
 		    	var gy = ygrid(y), start = parseInt($block.attr("start")),
 		    	    end = parseInt($block.attr("end"));
@@ -179,6 +197,10 @@ $(function() {
 		    	}
 		    	var g1 = (gy > fixed) ? fixed : gy,
 		    			g2 = (gy > fixed) ? gy : fixed;
+		    	$block.addClass("drawing");
+		    	var col = collide($block.parent(), g1, g2);
+		    	g1 = col[0];
+		    	g2 = col[1];
 		    	if (g1 < 1) g1 = 1;
 		    	if (g2 > 48) g2 = 48;
 		    	console.log(gy, start, end, g1, g2, fixed);
@@ -191,7 +213,6 @@ $(function() {
 			console.log("touch start at slot");
 			mouseStart = true;
 			var that = $(this), parentOffset = $(this).parent().offset();
-			e.stopImmediatePropagation();
 
 			var y = e.originalEvent.touches[0].pageY - parentOffset.top;
 			if (ygrid(y) != parseInt(that.attr("start")) &&
@@ -210,11 +231,11 @@ $(function() {
 			};
 
 			$(document).on("touchmove", touchmove).on("touchend", touchend);
-		}).click(function(e) {
+		}).hammer().on("tap", function(e) {
 			e.stopImmediatePropagation();
-			return false;
-		}).dblclick(function(e) {
+		}).hammer().on("doubletap", function(e) {
 			$(this).remove();
+			e.stopImmediatePropagation();
 		});
 	}
 
