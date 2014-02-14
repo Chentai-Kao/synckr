@@ -57,7 +57,9 @@ http.createServer(app).listen(app.get('port'), function() {
 
 // MongoDB
 var mongo = require('mongodb');
-mongoose.connect(process.env.MONGOHQ_URI || 'mongodb://localhost/synckr');
+mongoose.connect(
+    process.env.MONGOHQ_URI + '/synckr' ||
+    'mongodb://localhost/synckr');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
