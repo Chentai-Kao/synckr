@@ -45,6 +45,7 @@ exports.create = function(req, res) {
     if (error) {
       console.log(error);
     }
+    res.json("");
   });
 };
 
@@ -65,6 +66,7 @@ exports.updateSlot = function(req, res) {
       if (error) {
         console.log(error);
       }
+      res.json("");
     }
   );
 };
