@@ -49,28 +49,22 @@ exports.create = function(req, res) {
 };
 
 /*
- * AJAX add slot
+ * AJAX update slot
  */
 
-exports.addSlot = function(req, res) {
-  var eventId = req.params.eventId;
-  var facebookId = req.params.facebookId;
-  var data = req.body;
+exports.updateSlot = function(req, res) {
+  var eventId = req.body.eventId;
+  var facebookId = req.body.facebookId;
+  var slot = req.body.slot;
 
   var Event = req.app.get('models')('events_model');
-  Event.update({ _id: eventId, 'participants.facebookId': facebookId },
-    { $push: { 'participants.0.slot': data } },
+  Event.update(
+    { _id: eventId, "participants.facebookId": facebookId },
+    { $set: { "participants.$.slot": slot } },
     function(error) {
       if (error) {
         console.log(error);
       }
     }
   );
-    /*
-  newEvent.save(function(error) {
-    if (error) {
-      console.log(error);
-    }
-  });
-  */
 };

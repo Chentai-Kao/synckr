@@ -49,14 +49,15 @@ app.get('/project/:name', project.viewProject);
 app.get('/getevent/:eventId', events.getEvent);
 app.get('/eventlist/:facebookId', events.eventList);
 app.post('/newevent', events.create);
-app.post('/addslot/:eventId/:facebookId', events.addSlot);
+app.post('/updateslot', events.updateSlot);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
 // MongoDB
-mongoose.connect('mongodb://localhost/synckr');
+var mongo = require('mongodb');
+mongoose.connect(process.env.MONGOHQ_URI || 'mongodb://localhost/synckr');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
