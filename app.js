@@ -12,8 +12,6 @@ var models = require('./models');
 
 // Example route
 // var user = require('./routes/user');
-var index = require('./routes/index');
-var project = require('./routes/project');
 var events = require('./routes/events');
 
 var app = express();
@@ -45,7 +43,6 @@ if ('development' == app.get('env')) {
 // Example route
 // app.get('/users', user.list);
 app.get('/', function(req, res) {res.redirect('list.html');});
-app.get('/project/:name', project.viewProject);
 app.get('/getevent/:eventId', events.getEvent);
 app.get('/eventlist/:personId', events.eventList);
 app.post('/newevent', events.create);
