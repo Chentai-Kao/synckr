@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 app.get('/', function(req, res) {res.redirect('list.html');});
 app.get('/project/:name', project.viewProject);
 app.get('/getevent/:eventId', events.getEvent);
-app.get('/eventlist/:facebookId', events.eventList);
+app.get('/eventlist/:personId', events.eventList);
 app.post('/newevent', events.create);
 app.post('/updateslot', events.updateSlot);
 

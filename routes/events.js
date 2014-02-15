@@ -6,19 +6,19 @@
 exports.getEvent = function(req, res) {
   var eventId = req.params.eventId;
   var Event = req.app.get('models')('events_model');
-  Event.find({ _id: eventId }, function(error, record) {
+  Event.find({ eventId: eventId }, function(error, record) {
     res.json(record);
   });
 };
 
 /*
- * AJAX get event list given user's Facebook ID
+ * AJAX get event list given user's ID
  */
 
 exports.eventList = function(req, res) {
-  var facebookId = req.params.facebookId;
+  var personId = req.params.personId;
   var Event = req.app.get('models')('events_model');
-  Event.find({ 'participants.facebookId': facebookId },
+  Event.find({ 'participants.personId': personId },
     function(error, record) {
       res.json(record);
     }
@@ -32,15 +32,7 @@ exports.eventList = function(req, res) {
 exports.create = function(req, res) {
   var data = req.body;
   var Event = req.app.get('models')('events_model');
-  var newEvent = new Event({
-    title: data.title,
-    description: data.description,
-    startDate: new Date(data.startDate),
-    endDate: new Date(data.endDate),
-    deadline: new Date(data.deadline),
-    duration: data.duration,
-    participants: data.participants
-  });
+  var newEvent = new Event(data);
   newEvent.save(function(error) {
     if (error) {
       console.log(error);
@@ -55,12 +47,12 @@ exports.create = function(req, res) {
 
 exports.updateSlot = function(req, res) {
   var eventId = req.body.eventId;
-  var facebookId = req.body.facebookId;
+  var personId = req.body.personId;
   var slot = req.body.slot;
 
   var Event = req.app.get('models')('events_model');
   Event.update(
-    { _id: eventId, "participants.facebookId": facebookId },
+    { eventId: eventId, "participants.personId": personId },
     { $set: { "participants.$.slot": slot } },
     function(error) {
       if (error) {
