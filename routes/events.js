@@ -5,10 +5,13 @@ var crypto = require('crypto');
  */
 
 exports.getEvent = function(req, res) {
-  var eventId = req.params.eventId;
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
   var Event = req.app.get('models')('events');
   Event.find({ eventId: eventId }, function(error, record) {
-    res.json(record);
+    res.render("event");
   });
 };
 
@@ -46,6 +49,9 @@ exports.createEventPage = function(req, res) {
 }
 
 exports.createEvent = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
   var data = req.body;
   data.eventId = crypto.randomBytes(20).toString('hex');
   data.participants = data.participants || [];
