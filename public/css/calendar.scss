@@ -61,7 +61,7 @@ $draw-color: #1AD6AD;
 	float: left;
 }
 
-#handle-bar {
+#handle-bar{
 	margin-top: $first-end-height - $row-height / 2;
 	padding-right: 5px;
 	width: 12%;
@@ -162,4 +162,132 @@ $draw-color: #1AD6AD;
 	.gridheight-#{$i} {
 		height: $row-height / 2 * $i;
 	}
+}
+#mask{
+	position:absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #aaa;
+	opacity: 0.7;
+	z-index: 100;
+}
+
+.mask-side{
+	position:relative;
+	width:12%;
+	height:100%;
+	margin-top: $navbar-margin;
+	float: left;
+}
+#mask-top{
+	position:relative;
+	float:left;
+	margin-top: $navbar-margin+5;
+	height: $day-bar-height;
+	width: 88%;
+}
+#mask-topleft{
+	width:100%;
+	height: $day-bar-height;
+}
+#mask-left{
+	width:100%;
+	height:100%;
+}
+#mask-left img{
+	margin-top: 140px;
+	margin-left: -50%;
+}
+#mask p{
+	white-space: nowrap;
+	font-weight: bold;
+	color:black;
+}
+#mask-top img{
+	margin-left: 30%;
+}
+#mask-top p{
+	margin-left: 50%;
+}
+.mask-scroll, .mask-tap{
+	display:none;
+}
+.mask-drag-frame{
+	position: relative;
+	display:none;
+	height: $row-height*2;
+	width: 17.6%;
+	margin-top:224px;
+	margin-left:29.6%;
+}
+.mask-drag{
+	position: absolute;	
+	height: $row-height;
+	width: 100%;
+	background-color: black;
+	top: 0;
+	left: 0;
+}
+.mask-drag img{
+	margin-left:40%;
+	margin-top:10%;
+}
+#mask-drag-move{
+	z-index: 100;
+}
+.mask-double-click{
+	position: relative;
+	display: none;
+	height: $row-height*2;
+	width: 17.6%;
+	margin-top: 224px;
+	margin-left: 47.2%;
+	background-color: black;
+}
+.mask-double-click img{
+	margin-top: 25%;
+	margin-left: -10%;
+}
+.mask-heatmap{
+	position: relative;
+	display: none;
+}
+.mask-slot{
+	position: absolute;
+	width: 17.6%;
+	height: $row-height;
+	margin-left: 47.2%;
+}
+#mask-slot-1{
+	margin-top:224px;
+}
+#mask-slot-2{
+	margin-top:224+$row-height;
+}
+#mask-slot-3{
+	margin-top:224+$row-height*2;
+}
+#heat-indication{
+	position: absolute;
+	margin-left: 53%;
+	margin-top: 15%;	
+	opacity: 1;
+	width: 45%;
+	height: 40px;
+}
+.heat-level{
+	width: 20%;
+	height: 50%;
+	display: inline-block;
+}
+.level{
+	width: 100%;
+	height: 50%;
+}
+.level p{
+	display: inline-block;
+}
+#level-max{
+	margin-left: 58%;
 }

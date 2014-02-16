@@ -59,6 +59,47 @@
 				</div>
 			</div>
 		</div>
+		<div id="mask">
+			<div class="mask-side">
+				<div class="mask-tap" id="mask-topleft">
+					<img src="images/tap-icon.png"/>
+					<p>Tap to show votes</p>
+				</div>
+				<div class="mask-scroll" id="mask-left">
+					<img src="images/scroll-icon-black.png"/>
+					<p>Scroll to show time</p>
+				</div>
+			</div>
+			<div class="mask-scroll" id="mask-top">
+				<img src="images/scroll-horizontal-icon-black.png"/>
+				<p>Scroll to show dates</p>
+			</div>
+			<div class="mask-drag-frame">
+				<div class="mask-drag" id="mask-drag-move">
+					<img src="images/tap-icon.png"/>
+					<p>Drag to select slot</p>
+				</div>
+				<div class="mask-drag">
+				</div>
+			</div>
+			<div class="mask-double-click">
+				<img src="images/double-click-icon.png"/>
+				<p>Double click to delete</p>
+			</div>
+			<div class="mask-heatmap">
+				<div id="heat-indication">
+					<div class="heat-level" id="heat-level-1"></div><div class="heat-level" id="heat-level-2"></div><div class="heat-level" id="heat-level-3"></div><div class="heat-level" id="heat-level-4"></div><div class="heat-level" id="heat-level-5"></div>
+					<div class="level">
+						<p id="level-min">min</p>
+						<p id="level-max">max</p>
+					</div>
+				</div>				
+				<div class="mask-slot" id="mask-slot-1"></div>
+				<div class="mask-slot" id="mask-slot-2"></div>
+				<div class="mask-slot" id="mask-slot-3"></div>
+				<!-- <p> Votes shown as heatmap</p> -->
+			</div>
+		</div>	
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/jquery.hammer-full.min.js"></script>

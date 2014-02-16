@@ -281,6 +281,61 @@ $(function() {
 		});
 	}
 
+	var FTUE = function(){
+		var clicks = 0
+		var dragAnimate = function(){
+			$("#mask-drag-move").css("top", '0px');
+			$("#mask-drag-move").animate({
+				top:$("#mask-drag-move").height()
+				}, 700, function(){ setTimeout(function() {dragAnimate();}, 500)} 
+			);
+		};
+
+		$("#mask").show();
+		$(".mask-scroll").show();
+		$("#mask").click(function(e){
+			if (clicks == 0){
+				$(".mask-scroll").hide();
+				$(".mask-drag-frame").show();
+				dragAnimate();
+				clicks++;
+			}
+			else if (clicks == 1){
+				$(".mask-drag-frame").hide();
+				$(".mask-double-click").show();
+				$("#mask-drag-move").stop();
+				clicks++;
+			}
+			else if (clicks == 2){
+				$(".mask-double-click").hide();
+
+				$("#mask-slot-1").addClass("heatmap-1");
+				$("#mask-slot-2").addClass("heatmap-3");
+				$("#mask-slot-3").addClass("heatmap-5");
+				$("#heat-level-1").addClass("heatmap-1");
+				$("#heat-level-2").addClass("heatmap-2");
+				$("#heat-level-3").addClass("heatmap-3");
+				$("#heat-level-4").addClass("heatmap-4");
+				$("#heat-level-5").addClass("heatmap-5");
+
+				$(".mask-heatmap").show();
+				
+				clicks++;
+			}
+			else if(clicks == 3){
+				$(".mask-heatmap").hide();
+				$(".mask-tap").show();
+				clicks++;
+			}
+			else if(clicks == 4){
+				$(".mask-tap").hide();
+				$("#mask").hide();
+				clicks++;
+			}
+		});
+	}
+
+
 	drawGrid("2014-02-10");
 	drawGrid("2014-02-11");
 	drawGrid("2014-02-12");
@@ -292,4 +347,5 @@ $(function() {
 	scrollHookup();
 	dayHookup();
 	slotHookup();
+	FTUE();
 });
