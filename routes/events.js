@@ -15,7 +15,7 @@ exports.getEvent = function(req, res) {
  * AJAX get event list given user's ID
  */
 
-exports.eventList = function(req, res) {
+exports.listEvent = function(req, res) {
   var personId = req.params.personId;
   var Event = req.app.get('models')('events');
   Event.find({ 'participants.personId': personId },
@@ -29,7 +29,7 @@ exports.eventList = function(req, res) {
  * AJAX new event
  */
 
-exports.create = function(req, res) {
+exports.createEvent = function(req, res) {
   var data = req.body;
   var Event = req.app.get('models')('events');
   var newEvent = new Event(data);
@@ -39,6 +39,10 @@ exports.create = function(req, res) {
     }
     res.json("");
   });
+};
+
+exports.updateEvent = function(req, res) {
+  // TODO
 };
 
 /*

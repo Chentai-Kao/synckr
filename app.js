@@ -13,6 +13,7 @@ var models = require('./models');
 // Example route
 // var user = require('./routes/user');
 var events = require('./routes/events');
+var fb = require('./routes/fb');
 
 var app = express();
 
@@ -43,10 +44,14 @@ if ('development' == app.get('env')) {
 // Example route
 // app.get('/users', user.list);
 app.get('/', function(req, res) {res.redirect('list.html');});
-app.get('/getevent/:eventId', events.getEvent);
-app.get('/eventlist/:personId', events.eventList);
-app.post('/newevent', events.create);
-app.post('/updateslot', events.updateSlot);
+app.get('/login', fb.login);
+app.get('/callback', fb.loginCallback);
+app.get('/logout', fb.logout);
+app.get('/events/:id', events.getEvent);
+app.get('/events', events.listEvent);
+app.post('/events', events.createEvent);
+app.post('/events/:id', events.updateEvent)
+app.post('/events/:id/slots', events.updateSlot);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
