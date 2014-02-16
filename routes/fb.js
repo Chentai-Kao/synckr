@@ -50,9 +50,18 @@ exports.loginCallback = function (req, res, next) {
       req.session.access_token    = result.access_token;
       req.session.expires         = result.expires || 0;
 
-      console.log(result);
-
-      return res.redirect('/');
+      FB.setAccessToken(result.access_token);
+      FB.api('/me', function(fb_result) {
+        console.log("Querying me");
+        if(!fb_result || fb_result.error) {
+          console.log(!fb_result ? 'error occurred' : fb_result.error);
+          return;
+        }
+        req.session.fb_id = fb_result.id;
+        req.session.fb_name = fb_result.name;
+        console.log(req.session);
+        return res.redirect('/');
+      });
     }
   );
 };

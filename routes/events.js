@@ -16,9 +16,12 @@ exports.getEvent = function(req, res) {
  */
 
 exports.listEvent = function(req, res) {
-  var personId = req.params.personId;
+  console.log(req.session);
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
   var Event = req.app.get('models')('events');
-  Event.find({ 'participants.personId': personId },
+  Event.find({ 'participants.personId': id },
     function(error, record) {
       res.json(record);
     }
