@@ -292,4 +292,9 @@ $(function() {
 	scrollHookup();
 	dayHookup();
 	slotHookup();
+
+  $.get("/getevent/123", function(data) {
+    console.log(data);
+  });
+
 });

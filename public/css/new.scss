@@ -50,14 +50,14 @@ input[type="text"]{
 	width:50%;
 }
 
-#startdate, #enddate{
+#startdate, #enddate, #deadlinedate{
 	position:relative;
 	border-bottom: 1px solid $line-color;
 	height: 30px;
 	margin: 10px 0;
 }
 
-#st-date, #en-date{
+#st-date, #en-date, #de-date{
 	position:absolute;
 	left:0;
 	margin: 0;

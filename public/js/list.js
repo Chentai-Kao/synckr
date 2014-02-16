@@ -13,4 +13,7 @@ $(document).ready(function(){
 
 	});
 
+  $.get("/eventlist/123456", function(data) {
+    console.log(data);
+  });
 });
