@@ -347,5 +347,14 @@ $(function() {
 	scrollHookup();
 	dayHookup();
 	slotHookup();
+<<<<<<< HEAD
 	FTUE();
 });
+=======
+
+  $.get("/getevent/123", function(data) {
+    console.log(data);
+  });
+
+});
+>>>>>>> d72e3611582fb54259409c8bc75e606209b66fd2

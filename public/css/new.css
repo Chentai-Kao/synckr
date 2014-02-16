@@ -115,7 +115,7 @@ input[type="text"] {
 }
 
 /* line 53, new.scss */
-#startdate, #enddate {
+#startdate, #enddate, #deadlinedate {
   position: relative;
   border-bottom: 1px solid #aaaaaa;
   height: 30px;
@@ -123,7 +123,7 @@ input[type="text"] {
 }
 
 /* line 60, new.scss */
-#st-date, #en-date {
+#st-date, #en-date, #de-date {
   position: absolute;
   left: 0;
   margin: 0;
