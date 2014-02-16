@@ -35,7 +35,6 @@ $(document).ready(function(){
   // send data to server
   newEvent = {}
   $("#done").click(function(e) {
-    e.preventDefault();
     $("#title-form :input").each(function() {
       newEvent[this.name] = $(this).val();
     });
@@ -51,7 +50,6 @@ $(document).ready(function(){
     });
     newEvent.eventId = String(Math.random()).substring(2);
     $.post("/newevent", newEvent);
-    console.log(newEvent);
   });
 
 });
