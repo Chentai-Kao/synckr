@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>Synckr</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/new.css">
+		<link rel="stylesheet" href="/css/datepicker.css">
+	</head>
+	<body>
+		<div id="placeholder">
+			<div id="navbar">
+				<div id="nav-left"><a href="list.html">Cancel</a></div>
+				<div id="nav-middle">New</div>
+				<div id="nav-right">Done</div>
+			</div>
+			<form id="mainform" method="post" action="/events">
+				<fieldset class="field" id="title-form">
+					<input type="text" name="title" placeholder="Title"/>
+					<input type="text" name="description" placeholder="Description"/>
+				</fieldset>
+				<fieldset class="field" id="date-form">
+					<div id="startdate">
+						<div class="dates" id="st-text">
+							Start Date
+						</div>
+						<div class="dates">
+							<input id="st-date" name="startDate" readonly/>
+						</div>
+					</div>
+					<div id="enddate">
+						<div class="dates" id="en-text">
+							End Date
+						</div>
+						<div class="dates">
+							<input id="en-date" name="endDate" readonly/>
+						</div>
+					</div>
+					<div id="deadlinedate">
+						<div class="dates" id="de-text">
+              Deadline
+						</div>
+						<div class="dates">
+							<input id="de-date" name="deadline" readonly/>
+						</div>
+					</div>
+
+				</fieldset>
+				<fieldset class="field" id="dur-form">
+					<div id="duration">
+						<div class="dur" id="dur-text">
+							Duration
+						</div>
+						<div class="dur" id="dur-hr">
+							<select name="duration-hr" id="duration-hr" placeholder="hr">
+								<option>hr</option>
+								<option>1hr</option>
+								<option>2hr</option>
+								<option>3hr</option>
+							</select>
+						</div>
+						<div class="dur" id="dur-min">
+							<select name="duration-min" id="duration-min" placeholder="min">
+								<option>min</option>
+								<option>00min</option>
+								<option>30min</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="field" id="invite-form">
+					<input name="participants" placeholder="Invitees" readonly/>
+				</fieldset>
+			</form>
+		</div>
+		<div id="friendList">
+			<div id="navbar">
+				<div id="nav-left"><a href="#" id="back-new">Cancel</a></div>
+				<div id="nav-middle">Invite Friends</div>
+				<div id="nav-right"><a href="#" id="ok-new">Done</div>
+			</div>
+			<div id="search-bar">
+				<input type="search" placeholder="Search">
+			</div>
+			<div id="list">
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="/images/lorempixel.people.1.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Anna</br></p>
+					</div>
+				</div>
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="/images/lorempixel.people.2.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Ben</br></p>
+					</div>
+				</div>
+				<div class="friends">
+					<div class="friend-intro" id="friend-check">
+						<input type="checkbox"/>
+					</div>
+					<div class="friend-intro" id="friend-pic">
+						<img src="/images/lorempixel.city.1.jpeg" width="30px" height="30px"/>
+					</div>
+					<div class="friend-intro" id="friend-name">
+						<p>Carol</br></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap-datepicker.js"></script>
+		<script src="/js/new.js"></script>
+
+	</body>
+</html>

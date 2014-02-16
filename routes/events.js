@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 
 /*
  * AJAX get event given event ID
@@ -23,7 +24,12 @@ exports.listEvent = function(req, res) {
   var Event = req.app.get('models')('events');
   Event.find({ 'participants.personId': id },
     function(error, record) {
-      res.json(record);
+      console.log(record);
+      res.render('list', {
+        fb_id: req.session.fb_id,
+        fb_name: req.session.fb_name,
+        events: record
+      });
     }
   );
 };
@@ -32,15 +38,32 @@ exports.listEvent = function(req, res) {
  * AJAX new event
  */
 
+exports.createEventPage = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  res.render("new");
+}
+
 exports.createEvent = function(req, res) {
   var data = req.body;
+  data.eventId = crypto.randomBytes(20).toString('hex');
+  data.participants = data.participants || [];
+  data.participants.push({
+    name: req.session.fb_name,
+    personId: req.session.fb_id
+  });
+  data.duration = data["duration-hr"] + data["duration-min"];
+
   var Event = req.app.get('models')('events');
+  console.log(data);
   var newEvent = new Event(data);
+  console.log(newEvent);
   newEvent.save(function(error) {
     if (error) {
       console.log(error);
     }
-    res.json("");
+    res.redirect("/events");
   });
 };
 

@@ -30,26 +30,13 @@ $(document).ready(function(){
     e.preventDefault();
     $('#friendList').animate({left: width}, 200);
     $('#placeholder').animate({left: 0}, 200);
-  });  
-
-  // send data to server
-  newEvent = {}
-  $("#done").click(function(e) {
-    $("#title-form :input").each(function() {
-      newEvent[this.name] = $(this).val();
-    });
-    $("#date-form :input").each(function() {
-      newEvent[this.name] = $(this).val();
-    });
-    newEvent.duration = ""
-    $("#dur-form :input").each(function() {
-      newEvent.duration += $(this).val();
-    });
-    $("#invite-form :input").each(function() {
-      newEvent[this.name] = $(this).val();
-    });
-    newEvent.eventId = String(Math.random()).substring(2);
-    $.post("/newevent", newEvent);
   });
 
+  // $("#mainform").submit(function(e) {
+  //   e.preventDefault();
+  //   $.post("/events", $(this).serialize());
+  // });
+  $("#nav-right").click(function(e) {
+    $("#mainform").submit();
+  });
 });

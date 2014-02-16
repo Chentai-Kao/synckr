@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Synckr</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/list.css">
+	</head>
+	<body>
+		<div id="placeholder">
+			<div id="navbar">
+				<div id="nav-left">Edit</div>
+				<div id="nav-middle">Synckr</div>
+				<div id="nav-right"><a href="/events/new">+</a></div>
+			</div>
+			<div id="list">
+			{{#each events}}
+				<div class="out-event">
+					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<a href="/events/{{eventId}}">
+						<div class="event">
+							<div class="event-title">{{title}}</div>
+							<div class="event-info done">Unknown</div>
+							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+						</div>
+					</a>
+				</div>
+			{{/each}}
+				<!-- <div class="out-event">
+					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<a href="calendar.html">
+						<div class="event">
+							<div class="event-title">Event 1</div>
+							<div class="event-info decide">Decide>>></div>
+							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+						</div>
+					</a>
+				</div>
+				<div class="out-event">
+					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<a href="calendar.html">
+						<div class="event">
+							<div class="event-title">Event 2</div>
+							<div class="event-info ongoing">
+								<div class="event-deadline">5 days left</div>
+								<div class="event-people">
+									<img src="images/person-icon.png"/>
+									3/5
+								</div>
+							</div>
+							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+						</div>
+					</a>
+				</div>
+				<div class="out-event">
+					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<a href="calendar.html">
+						<div class="event">
+							<div class="event-title">Event 3</div>
+							<div class="event-info done">Done</div>
+							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+						</div>
+					</a>
+				</div>
+				<div class="out-event">
+					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<a href="calendar.html">
+						<div class="event">
+							<div class="event-title">Event 4</div>
+							<div class="event-info pending">Pending</div>
+							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+						</div>
+					</a>
+				</div> -->
+			</div>
+			<div id="user-info">
+				<div id="user-pic"><img src="https://graph.facebook.com/{{fb_id}}/picture" width="30" height="30"></div>
+				<div id="user-name">{{fb_name}}</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/list.js"></script>
+	</body>
+</html>
