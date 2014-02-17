@@ -1,43 +1,5 @@
 $(function() {
   var slotID = 0;
-  var heatmap = [
-    {
-      "date": "2014-02-11",
-      "start": "30",
-      "duration": "2",
-      "level": 1,
-      "count": 2
-    },
-    {
-      "date": "2014-02-11",
-      "start": "32",
-      "duration": "2",
-      "level": 3,
-      "count": 6
-    },
-    {
-      "date": "2014-02-11",
-      "start": "20",
-      "duration": "4",
-      "level": 5,
-      "count": 10
-    },
-    {
-      "date": "2014-02-12",
-      "start": "23",
-      "duration": "2",
-      "level": 2,
-      "count": 4
-    },
-    {
-      "date": "2014-02-12",
-      "start": "20",
-      "duration": "2",
-      "level": 4,
-      "count": 8
-    }
-  ];
-
 
   $("#overlay-toggle").click(function(){
     var $slot = $(".data");
@@ -85,12 +47,27 @@ $(function() {
   };
 
   var drawHeatmap = function(map) {
-    $.each(map, function(i, slot) {
-      var $day = $("#" + slot.date);
-      $day.prepend('<p class="slot data gridtop-' + parseInt(slot.start)+ ' gridheight-'
-        + parseInt(slot.duration) + ' heatmap-' + parseInt(slot.level) + '" count="'
-        + parseInt(slot.count) + '"></p>');
-    })
+    var maxCount = 0;
+    $.each(map, function(date, slots) {
+      $.each(slots, function(i, slot) {
+        var count = parseInt(slot.count);
+        if (count > maxCount) {
+          maxCount = count;
+        }
+      });
+    });
+
+    $.each(map, function(date, slots) {
+      var $day = $("#" + date);
+      $.each(slots, function(i, slot) {
+        $day.prepend(
+          '<p class="slot data gridtop-' + parseInt(slot.startTime) +
+          ' gridheight-' + parseInt(slot.duration) +
+          ' heatmap-' + Math.ceil(parseInt(slot.count) / maxCount * 5) +
+          '" count="' + parseInt(slot.count) + '"></p>'
+        );
+      });
+    });
   };
 
   var drawGrid = function(date) {
@@ -353,21 +330,22 @@ $(function() {
   }
 
 
+  // TODO Draw date from start date to end date
+  var startDate = $("meta[name=startDate]").attr("content");
+  var endDate = $("meta[name=endDate]").attr("content");
   drawGrid("2014-02-10");
   drawGrid("2014-02-11");
   drawGrid("2014-02-12");
   drawGrid("2014-02-13");
   drawGrid("2014-02-14");
   drawGrid("2014-02-15");
-  $.get("/events/" + $("meta[name=eventId]").attr("content") + "/slots",
-    function(slot) {
-      drawSlot(slot);
-    }
+  $.get(
+    "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
+    drawSlot
   );
-  $.get("/events/" + $("meta[name=eventId]").attr("content") + "/heatmap",
-    function(heatmap) {
-      //drawHeatmap(heatmap);
-    }
+  $.get(
+    "/events/" + $("meta[name=eventId]").attr("content") + "/heatmap",
+    drawHeatmap
   );
   $("#scroll-pane").scrollTop(360);
   scrollHookup();

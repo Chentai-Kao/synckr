@@ -11,7 +11,11 @@ exports.getEvent = function(req, res) {
   var eventId = req.params.id;
   var Event = req.app.get('models')('events');
   Event.findOne({ eventId: eventId }, function(error, record) {
-    res.render("event", { eventId: eventId });
+    res.render("event", {
+      eventId: eventId,
+      startDate: record.startDate,
+      endDate: record.endDate
+    });
   });
 };
 
@@ -82,6 +86,7 @@ exports.getHeatmap = function(req, res) {
       return 0;
     };
 
+    sortedSlot = {};
     for (var date in slotByDate) {
       if (slotByDate.hasOwnProperty(date)) {
         // sort by start and end
@@ -138,24 +143,17 @@ exports.getHeatmap = function(req, res) {
           pushQueue(bars[i]);
           popQueue(bars[i]);
         }
+        sortedSlot[date] = result;
       }
     }
+    return sortedSlot;
   }
 
   var Event = req.app.get('models')('events');
   Event.findOne({ eventId: eventId }, function(error, record) {
     var slotByDate = createSlotByDate(record);
     var sortedSlot = createSortedSlot(slotByDate);
-    /*
-    {
-      "date": "2014-02-11",
-      "start": "30",
-      "duration": "2",
-      "level": 1,
-      "count": 2
-    },
-    */
-    res.json(record);
+    res.json(sortedSlot);
   });
 };
 
