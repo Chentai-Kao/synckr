@@ -53,6 +53,8 @@ app.get('/events/new', events.createEventPage);
 app.get('/events/:id', events.getEvent);
 app.post('/events/:id', events.updateEvent)
 app.post('/events/:id/slots', events.updateSlot);
+app.get('/events/:id/heatmap', events.getHeatmap);
+app.get('/events/:id/slots', events.getSlot);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

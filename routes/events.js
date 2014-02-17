@@ -10,8 +10,44 @@ exports.getEvent = function(req, res) {
 
   var eventId = req.params.id;
   var Event = req.app.get('models')('events');
-  Event.find({ eventId: eventId }, function(error, record) {
-    res.render("event");
+  Event.findOne({ eventId: eventId }, function(error, record) {
+    res.render("event", { eventId: eventId });
+  });
+};
+
+exports.getHeatmap = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var Event = req.app.get('models')('events');
+  Event.findOne({ eventId: eventId }, function(error, record) {
+    /*
+		{
+			"date": "2014-02-11",
+			"start": "30",
+			"duration": "2",
+			"level": 1,
+			"count": 2
+		},
+    */
+    res.json(record);
+  });
+};
+
+exports.getSlot = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var Event = req.app.get('models')('events');
+
+  Event.findOne({ eventId: eventId }, function(error, record) {
+    for (var i = 0; i < record.participants.length; ++i) {
+      if (record.participants[i].personId === id) {
+        res.json(record.participants[i].slot);
+      }
+    }
   });
 };
 
@@ -20,14 +56,12 @@ exports.getEvent = function(req, res) {
  */
 
 exports.listEvent = function(req, res) {
-  console.log(req.session);
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
 
   var Event = req.app.get('models')('events');
   Event.find({ 'participants.personId': id },
     function(error, record) {
-      console.log(record);
       res.render('list', {
         fb_id: req.session.fb_id,
         fb_name: req.session.fb_name,
@@ -62,9 +96,7 @@ exports.createEvent = function(req, res) {
   data.duration = data["duration-hr"] + data["duration-min"];
 
   var Event = req.app.get('models')('events');
-  console.log(data);
   var newEvent = new Event(data);
-  console.log(newEvent);
   newEvent.save(function(error) {
     if (error) {
       console.log(error);
@@ -82,13 +114,15 @@ exports.updateEvent = function(req, res) {
  */
 
 exports.updateSlot = function(req, res) {
-  var eventId = req.body.eventId;
-  var personId = req.body.personId;
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
   var slot = req.body.slot;
 
   var Event = req.app.get('models')('events');
   Event.update(
-    { eventId: eventId, "participants.personId": personId },
+    { eventId: eventId, "participants.personId": id },
     { $set: { "participants.$.slot": slot } },
     function(error) {
       if (error) {

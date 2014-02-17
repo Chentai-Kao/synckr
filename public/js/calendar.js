@@ -1,4 +1,5 @@
 $(function() {
+	var slotID = 0;
 	var heatmap = [
 		{
 			"date": "2014-02-11",
@@ -53,18 +54,35 @@ $(function() {
 		})
 	});
 
-	// $("#nav-right").click(function(){
-	// 	var data = [];
-	// 	$.each($(".draw"), function(i, d) {
-	// 		var $d = $(d);
-	// 		data.push({
-	// 			"date": $d.parent().attr("id"),
-	// 			"start": parseInt($d.attr("start")),
-	// 			"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
-	// 		});
-	// 	});
-	// 	console.log(data);
-	// });
+	$("#nav-right").click(function(){
+		var data = [];
+		$.each($(".draw"), function(i, d) {
+			var $d = $(d);
+			data.push({
+				"startDate": $d.parent().attr("id"),
+				"startTime": parseInt($d.attr("start")),
+				"duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
+			});
+		});
+    $.post(
+      "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
+      { slot: data }
+    );
+	});
+
+	var drawSlot = function(slots) {
+		$.each(slots, function(i, slot) {
+			var $day = $("#" + slot.startDate);
+      var startDate = parseInt(slot.startDate);
+      var startTime = parseInt(slot.startTime);
+      var duration = parseInt(slot.duration);
+			$day.prepend('<p id="' + (++slotID) + '" class="slot draw gridtop-' +
+        startTime + ' gridheight-' + duration + '" start="' + startTime +
+        '" end="' + (startTime + duration) + '"></p>'
+      );
+			blockHookup($day);
+		})
+	};
 
 	var drawHeatmap = function(map) {
 		$.each(map, function(i, slot) {
@@ -146,7 +164,6 @@ $(function() {
 		});
 	};
 
-	var slotID = 0;
 	var ygrid = function(y) {
 		return Math.floor((y - 15) / 20) + 1;
 	};
@@ -342,11 +359,20 @@ $(function() {
 	drawGrid("2014-02-13");
 	drawGrid("2014-02-14");
 	drawGrid("2014-02-15");
-	drawHeatmap(heatmap);
+  $.get("/events/" + $("meta[name=eventId]").attr("content") + "/slots",
+    function(slot) {
+      drawSlot(slot);
+    }
+  );
+  $.get("/events/" + $("meta[name=eventId]").attr("content") + "/heatmap",
+    function(heatmap) {
+      //drawHeatmap(heatmap);
+    }
+  );
 	$("#scroll-pane").scrollTop(360);
 	scrollHookup();
 	dayHookup();
 	slotHookup();
-	FTUE();
+	//FTUE();
 });
 
