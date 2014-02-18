@@ -9,7 +9,7 @@ exports.getEvent = function(req, res) {
   if (!id) return res.redirect('/login');
 
   var eventId = req.params.id;
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
       res.render("event", {
@@ -159,7 +159,7 @@ exports.getHeatmap = function(req, res) {
     return sortedSlot;
   }
 
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
       var slotByDate = createSlotByDate(record);
@@ -176,7 +176,7 @@ exports.getSlot = function(req, res) {
   if (!id) return res.redirect('/login');
 
   var eventId = req.params.id;
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
 
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
@@ -199,7 +199,7 @@ exports.listEvent = function(req, res) {
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
 
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
   Event.find({ 'participants.personId': id },
     function(error, record) {
       res.render('list', {
@@ -273,7 +273,7 @@ exports.createEvent = function(req, res) {
   data.duration = data["duration-hr"] + data["duration-min"];
 
   console.log(data);
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
   var newEvent = new Event(data);
   newEvent.save(function(error) {
     if (error) {
@@ -298,7 +298,7 @@ exports.updateSlot = function(req, res) {
   var eventId = req.params.id;
   var slot = req.body.slot;
 
-  var Event = req.app.get('models')('events');
+  var Event = req.app.get('models')('event');
   Event.update(
     { eventId: eventId, "participants.personId": id },
     { $set: { "participants.$.slot": slot } },
