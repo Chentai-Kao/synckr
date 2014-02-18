@@ -1,13 +1,16 @@
 $(document).ready(function(){
 
   $("#st-date").datepicker().on('changeDate', function(e){
-    $("#st-date").datepicker('hide')
+    $("#st-date").datepicker('hide');
+    $("#start-date").val($("#st-date").data("datepicker").date);
   });
   $("#en-date").datepicker().on('changeDate', function(e){
-    $("#en-date").datepicker('hide')
+    $("#en-date").datepicker('hide');
+    $("#end-date").val($("#en-date").data("datepicker").date);
   });
   $("#de-date").datepicker().on('changeDate', function(e){
-    $("#de-date").datepicker('hide')
+    $("#de-date").datepicker('hide');
+    $("#deadline-date").val($("#de-date").data("datepicker").date);
   });
 
 

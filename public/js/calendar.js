@@ -330,15 +330,13 @@ $(function() {
   }
 
 
-  // TODO Draw date from start date to end date
   var startDate = $("meta[name=startDate]").attr("content");
   var endDate = $("meta[name=endDate]").attr("content");
-  drawGrid("2014-02-10");
-  drawGrid("2014-02-11");
-  drawGrid("2014-02-12");
-  drawGrid("2014-02-13");
-  drawGrid("2014-02-14");
-  drawGrid("2014-02-15");
+  for (var d = new Date(startDate);
+      d <= new Date(endDate);
+      d.setDate(d.getDate() + 1)) {
+    drawGrid(d);
+  }
   $.get(
     "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
     drawSlot

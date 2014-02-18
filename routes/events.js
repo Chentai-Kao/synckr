@@ -245,12 +245,16 @@ exports.createEvent = function(req, res) {
       ]
     }
   ];
+  // add myself as participant
   data.participants.push({
     name: req.session.fb_name,
     personId: req.session.fb_id
   });
+
+  // merge hour and min to duration
   data.duration = data["duration-hr"] + data["duration-min"];
 
+  console.log(data);
   var Event = req.app.get('models')('events');
   var newEvent = new Event(data);
   newEvent.save(function(error) {
