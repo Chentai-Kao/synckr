@@ -281,7 +281,7 @@ $(function() {
       $("#mask-drag-move").css("top", '0px');
       $("#mask-drag-move").animate({
         top:$("#mask-drag-move").height()
-        }, 700, function(){ setTimeout(function() {dragAnimate();}, 500)} 
+        }, 700, function(){ setTimeout(function() {dragAnimate();}, 500)}
       );
     };
 
@@ -313,7 +313,7 @@ $(function() {
         $("#heat-level-5").addClass("heatmap-5");
 
         $(".mask-heatmap").show();
-        
+
         clicks++;
       }
       else if(clicks == 3){
@@ -329,12 +329,15 @@ $(function() {
     });
   }
 
-
-  var startDate = $("meta[name=startDate]").attr("content");
-  var endDate = $("meta[name=endDate]").attr("content");
-  for (var d = new Date(startDate);
-      d <= new Date(endDate);
-      d.setDate(d.getDate() + 1)) {
+  var showDay = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
+                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var startDate = new Date($("meta[name=startDate]").attr("content"));
+  var endDate = new Date($("meta[name=endDate]").attr("content"));
+  $("#month").html(showMonth[startDate.getMonth()]);
+  for (var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
+    $("#day-stretch").append('<div class="day"><div class="date">' + d.getDate()
+      + '</div><div class="date-day">' + showDay[d.getDay()] + '</div>');
     drawGrid(d);
   }
   $.get(
