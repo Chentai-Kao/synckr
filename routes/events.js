@@ -182,7 +182,7 @@ exports.getSlot = function(req, res) {
     if (record) {
       for (var i = 0; i < record.participants.length; ++i) {
         if (record.participants[i].personId === id) {
-          res.json(record.participants[i].slot);
+          return res.json(record.participants[i].slot);
         }
       }
     } else {
