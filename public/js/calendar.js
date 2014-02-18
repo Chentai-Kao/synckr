@@ -58,7 +58,7 @@ $(function() {
     });
 
     $.each(map, function(date, slots) {
-      var $day = $("#" + date);
+      var $day = $("[id='" + date + "']");
       $.each(slots, function(i, slot) {
         $day.prepend(
           '<p class="slot data gridtop-' + parseInt(slot.startTime) +
