@@ -11,11 +11,15 @@ exports.getEvent = function(req, res) {
   var eventId = req.params.id;
   var Event = req.app.get('models')('events');
   Event.findOne({ eventId: eventId }, function(error, record) {
-    res.render("event", {
-      eventId: eventId,
-      startDate: record.startDate,
-      endDate: record.endDate
-    });
+    if (record) {
+      res.render("event", {
+        eventId: eventId,
+        startDate: record.startDate,
+        endDate: record.endDate
+      });
+    } else {
+      res.send(404);
+    }
   });
 };
 
@@ -151,9 +155,13 @@ exports.getHeatmap = function(req, res) {
 
   var Event = req.app.get('models')('events');
   Event.findOne({ eventId: eventId }, function(error, record) {
-    var slotByDate = createSlotByDate(record);
-    var sortedSlot = createSortedSlot(slotByDate);
-    res.json(sortedSlot);
+    if (record) {
+      var slotByDate = createSlotByDate(record);
+      var sortedSlot = createSortedSlot(slotByDate);
+      res.json(sortedSlot);
+    } else {
+      res.send(404);
+    }
   });
 };
 
@@ -165,10 +173,14 @@ exports.getSlot = function(req, res) {
   var Event = req.app.get('models')('events');
 
   Event.findOne({ eventId: eventId }, function(error, record) {
-    for (var i = 0; i < record.participants.length; ++i) {
-      if (record.participants[i].personId === id) {
-        res.json(record.participants[i].slot);
+    if (record) {
+      for (var i = 0; i < record.participants.length; ++i) {
+        if (record.participants[i].personId === id) {
+          res.json(record.participants[i].slot);
+        }
       }
+    } else {
+      res.send(404);
     }
   });
 };
