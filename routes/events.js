@@ -131,11 +131,15 @@ exports.getHeatmap = function(req, res) {
 
         pushQueue(bars[0]);
         var result = []
+        // calculating slot [i-1, i]
         for (var i = 1; i < bars.length; ++i) {
+          // p is the array of the participants in [i-1,i]
           var p = [];
+          // add all the slots in queue to the array
           for (var j = 0; j < queue.length; ++j) {
             p.push(queue[j].personId);
           }
+          // create time slot for [i-1, i]
           if (queue.length > 0) {
             result.push({
               startTime: bars[i - 1],
@@ -144,7 +148,9 @@ exports.getHeatmap = function(req, res) {
               participants: p
             });
           }
+          // push slots which starts at i
           pushQueue(bars[i]);
+          // pop slots which ends at i
           popQueue(bars[i]);
         }
         sortedSlot[date] = result;
