@@ -23,7 +23,7 @@ $(function() {
       data.push({
         "startDate": $d.parent().attr("id"),
         "startTime": parseInt($d.attr("start")),
-        "duration": parseInt($d.attr("end")) - parseInt($d.attr("start"))
+        "duration": parseInt($d.attr("end")) - parseInt($d.attr("start")) + 1
       });
     });
     $.post(
@@ -34,15 +34,15 @@ $(function() {
 
   var drawSlot = function(slots) {
     $.each(slots, function(i, slot) {
-      var $day = $("#" + slot.startDate);
-      var startDate = parseInt(slot.startDate);
+      var $day = $("[id='" + slot.startDate + "']");
       var startTime = parseInt(slot.startTime);
       var duration = parseInt(slot.duration);
-      $day.prepend('<p id="' + (++slotID) + '" class="slot draw gridtop-' +
+      $slot = $('<p id="slot-' + (++slotID) + '" class="slot draw gridtop-' +
         startTime + ' gridheight-' + duration + '" start="' + startTime +
-        '" end="' + (startTime + duration) + '"></p>'
+        '" end="' + (startTime + duration - 1) + '"></p>'
       );
-      blockHookup($day);
+      $day.prepend($slot);
+      blockHookup($slot);
     })
   };
 
