@@ -70,12 +70,12 @@ exports.listEvent = function(req, res) {
   Event.find({ 'participants.personId': id },
     function(error, record) {
       record.sort(function(a, b) {
-        var acode = 0, bcode = 0;
-        if (a.notDecided(id) && a.isPending()) acode = 2;
+        var acode = 2, bcode = 2;
+        if (a.notDecided(id) && a.isPending()) acode = 0;
         if (a.notVoted(id) && a.isOngoing()) acode = 1;
-        if (b.notDecided(id) && b.isPending()) bcode = 2;
+        if (b.notDecided(id) && b.isPending()) bcode = 0;
         if (b.notVoted(id) && b.isOngoing()) bcode = 1;
-        return (acode + a.deadline) < (bcode + b.deadline);
+        return (acode + a.deadline) > (bcode + b.deadline);
       });
       res.render('list', {
         fb_id: req.session.fb_id,
