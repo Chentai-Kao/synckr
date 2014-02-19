@@ -70,7 +70,7 @@ a:hover {
 .out-event {
   min-height: 80px;
   width: 100%;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px dashed #aaa;
   padding: 0 25px;
   background-color: rgba(209, 238, 252, 0.6);
 }
@@ -140,7 +140,7 @@ a:hover {
 
 /* line 73, list.scss */
 .not-decided, .not-voted {
-  border-bottom: 1px solid #738596;
+  border-bottom: 1px dashed #738596;
 }
 
 /* line 77, list.scss */

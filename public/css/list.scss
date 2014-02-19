@@ -21,7 +21,7 @@ $event-done-text: #052D6E;
 .out-event{
 	min-height: $event-height;
 	width: 100%;
-	border-bottom: 1px solid #aaa;
+	border-bottom: 1px dashed #aaa;
 	padding: 0 $left-right-margin;
 	background-color: $event-done;
 }
@@ -71,7 +71,7 @@ $event-done-text: #052D6E;
 }
 
 .not-decided, .not-voted {
-	border-bottom: 1px solid #738596;
+	border-bottom: 1px dashed #738596;
 }
 
 .event-deadline{
