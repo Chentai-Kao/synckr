@@ -14,18 +14,35 @@
 				<div id="nav-right"><a href="/events/new">+</a></div>
 			</div>
 			<div id="list">
-			{{#each events}}
+			<% for (var i = 0; i < events.length; ++i) { %>
 				<div class="out-event">
-					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
-					<a href="/events/{{eventId}}">
+					<% if (events[i].isMine(fb_id)) { %>
+						<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
+					<% } %>
+					<a href="/events/<%= events[i].eventId %>">
 						<div class="event">
-							<div class="event-title">{{title}}</div>
-							<div class="event-info done">Unknown</div>
-							<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+							<div class="event-title"><%= events[i].title %></div>
+							<% if (events[i].isDone()) { %>
+								<div class="event-info done">Done</div>
+
+							<% } else if (events[i].isOngoing()) { %>
+								<div class="event-info ongoing">
+									<div class="event-deadline"><%= events[i].daysLeft() %> days left</div>
+									<div class="event-people">
+										<img src="images/person-icon.png"/>
+										<%= events[i].votedCount() %>/<%= events[i].totalCount() %>
+									</div>
+								</div>
+							<% } else if (events[i].isPending()) { %>
+								<div class="event-info done">Pending</div>
+							<% } %>
+							<% if (events[i].isMine(fb_id)) { %>
+								<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+							<% } %>
 						</div>
 					</a>
 				</div>
-			{{/each}}
+			<% } %>
 				<!-- <div class="out-event">
 					<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
 					<a href="calendar.html">
@@ -74,8 +91,8 @@
 				</div> -->
 			</div>
 			<div id="user-info">
-				<div id="user-pic"><img src="https://graph.facebook.com/{{fb_id}}/picture" width="30" height="30"></div>
-				<div id="user-name">{{fb_name}}</div>
+				<div id="user-pic"><img src="https://graph.facebook.com/<%= fb_id %>/picture" width="30" height="30"></div>
+				<div id="user-name"><%= fb_name %></div>
 			</div>
 		</div>
 
