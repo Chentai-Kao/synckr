@@ -34,10 +34,11 @@ var EventSchema = new Schema({
 });
 
 EventSchema.methods.getType = function() {
-  var now = new Date();
-  if (now > this.deadline && typeof this.decision !== "undefined") {
+  var now = new Date(),
+      deadline = new Date(this.deadline);
+  if (now > deadline && typeof this.decision !== "undefined") {
     return 'done';
-  } else if (now > this.deadline && typeof this.decision === "undefined") {
+  } else if (now > deadline && typeof this.decision === "undefined") {
     return 'pending';
   } else {
     return 'ongoing';
