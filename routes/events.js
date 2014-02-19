@@ -69,6 +69,14 @@ exports.listEvent = function(req, res) {
   var Event = req.app.get('models')('event');
   Event.find({ 'participants.personId': id },
     function(error, record) {
+      record.sort(function(a, b) {
+        var acode = 0, bcode = 0;
+        if (a.notDecided(id) && a.isPending()) acode = 2;
+        if (a.notVoted(id) && a.isOngoing()) acode = 1;
+        if (b.notDecided(id) && b.isPending()) bcode = 2;
+        if (b.notVoted(id) && b.isOngoing()) bcode = 1;
+        return (acode + a.deadline) < (bcode + b.deadline);
+      });
       res.render('list', {
         fb_id: req.session.fb_id,
         fb_name: req.session.fb_name,
