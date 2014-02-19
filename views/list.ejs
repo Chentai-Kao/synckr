@@ -15,7 +15,14 @@
 			</div>
 			<div id="list">
 			<% for (var i = 0; i < events.length; ++i) { %>
-				<div class="out-event">
+				<div class="out-event
+					<% if (events[i].notDecided(fb_id)) { %>
+						not-decided
+					<% } %>
+					<% if (events[i].notVoted(fb_id)) { %>
+						not-voted
+					<% } %>
+				">
 					<% if (events[i].isMine(fb_id)) { %>
 						<div class="cancel-icon"><img src="images/cancel-icon.png"/ width="20px"></div>
 					<% } %>

@@ -100,34 +100,10 @@ exports.createEvent = function(req, res) {
     {
       "name" : "Andrew Liu",
       "personId" : "766485187",
-      "slot" : [
-        {
-          "startDate" : "2014-02-10",
-          "startTime" : "20",
-          "duration" : "5",
-        },
-        {
-          "startDate" : "2014-02-11",
-          "startTime" : "10",
-          "duration" : "15",
-        }
-      ]
     },
     {
       "name" : "Jocelin Ho",
       "personId" : "100000010285733",
-      "slot" : [
-        {
-          "startDate" : "2014-02-10",
-          "startTime" : "10",
-          "duration" : "20",
-        },
-        {
-          "startDate" : "2014-02-10",
-          "startTime" : "20",
-          "duration" : "3",
-        }
-      ]
     }
   ];
   // add myself as participant

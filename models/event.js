@@ -45,6 +45,25 @@ EventSchema.methods.getType = function() {
   }
 };
 
+EventSchema.methods.notVoted = function(id) {
+  for (var i = 0; i < this.participants.length; ++i) {
+    if (this.participants[i].personId === id) {
+      if (this.participants[i].slot && this.participants[i].slot.length > 0) return false;
+      else return true;
+    }
+  }
+  return false;
+}
+
+EventSchema.methods.notDecided = function(id) {
+  if (!this.isMine(id)) return false;
+  if (this.decision) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 EventSchema.methods.isDone = function() {
   return this.getType() === 'done';
 }
