@@ -57,13 +57,14 @@ $(function() {
       });
     });
 
+    maxCount--;
     $.each(map, function(date, slots) {
       var $day = $("[id='" + date + "']");
       $.each(slots, function(i, slot) {
         $day.prepend(
           '<p class="slot data gridtop-' + parseInt(slot.startTime) +
           ' gridheight-' + parseInt(slot.duration) +
-          ' heatmap-' + Math.ceil(parseInt(slot.count) / maxCount * 5) +
+          ' heatmap-' + Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1) +
           '" count="' + parseInt(slot.count) + '"></p>'
         );
       });
@@ -341,13 +342,14 @@ $(function() {
     drawGrid(d);
   }
   $.get(
-    "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
-    drawSlot
-  );
-  $.get(
     "/events/" + $("meta[name=eventId]").attr("content") + "/heatmap",
     drawHeatmap
   );
+  $.get(
+    "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
+    drawSlot
+  );
+
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
   dayHookup();

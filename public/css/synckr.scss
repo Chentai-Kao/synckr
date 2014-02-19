@@ -7,6 +7,9 @@ $left-right-margin: 25px;
 $navbar-margin: 40px;
 $bottom-margin: 30px;
 
+$navbar-color: #FFFFFF;
+$navbar-background: rgba(52, 170, 220, 0.7);
+
 #placeholder {
 	position:absolute;
 	width: 100%;
@@ -21,9 +24,12 @@ $bottom-margin: 30px;
 	position: relative;
 	@include clearfix;
 	font-weight: normal;
-	border-bottom: 1px solid $line-color;
+	// border-bottom: 1px solid $line-color;
 	height: $navbar-margin;
 	line-height: $navbar-margin;
+	//background-color: rgba(245, 165, 3, 0.7);
+	background-color: $navbar-background;
+	color: $navbar-color;
 }
 
 #nav-left {
@@ -47,9 +53,16 @@ $bottom-margin: 30px;
 a {
 	text-decoration: none;
 	color:black;
-
 }
-a:hover{
+
+a:hover {
 	text-decoration: none;
 	color:black;
+}
+
+#navbar a{
+	color: $navbar-color;
+}
+#navbar a:hover{
+	color: $navbar-color;
 }

@@ -14,7 +14,16 @@ $first-end-height: 15px;
 $day-bar-height: 45px;
 $navbar-top-margin: 5px;
 
-$draw-color: #1AD6AD;
+$heatmap-1: #E7E7E7;
+$heatmap-5: #7F7F93;
+$heatmap-3: mix($heatmap-1, $heatmap-5);
+$heatmap-2: mix($heatmap-1, $heatmap-3);
+$heatmap-4: mix($heatmap-3, $heatmap-5);
+
+$heatmaps:$heatmap-1, $heatmap-2, $heatmap-3, $heatmap-4, $heatmap-5;
+
+//$draw-color: lighten(rgb(242, 56, 90), 20);
+$draw-color: #5BCAFF;
 
 #placeholder, #pane {
 	height: 100%;
@@ -146,9 +155,11 @@ $draw-color: #1AD6AD;
 	margin: 0;
 }
 
+$slot-offset: 3px;
 @for $i from 1 through 5 {
 	.heatmap-#{$i} {
-		background-color: darken(rgba(196,196,196,0.5), 20% * $i);
+		background-color: rgba(nth($heatmaps, $i), 0.5);
+		//background-color: darken(rgba(200, 200, 200, 0.5), 30%);
 	}
 }
 
@@ -160,11 +171,12 @@ $draw-color: #1AD6AD;
 
 @for $i from 1 through 50 {
 	.gridheight-#{$i} {
-		height: $row-height / 2 * $i;
+		height: $row-height / 2 * $i - $slot-offset;
 	}
+
 }
 #mask{
-	position:absolute;
+	position:fixed;
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -290,4 +302,9 @@ $draw-color: #1AD6AD;
 }
 #level-max{
 	margin-left: 58%;
+}
+.data{
+	// z-index: 100;
+	opacity: 1;
+	border-radius: 5px;
 }
