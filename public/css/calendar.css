@@ -1,4 +1,4 @@
-/* line 13, synckr.scss */
+/* line 20, synckr.scss */
 #placeholder {
   position: absolute;
   width: 100%;
@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-/* line 23, synckr.scss */
+/* line 30, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -23,7 +23,7 @@
   color: white;
 }
 
-/* line 35, synckr.scss */
+/* line 42, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
@@ -31,12 +31,12 @@
   font-size: 15px;
 }
 
-/* line 42, synckr.scss */
+/* line 49, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 46, synckr.scss */
+/* line 53, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -44,26 +44,36 @@
   font-size: 15px;
 }
 
-/* line 53, synckr.scss */
+/* line 60, synckr.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 58, synckr.scss */
+/* line 65, synckr.scss */
 a:hover {
   text-decoration: none;
   color: black;
 }
 
-/* line 63, synckr.scss */
+/* line 70, synckr.scss */
 #navbar a {
-  color: white;
+  color: #748089;
 }
 
-/* line 66, synckr.scss */
+/* line 73, synckr.scss */
 #navbar a:hover {
-  color: white;
+  color: #748089;
+}
+
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
 }
 
 /* line 8, calendar.scss */

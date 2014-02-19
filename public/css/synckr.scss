@@ -1,6 +1,13 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/css3/user-interface";
 
+$red: #a34730;
+$yellow: #f2992e;
+$blue: #33465d;
+$gray: #748089;
+$green: #55bc8a;
+$cyan: #49a8d8;
+
 $line-color: #aaa;
 
 $left-right-margin: 25px;
@@ -61,8 +68,14 @@ a:hover {
 }
 
 #navbar a{
-	color: $navbar-color;
+	color: $gray;
 }
 #navbar a:hover{
-	color: $navbar-color;
+	color: $gray;
+}
+#nav-left {
+	color: $gray;
+}
+#nav-right {
+	color: $cyan;
 }
