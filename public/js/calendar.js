@@ -30,6 +30,8 @@ $(function() {
       "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
       { slot: data }
     );
+    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+
   });
 
   var drawSlot = function(slots) {
