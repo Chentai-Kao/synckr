@@ -1,10 +1,17 @@
 @import "compass/css3/box";
 @import "synckr.scss";
 
+$red: #a34730;
+$yellow: #f2992e;
+$blue: #33465d;
+$gray: #748089;
+$green: #55bc8a;
+$cyan: #49a8d8;
+
 $event-height: 80px;
-$event-not-voted: #33465d;
+$event-not-voted: $blue;
 //#FF5B37;
-$event-not-decided: #33465d;
+$event-not-decided: $blue;
 //24709f
 $event-dark-text: white;
 $event-done:rgba(209, 238, 252, 0.6);
@@ -39,12 +46,12 @@ $event-done-text: #052D6E;
 	//float:left;
 }
 .event-title{
-	width:65%;
+	width:60%;
 }
 
 .event-info{
 	position:relative;
-	width:35%;
+	width:40%;
 	line-height: $event-height;
 	min-height: $event-height;
 	font-size: 18px;
@@ -52,7 +59,6 @@ $event-done-text: #052D6E;
 .arrow{
 	width:5%;
 	display: none;
-	margin-left:10px;
 }
 .arrow-move{
 	display:block;
@@ -70,27 +76,23 @@ $event-done-text: #052D6E;
 
 .event-deadline{
 	position: absolute;
-	left:0;
-	height: 50%;
+	left: 0;
+	top: 10%;
+	height: 40%;
 	width: 100%;
 	line-height: $event-height/2;
 }
 .event-people{
 	position: absolute;
 	left:0;
-	height: 50%;
+	height: 40%;
 	width:100%;
-	top:50%;
+	top: 50%;
 	line-height: $event-height/2;
 }
 .event-people img{
 	width:30px;
 	margin: 0 0 0 -5px;
-}
-#nav-right{
-	font-size: 30px;
-	font-weight: 200;
-	line-height: 30px;
 }
 
 #user-info{
@@ -140,4 +142,29 @@ $event-done-text: #052D6E;
 	top: $navbar-margin;
 	bottom: $bottom-margin;
 	width: 100%;
+}
+
+#nav-right {
+	height: 100%;
+	font-size: 18px;
+	@include display-box;
+	@include box-align(center);
+}
+
+.decide, .deadline, .pending {
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+}
+
+.decide {
+	background-color: $red;
+}
+
+.deadline {
+	background-color: $yellow;
+}
+
+.pending {
+	background-color: $green;
 }

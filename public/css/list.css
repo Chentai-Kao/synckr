@@ -66,7 +66,7 @@ a:hover {
   color: white;
 }
 
-/* line 14, list.scss */
+/* line 21, list.scss */
 .out-event {
   min-height: 80px;
   width: 100%;
@@ -75,22 +75,22 @@ a:hover {
   background-color: rgba(209, 238, 252, 0.6);
 }
 
-/* line 22, list.scss */
+/* line 29, list.scss */
 .out-event a {
   color: #052d6e;
 }
 
-/* line 26, list.scss */
+/* line 33, list.scss */
 .not-decided {
   background-color: #33465d;
 }
 
-/* line 29, list.scss */
+/* line 36, list.scss */
 .not-voted {
   background-color: #33465d;
 }
 
-/* line 33, list.scss */
+/* line 40, list.scss */
 .event {
   min-height: 80px;
   display: -webkit-box;
@@ -103,80 +103,73 @@ a:hover {
   box-align: center;
 }
 
-/* line 41, list.scss */
+/* line 48, list.scss */
 .event-title {
-  width: 65%;
+  width: 60%;
 }
 
-/* line 45, list.scss */
+/* line 52, list.scss */
 .event-info {
   position: relative;
-  width: 35%;
+  width: 40%;
   line-height: 80px;
   min-height: 80px;
   font-size: 18px;
 }
 
-/* line 52, list.scss */
+/* line 59, list.scss */
 .arrow {
   width: 5%;
   display: none;
-  margin-left: 10px;
 }
 
-/* line 57, list.scss */
+/* line 63, list.scss */
 .arrow-move {
   display: block;
 }
 
-/* line 60, list.scss */
+/* line 66, list.scss */
 .not-decided .arrow, .not-voted .arrow {
   display: block;
 }
 
-/* line 63, list.scss */
+/* line 69, list.scss */
 .not-decided a, .not-voted a {
   color: white;
 }
 
-/* line 67, list.scss */
+/* line 73, list.scss */
 .not-decided, .not-voted {
   border-bottom: 1px solid #738596;
 }
 
-/* line 71, list.scss */
+/* line 77, list.scss */
 .event-deadline {
   position: absolute;
   left: 0;
-  height: 50%;
+  top: 10%;
+  height: 40%;
   width: 100%;
   line-height: 40px;
 }
 
-/* line 78, list.scss */
+/* line 85, list.scss */
 .event-people {
   position: absolute;
   left: 0;
-  height: 50%;
+  height: 40%;
   width: 100%;
   top: 50%;
   line-height: 40px;
 }
 
-/* line 86, list.scss */
+/* line 93, list.scss */
 .event-people img {
   width: 30px;
   margin: 0 0 0 -5px;
 }
 
-/* line 90, list.scss */
-#nav-right {
-  font-size: 30px;
-  font-weight: 200;
-  line-height: 30px;
-}
-
-/* line 96, list.scss */
+/* line 98, list.scss */
 #user-info {
   position: absolute;
   width: 100%;
@@ -187,24 +180,24 @@ a:hover {
   color: white;
 }
 
-/* line 106, list.scss */
+/* line 108, list.scss */
 #user-pic {
   width: 14%;
   float: left;
 }
 
-/* line 110, list.scss */
+/* line 112, list.scss */
 #user-name {
   width: 86%;
   float: left;
 }
 
-/* line 115, list.scss */
+/* line 117, list.scss */
 .cancel-icon {
   display: none;
 }
 
-/* line 120, list.scss */
+/* line 122, list.scss */
 .cancel-icon-move {
   margin: 0 25px 0 0;
   display: block;
@@ -214,7 +207,7 @@ a:hover {
   padding-top: 30px;
 }
 
-/* line 129, list.scss */
+/* line 131, list.scss */
 #navbar {
   position: absolute;
   top: 0;
@@ -222,7 +215,7 @@ a:hover {
   width: 100%;
 }
 
-/* line 136, list.scss */
+/* line 138, list.scss */
 #list {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -230,4 +223,40 @@ a:hover {
   top: 40px;
   bottom: 30px;
   width: 100%;
+}
+
+/* line 147, list.scss */
+#nav-right {
+  height: 100%;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+/* line 154, list.scss */
+.decide, .deadline, .pending {
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+/* line 160, list.scss */
+.decide {
+  background-color: #a34730;
+}
+
+/* line 164, list.scss */
+.deadline {
+  background-color: #f2992e;
+}
+
+/* line 168, list.scss */
+.pending {
+  background-color: #55bc8a;
 }
