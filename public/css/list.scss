@@ -2,8 +2,9 @@
 @import "synckr.scss";
 
 $event-height: 80px;
-$event-decide: #FF5B37;
-$event-ongoing: rgba(255, 149, 0, 0.4);
+$event-not-voted: rgba(255, 149, 0, 0.4);
+//#FF5B37;
+$event-not-decided: rgba(255, 149, 0, 0.4);
 $event-done:rgba(209, 238, 252, 0.6); 
 // yellow rgba(255, 219, 76, 0.5);
 $event-done-text: #052D6E;
@@ -13,13 +14,20 @@ $event-done-text: #052D6E;
 	width: 100%;
 	border-bottom: 1px solid #aaa;
 	padding: 0 $left-right-margin;
-	background-color: $event-ongoing;
-	
+	background-color: $event-done;	
 }
 
 .out-event a{
 	color:$event-done-text;
 }
+
+.not-decided{
+	background-color: $event-not-decided;
+}
+.not-voted{
+	background-color: $event-not-voted;
+}
+
 .event {
 	min-height: $event-height;
 	@include display-box;
@@ -45,6 +53,9 @@ $event-done-text: #052D6E;
 	margin-left:10px;
 }
 .arrow-move{
+	display:block;
+}
+.not-decided .arrow, .not-voted .arrow{
 	display:block;
 }
 

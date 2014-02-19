@@ -16,10 +16,10 @@
 			<div id="list">
 			<% for (var i = 0; i < events.length; ++i) { %>
 				<div class="out-event
-					<% if (events[i].notDecided(fb_id)) { %>
+					<% if (events[i].notDecided(fb_id) && events[i].isPending()) { %>
 						not-decided
 					<% } %>
-					<% if (events[i].notVoted(fb_id)) { %>
+					<% if (events[i].notVoted(fb_id) && events[i].isOngoing()) { %>
 						not-voted
 					<% } %>
 				">
@@ -41,9 +41,9 @@
 								</div>
 							<% } else if (events[i].isPending()) { %>
 								<% if (events[i].isMine(fb_id)) { %>
-									<div class="event-info decide">Decide>>></div>
+									<div class="event-info decide">Go decide!</div>
 								<% } else { %>
-									<div class="event-info pending">Pending</div>
+									<div class="event-info pending">Pending...</div>
 								<% } %>
 							<% } %>
 							<% if (events[i].isMine(fb_id)) { %>

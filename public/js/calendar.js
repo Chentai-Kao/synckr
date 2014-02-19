@@ -48,6 +48,12 @@ $(function() {
     })
   };
 
+  var drawCalendar = function(){
+    var $day = $("[id=Thu Feb 20 2014 00:00:00 GMT-0800 (PST)");
+    
+
+  };
+
   var drawHeatmap = function(map) {
     var maxCount = 0;
     $.each(map, function(date, slots) {
