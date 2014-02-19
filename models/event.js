@@ -69,7 +69,7 @@ EventSchema.methods.totalCount = function() {
 EventSchema.methods.votedCount = function() {
   var num = 0;
   for (var i = 0; i < this.participants.length; ++i) {
-    if (typeof this.participants[i].slot !== 'undefined' &&
+    if (this.participants[i].slot &&
         this.participants[i].slot.length > 0) {
       num++;
     }
