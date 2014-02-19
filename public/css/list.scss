@@ -2,14 +2,24 @@
 @import "synckr.scss";
 
 $event-height: 80px;
+$event-decide: #FF5B37;
+$event-ongoing: rgba(255, 149, 0, 0.4);
+$event-done:rgba(209, 238, 252, 0.6); 
+// yellow rgba(255, 219, 76, 0.5);
+$event-done-text: #052D6E;
 
 .out-event{
 	min-height: $event-height;
 	width: 100%;
 	border-bottom: 1px solid #aaa;
 	padding: 0 $left-right-margin;
+	background-color: $event-ongoing;
+	
 }
 
+.out-event a{
+	color:$event-done-text;
+}
 .event {
 	min-height: $event-height;
 	@include display-box;
@@ -68,14 +78,16 @@ $event-height: 80px;
 	width: 100%;
 	height: $bottom-margin;
 	bottom: 0;
-	border-top: 1px solid #aaa;
+	// border-top: 1px solid #aaa;
+	background-color: $navbar-background;
+	color:$navbar-color;
 }
 #user-pic{
-	width:15%;
+	width:14%;
 	float:left;
 }
 #user-name{
-	width:85%;
+	width:86%;
 	float:left;
 }
 

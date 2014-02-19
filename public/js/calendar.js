@@ -332,7 +332,7 @@ $(function() {
     });
   }
 
-  var showDay = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var startDate = new Date($("meta[name=startDate]").attr("content"));
