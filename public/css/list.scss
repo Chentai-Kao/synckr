@@ -2,9 +2,11 @@
 @import "synckr.scss";
 
 $event-height: 80px;
-$event-not-voted: rgba(255, 149, 0, 0.4);
+$event-not-voted: #33465d;
 //#FF5B37;
-$event-not-decided: rgba(255, 149, 0, 0.4);
+$event-not-decided: #33465d;
+//24709f
+$event-dark-text: white;
 $event-done:rgba(209, 238, 252, 0.6);
 // yellow rgba(255, 219, 76, 0.5);
 $event-done-text: #052D6E;
@@ -18,7 +20,7 @@ $event-done-text: #052D6E;
 }
 
 .out-event a{
-	color:$event-done-text;
+	color: $event-done-text;
 }
 
 .not-decided{
@@ -57,6 +59,13 @@ $event-done-text: #052D6E;
 }
 .not-decided .arrow, .not-voted .arrow{
 	display:block;
+}
+.not-decided a, .not-voted a {
+	color: $event-dark-text;
+}
+
+.not-decided, .not-voted {
+	border-bottom: 1px solid #738596;
 }
 
 .event-deadline{
