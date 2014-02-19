@@ -44,6 +44,43 @@ EventSchema.methods.getType = function() {
   }
 };
 
+EventSchema.methods.isDone = function() {
+  return this.getType() === 'done';
+}
+
+EventSchema.methods.isPending = function() {
+  return this.getType() === 'pending';
+}
+
+EventSchema.methods.isOngoing = function() {
+  return this.getType() === 'ongoing';
+}
+
+EventSchema.methods.daysLeft = function() {
+  var now = new Date(),
+      deadline = new Date(this.deadline);
+  return Math.round(Math.abs((now.getTime() - deadline.getTime())/(86400000)))
+}
+
+EventSchema.methods.totalCount = function() {
+  return this.participants.length;
+}
+
+EventSchema.methods.votedCount = function() {
+  var num = 0;
+  for (var i = 0; i < this.participants.length; ++i) {
+    if (typeof this.participants[i].slot !== 'undefined' &&
+        this.participants[i].slot.length > 0) {
+      num++;
+    }
+  }
+  return num;
+}
+
+EventSchema.methods.isMine = function(id) {
+  return this.host.personId === id;
+}
+
 EventSchema.methods.genHeatmap = function(id) {
   var createSlotByDate = function(record) {
     // Given a MongoDB event document, create slot with following format:
@@ -180,4 +217,4 @@ EventSchema.methods.genHeatmap = function(id) {
   return createSortedSlot(slotByDate);
 };
 
-module.exports = mongoose.model('event', EventSchema);
+module.exports = mongoose.model('events', EventSchema);
