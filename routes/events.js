@@ -138,6 +138,10 @@ exports.createEvent = function(req, res) {
 
   // merge hour and min to duration
   data.duration = data["duration-hr"] + data["duration-min"];
+  data.host = {
+    name: req.session.fb_name,
+    personId: req.session.fb_id
+  };
 
   console.log(data);
   var Event = req.app.get('models')('event');
