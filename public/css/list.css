@@ -86,7 +86,7 @@ a:hover {
 }
 
 /* line 27, list.scss */
-.not-voted {
+.require-action {
   background-color: rgba(255, 149, 0, 0.4);
 }
 

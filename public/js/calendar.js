@@ -51,9 +51,16 @@ $(function() {
   };
 
   var drawCalendar = function(){
-    var $day = $("[id=Thu Feb 20 2014 00:00:00 GMT-0800 (PST)");
-    
+    var $day = $("[id='Tue Feb 25 2014 00:00:00 GMT-0800 (PST)']");
+    $slot = $('<p id="slot-'+ (++slotID) + '" class="slot calendar gridtop-17 gridheight-8"></p>');
+    $slot.prepend('<p class="count">Tennis</p>');
+    $day.prepend($slot);
 
+
+    var $day2 = $("[id='Mon Feb 24 2014 00:00:00 GMT-0800 (PST)']");
+    $slot = $('<p id="slot-'+ (++slotID) + '" class="slot calendar gridtop-27 gridheight-8"></p>');
+    $slot.prepend('<p class="count">Meeting</p>');
+    $day2.prepend($slot);
   };
 
   var drawHeatmap = function(map) {
@@ -359,6 +366,8 @@ $(function() {
     "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
     drawSlot
   );
+  drawCalendar();
+
 
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
