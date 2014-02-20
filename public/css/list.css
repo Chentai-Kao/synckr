@@ -66,7 +66,7 @@ a:hover {
   color: white;
 }
 
-/* line 12, list.scss */
+/* line 10, list.scss */
 .out-event {
   min-height: 80px;
   width: 100%;
@@ -75,22 +75,22 @@ a:hover {
   background-color: rgba(209, 238, 252, 0.6);
 }
 
-/* line 20, list.scss */
+/* line 18, list.scss */
 .out-event a {
   color: #052d6e;
 }
 
-/* line 24, list.scss */
+/* line 22, list.scss */
 .not-decided {
   background-color: rgba(255, 149, 0, 0.4);
 }
 
-/* line 27, list.scss */
-.not-voted {
+/* line 25, list.scss */
+.require-action {
   background-color: rgba(255, 149, 0, 0.4);
 }
 
-/* line 31, list.scss */
+/* line 29, list.scss */
 .event {
   min-height: 80px;
   display: -webkit-box;
@@ -103,12 +103,12 @@ a:hover {
   box-align: center;
 }
 
-/* line 39, list.scss */
+/* line 37, list.scss */
 .event-title {
   width: 65%;
 }
 
-/* line 43, list.scss */
+/* line 41, list.scss */
 .event-info {
   position: relative;
   width: 35%;
@@ -117,24 +117,24 @@ a:hover {
   font-size: 18px;
 }
 
-/* line 50, list.scss */
+/* line 48, list.scss */
 .arrow {
   width: 5%;
   display: none;
   margin-left: 10px;
 }
 
-/* line 55, list.scss */
+/* line 53, list.scss */
 .arrow-move {
   display: block;
 }
 
-/* line 58, list.scss */
+/* line 56, list.scss */
 .not-decided .arrow, .not-voted .arrow {
   display: block;
 }
 
-/* line 62, list.scss */
+/* line 60, list.scss */
 .event-deadline {
   position: absolute;
   left: 0;
@@ -143,7 +143,7 @@ a:hover {
   line-height: 40px;
 }
 
-/* line 69, list.scss */
+/* line 67, list.scss */
 .event-people {
   position: absolute;
   left: 0;
@@ -153,20 +153,20 @@ a:hover {
   line-height: 40px;
 }
 
-/* line 77, list.scss */
+/* line 75, list.scss */
 .event-people img {
   width: 30px;
   margin: 0 0 0 -5px;
 }
 
-/* line 81, list.scss */
+/* line 79, list.scss */
 #nav-right {
   font-size: 30px;
   font-weight: 200;
   line-height: 30px;
 }
 
-/* line 87, list.scss */
+/* line 85, list.scss */
 #user-info {
   position: absolute;
   width: 100%;
@@ -176,24 +176,24 @@ a:hover {
   color: white;
 }
 
-/* line 96, list.scss */
+/* line 94, list.scss */
 #user-pic {
   width: 14%;
   float: left;
 }
 
-/* line 100, list.scss */
+/* line 98, list.scss */
 #user-name {
   width: 86%;
   float: left;
 }
 
-/* line 105, list.scss */
+/* line 103, list.scss */
 .cancel-icon {
   display: none;
 }
 
-/* line 110, list.scss */
+/* line 108, list.scss */
 .cancel-icon-move {
   margin: 0 25px 0 0;
   display: block;
