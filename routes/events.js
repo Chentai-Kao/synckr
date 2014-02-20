@@ -14,6 +14,7 @@ exports.getEvent = function(req, res) {
     if (record) {
       res.render("event", {
         eventId: eventId,
+        eventType: record.getType(),
         startDate: record.startDate,
         endDate: record.endDate
       });
