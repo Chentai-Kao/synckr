@@ -8,9 +8,11 @@ var SlotSchema = new Schema({
 });
 
 var ParticipantSchema = new Schema({
-  name:     { type: String, required: true },
-  personId: { type: String, required: true },
-  slot:     [SlotSchema]
+  name:        { type: String, required: true },
+  personId:    { type: String, required: true },
+  firstUse:    { type: Boolean, default: true },
+  firstDecide: { type: Boolean, default: true },
+  slot:        [SlotSchema]
 });
 
 var EventSchema = new Schema({

@@ -35,17 +35,19 @@ $(function() {
   });
 
   var drawSlot = function(slots) {
-    $.each(slots, function(i, slot) {
-      var $day = $("[id='" + slot.startDate + "']");
-      var startTime = parseInt(slot.startTime);
-      var duration = parseInt(slot.duration);
-      $slot = $('<p id="slot-' + (++slotID) + '" class="slot draw gridtop-' +
-        startTime + ' gridheight-' + duration + '" start="' + startTime +
-        '" end="' + (startTime + duration - 1) + '"></p>'
-      );
-      $day.prepend($slot);
-      blockHookup($slot);
-    })
+    if (slots) {
+      $.each(slots, function(i, slot) {
+        var $day = $("[id='" + slot.startDate + "']");
+        var startTime = parseInt(slot.startTime);
+        var duration = parseInt(slot.duration);
+        $slot = $('<p id="slot-' + (++slotID) + '" class="slot draw gridtop-' +
+          startTime + ' gridheight-' + duration + '" start="' + startTime +
+          '" end="' + (startTime + duration - 1) + '"></p>'
+        );
+        $day.prepend($slot);
+        blockHookup($slot);
+      })
+    }
   };
 
   var drawCalendar = function(){
@@ -362,6 +364,9 @@ $(function() {
   scrollHookup();
   dayHookup();
   slotHookup();
-  //FTUE();
+  var firstUse = $("meta[name=firstUse]").attr("content");
+  if (firstUse === "true") {
+    FTUE();
+  }
 });
 

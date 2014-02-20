@@ -1,9 +1,5 @@
 var crypto = require('crypto');
 
-/*
- * AJAX get event given event ID
- */
-
 exports.getEvent = function(req, res) {
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
@@ -12,11 +8,16 @@ exports.getEvent = function(req, res) {
   var Event = req.app.get('models')('event');
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
-      res.render("event", {
-        eventId: eventId,
-        startDate: record.startDate,
-        endDate: record.endDate
-      });
+      for (var i = 0; i < record.participants.length; ++i) {
+        if (record.participants[i].personId === id) {
+          res.render("event", {
+            eventId: eventId,
+            startDate: record.startDate,
+            endDate: record.endDate,
+            firstUse: record.participants[i].firstUse
+          });
+        }
+      }
     } else {
       res.send(404);
     }
@@ -58,10 +59,6 @@ exports.getSlot = function(req, res) {
   });
 };
 
-/*
- * AJAX get event list given user's ID
- */
-
 exports.listEvent = function(req, res) {
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
@@ -85,10 +82,6 @@ exports.listEvent = function(req, res) {
     }
   );
 };
-
-/*
- * AJAX new event
- */
 
 exports.createEventPage = function(req, res) {
   var id = req.session.fb_id;
@@ -127,7 +120,6 @@ exports.createEvent = function(req, res) {
     personId: req.session.fb_id
   };
 
-  console.log(data);
   var Event = req.app.get('models')('event');
   var newEvent = new Event(data);
   newEvent.save(function(error) {
@@ -142,10 +134,6 @@ exports.updateEvent = function(req, res) {
   // TODO
 };
 
-/*
- * AJAX update slot
- */
-
 exports.updateSlot = function(req, res) {
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
@@ -156,7 +144,10 @@ exports.updateSlot = function(req, res) {
   var Event = req.app.get('models')('event');
   Event.update(
     { eventId: eventId, "participants.personId": id },
-    { $set: { "participants.$.slot": slot } },
+    { $set: {
+      "participants.$.slot": slot,
+      "participants.$.firstUse": false
+    }},
     function(error) {
       if (error) {
         console.log(error);
