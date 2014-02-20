@@ -165,3 +165,23 @@ exports.updateSlot = function(req, res) {
     }
   );
 };
+
+exports.decideSlot = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var decision = req.body.decision;
+
+  var Event = req.app.get('models')('event');
+  Event.update(
+    { eventId: eventId },
+    { $set: { "decision": decision } },
+    function(error) {
+      if (error) {
+        console.log(error);
+      }
+      res.json("");
+    }
+  );
+}
