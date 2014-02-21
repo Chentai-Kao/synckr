@@ -14,7 +14,8 @@ exports.getEvent = function(req, res) {
     if (record) {
       res.render("event", {
         eventId: eventId,
-        eventType: record.getType(),
+        notVoted: record.notVoted(id),
+        notDecided: record.notDecided(id),
         startDate: record.startDate,
         endDate: record.endDate,
         firstUse: req.session.first_use,

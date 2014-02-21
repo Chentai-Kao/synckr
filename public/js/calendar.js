@@ -289,7 +289,7 @@ $(function() {
       $(this).remove();
       e.stopImmediatePropagation();
     });
-  }
+  };
 
   var FTUE = function(){
     var clicks = 0
@@ -343,7 +343,16 @@ $(function() {
         clicks++;
       }
     });
-  }
+  };
+
+  var decideGuide = function() {
+    $("#mask").show();
+    $(".mask-decide").show();
+    $("#mask").click(function(e){
+      $(".mask-decide").hide();
+      $("#mask").hide();
+    });
+  };
 
   var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
@@ -351,7 +360,8 @@ $(function() {
   var eventId = $("meta[name=eventId]").attr("content"),
       startDate = new Date($("meta[name=startDate]").attr("content")),
       endDate = new Date($("meta[name=endDate]").attr("content")),
-      eventType = $("meta[name=eventType]").attr("content"),
+      notVoted = $("meta[name=notVoted]").attr("content"),
+      notDecided = $("meta[name=notDecided]").attr("content"),
       firstUse = $("meta[name=firstUse]").attr("content"),
       firstDecide = $("meta[name=firstDecide]").attr("content");
 
@@ -370,8 +380,12 @@ $(function() {
   dayHookup();
   slotHookup();
 
-  if (firstUse === "true") {
+  if (firstUse === "true" && notVoted === "true") {
     FTUE();
+  }
+  if (notDecided === "true") {
+    // TODO: check when all voted are done
+    decideGuide();
   }
 });
 

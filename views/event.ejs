@@ -6,7 +6,8 @@
     <meta name="eventId" content="<%= eventId %>">
     <meta name="startDate" content="<%= startDate %>">
     <meta name="endDate" content="<%= endDate %>">
-    <meta name="eventType" content="<%= eventType %>">
+    <meta name="notVoted" content="<%= notVoted %>">
+    <meta name="notDecided" content="<%= notDecided %>">
     <meta name="firstUse" content="<%= firstUse %>">
     <meta name="firstDecide" content="<%= firstDecide %>">
 		<link rel="stylesheet" href="/css/bootstrap.css">
@@ -108,6 +109,9 @@
 				<div class="mask-slot" id="mask-slot-2"></div>
 				<div class="mask-slot" id="mask-slot-3"></div>
 				<p id="votes-indication"> Votes shown as heatmap</p>
+			</div>
+			<div class="mask-decide">
+				<p id="decide-indication"> Drag to decide time</p>
 			</div>
 		</div>
 
