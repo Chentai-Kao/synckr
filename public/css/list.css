@@ -1,60 +1,277 @@
-/*
-Syntax error: Invalid CSS after "}": expected selector or at-rule, was "<<<<<<< HEAD"
-        on line 143 of /Users/eggegg/project/synckr/public/css/list.scss
+/* line 20, synckr.scss */
+#placeholder {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
-Backtrace:
-/Users/eggegg/project/synckr/public/css/list.scss:143
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/scss/parser.rb:1149:in `expected'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/scss/parser.rb:1085:in `expected'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/scss/parser.rb:28:in `parse'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/engine.rb:342:in `_to_tree'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/engine.rb:315:in `_render'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/sass-3.2.13/lib/sass/engine.rb:262:in `render'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:30:in `block in temporary_multipath_handler'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `each'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:27:in `temporary_multipath_handler'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:17:in `block (2 levels) in run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:16:in `each'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:16:in `block in run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/rb-fsevent-0.9.3/lib/rb-fsevent/fsevent.rb:43:in `call'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/rb-fsevent-0.9.3/lib/rb-fsevent/fsevent.rb:43:in `run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/backends/rbfsevent.rb:20:in `run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/bin/compass:44:in `call'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/bin/compass:23:in `load'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/bin/compass:23:in `<main>'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/bin/ruby_noexec_wrapper:14:in `eval'
-/Users/eggegg/.rvm/gems/ruby-1.9.3-p448/bin/ruby_noexec_wrapper:14:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"}\": expected selector or at-rule, was \"<<<<<<< HEAD\"\A         on line 143 of /Users/eggegg/project/synckr/public/css/list.scss"; }
+/* line 30, synckr.scss */
+#navbar {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  font-weight: normal;
+  height: 40px;
+  line-height: 40px;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 42, synckr.scss */
+#nav-left {
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+  font-size: 15px;
+}
+
+/* line 49, synckr.scss */
+#nav-middle {
+  text-align: center;
+}
+
+/* line 53, synckr.scss */
+#nav-right {
+  position: absolute;
+  top: 0;
+  right: 12.5px;
+  font-size: 15px;
+}
+
+/* line 60, synckr.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 65, synckr.scss */
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 70, synckr.scss */
+#navbar a {
+  color: #748089;
+}
+
+/* line 73, synckr.scss */
+#navbar a:hover {
+  color: #748089;
+}
+
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 17, list.scss */
+.out-event {
+  min-height: 80px;
+  width: 100%;
+  border-bottom: 1px dashed #aaa;
+  padding: 0 25px;
+  background-color: rgba(209, 238, 252, 0.6);
+}
+
+/* line 25, list.scss */
+.out-event a {
+  color: #052d6e;
+}
+
+/* line 29, list.scss */
+.not-decided {
+  background-color: #33465d;
+}
+
+/* line 32, list.scss */
+.not-voted {
+  background-color: #33465d;
+}
+
+/* line 36, list.scss */
+.event {
+  min-height: 80px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+/* line 44, list.scss */
+.event-title {
+  width: 60%;
+}
+
+/* line 48, list.scss */
+.event-info {
+  position: relative;
+  width: 40%;
+  line-height: 80px;
+  min-height: 80px;
+  font-size: 18px;
+}
+
+/* line 55, list.scss */
+.arrow {
+  width: 5%;
+  display: none;
+}
+
+/* line 59, list.scss */
+.arrow-move {
+  display: block;
+}
+
+/* line 62, list.scss */
+.not-decided .arrow, .not-voted .arrow {
+  display: block;
+}
+
+/* line 65, list.scss */
+.not-decided a, .not-voted a {
+  color: white;
+}
+
+/* line 69, list.scss */
+.not-decided, .not-voted {
+  border-bottom: 1px dashed #738596;
+}
+
+/* line 73, list.scss */
+.event-deadline {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 40%;
+  width: 100%;
+  line-height: 40px;
+}
+
+/* line 81, list.scss */
+.event-people {
+  position: absolute;
+  left: 0;
+  height: 40%;
+  width: 100%;
+  top: 50%;
+  line-height: 40px;
+}
+
+/* line 89, list.scss */
+.event-people img {
+  width: 30px;
+  margin: 0 0 0 -5px;
+}
+
+/* line 94, list.scss */
+#user-info {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  left: 0;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 104, list.scss */
+#user-pic {
+  width: 14%;
+  float: left;
+}
+
+/* line 108, list.scss */
+#user-name {
+  width: 86%;
+  float: left;
+}
+
+/* line 113, list.scss */
+.cancel-icon {
+  display: none;
+}
+
+/* line 118, list.scss */
+.cancel-icon-move {
+  margin: 0 25px 0 0;
+  display: block;
+  width: 5%;
+  float: left;
+  height: 80px;
+  padding-top: 30px;
+}
+
+/* line 127, list.scss */
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 134, list.scss */
+#list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 40px;
+  bottom: 30px;
+  width: 100%;
+}
+
+/* line 143, list.scss */
+#nav-right {
+  height: 100%;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+/* line 150, list.scss */
+.decide, .deadline, .pending, .done {
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+/* line 156, list.scss */
+.decide {
+  background-color: #a34730;
+}
+
+/* line 160, list.scss */
+.deadline {
+  background-color: #f2992e;
+}
+
+/* line 164, list.scss */
+.pending {
+  background-color: #55bc8a;
+}
+
+/* line 168, list.scss */
+.done {
+  background-color: #55bc8a;
+}
