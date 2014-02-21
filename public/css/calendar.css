@@ -1061,3 +1061,16 @@ a:hover {
 .friend-name {
   width: 75%;
 }
+
+/* line 422, calendar.scss */
+.final-decision {
+  background-color: rgba(255, 147, 0, 0.7);
+  text-align: center;
+  display: table;
+}
+
+/* line 428, calendar.scss */
+#star-icon {
+  display: table-cell;
+  vertical-align: middle;
+}

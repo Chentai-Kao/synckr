@@ -505,7 +505,9 @@ $(function() {
     $.get("/events/" + eventId + "/slots", drawSlot);
   }
   if (eventType === "done") {
-    $.get("/events/" + eventId + "/decide", drawSlot);
+    $.get("/events/" + eventId + "/decide", drawSlot).then(function() {
+      $(".draw").addClass("final-decision").html('<p id="star-icon"><span class="glyphicon glyphicon-star"></span></p>');
+    });
   }
   drawCalendar();
 
