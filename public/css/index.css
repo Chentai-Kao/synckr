@@ -1,0 +1,117 @@
+/* line 20, synckr.scss */
+#placeholder {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 30, synckr.scss */
+#navbar {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  font-weight: normal;
+  height: 40px;
+  line-height: 40px;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 42, synckr.scss */
+#nav-left {
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+  font-size: 15px;
+}
+
+/* line 49, synckr.scss */
+#nav-middle {
+  text-align: center;
+}
+
+/* line 53, synckr.scss */
+#nav-right {
+  position: absolute;
+  top: 0;
+  right: 12.5px;
+  font-size: 15px;
+}
+
+/* line 60, synckr.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 65, synckr.scss */
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 70, synckr.scss */
+#navbar a {
+  color: #748089;
+}
+
+/* line 73, synckr.scss */
+#navbar a:hover {
+  color: #748089;
+}
+
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 3, index.scss */
+#placeholder {
+  background-color: #33465d;
+}
+
+/* line 7, index.scss */
+#logo {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 25%;
+  color: white;
+  font-size: 35px;
+}
+
+/* line 16, index.scss */
+#login {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 60%;
+}
+
+/* line 23, index.scss */
+#wrapper {
+  font-size: 35px;
+  padding: 10px;
+  background-color: #49a8d8;
+  border-radius: 5px;
+  padding-left: 60px;
+  position: relative;
+}
+
+/* line 32, index.scss */
+#fb {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
