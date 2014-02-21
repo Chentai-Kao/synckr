@@ -37,6 +37,7 @@ exports.getHeatmap = function(req, res) {
   var Event = req.app.get('models')('event');
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
+      console.log(record);
       res.json(record.genHeatmap(id));
     } else {
       res.send(404);

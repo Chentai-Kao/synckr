@@ -304,12 +304,14 @@ $(function() {
       var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
       console.log(col, gy);
       if (col[0] != gy) return;
-      saved = false;
+      
       if (inDecision) {
         $(".draw").remove();
       }
       if (heatmapToggle) return;
       e.preventDefault();
+
+      saved = false;
 
       var $slot = $('<p id="slot-' + slotID + '"></p>');
       blockHookup($slot);
@@ -442,7 +444,7 @@ $(function() {
       }
       else if(clicks == 4){
         $(".mask-tap").hide();
-        $("#mask").hide();
+        $("#mask").hide().unbind();
         clicks++;
       }
     });
@@ -453,7 +455,8 @@ $(function() {
     $(".mask-decide").show();
     $("#mask").click(function(e){
       $(".mask-decide").hide();
-      $("#mask").hide();
+      $("#mask").hide().unbind();
+
     });
   };
 
