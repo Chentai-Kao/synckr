@@ -496,8 +496,12 @@ $(function() {
     inDecision = true;
   }
 
-  $.get("/events/" + eventId + "/heatmap", drawHeatmap);
-  if (!inDecision) {
+  if (eventType === "ongoing") {
+    $.get("/events/" + eventId + "/heatmap", drawHeatmap);
+  } else {
+    $.get("/events/" + eventId + "/heatmap?self=true", drawHeatmap);
+  }
+  if (eventType === "ongoing") {
     $.get("/events/" + eventId + "/slots", drawSlot);
   }
   if (eventType === "done") {
@@ -508,7 +512,7 @@ $(function() {
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
   dayHookup();
-  if (eventType === "ongoing") {
+  if (eventType === "ongoing" || inDecision) {
     slotHookup();
   }
 });

@@ -106,7 +106,7 @@ EventSchema.methods.isMine = function(id) {
   return this.host.personId === id;
 }
 
-EventSchema.methods.genHeatmap = function(id) {
+EventSchema.methods.genHeatmap = function(id, includeSelf) {
   var createSlotByDate = function(record) {
     // Given a MongoDB event document, create slot with following format:
     // slotByDate = {
@@ -123,7 +123,7 @@ EventSchema.methods.genHeatmap = function(id) {
     var slotByDate = {};
     for (var i = 0; i < record.participants.length; ++i) {
       var user = record.participants[i];
-      if (user.personId === id) {
+      if (user.personId === id && includeSelf !== "true") {
         continue;
       }
       if (!user.slot) continue;
