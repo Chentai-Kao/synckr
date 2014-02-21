@@ -188,27 +188,27 @@ input[type="text"] {
 }
 
 /* line 100, new.scss */
-#friend-check {
+.friend-check {
   width: 10%;
 }
 
-/* line 103, new.scss */
-#friend-pic {
+/* line 104, new.scss */
+.friend-pic {
   width: 15%;
 }
 
-/* line 107, new.scss */
-#friend-name {
+/* line 108, new.scss */
+.friend-name {
   width: 75%;
 }
 
-/* line 111, new.scss */
+/* line 112, new.scss */
 .invitees {
   width: 100%;
   height: 100%;
 }
 
-/* line 115, new.scss */
+/* line 117, new.scss */
 .invitees img {
   margin: 10px;
 }
