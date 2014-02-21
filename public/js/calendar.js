@@ -148,10 +148,13 @@ $(function() {
     $.each(map, function(date, slots) {
       var $day = $("[id='" + date + "']");
       $.each(slots, function(i, slot) {
+        var hm;
+        if (maxCount === 0) hm = 1;
+        else hm = Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1);
         $day.prepend(
           '<p class="slot data gridtop-' + parseInt(slot.startTime) +
           ' gridheight-' + parseInt(slot.duration) +
-          ' heatmap-' + Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1) +
+          ' heatmap-' + hm +
           '" count="' + parseInt(slot.count) + '" id="hm-' + (++hmId) + '"></p>'
         );
         heatmapParticipants["hm-" + hmId] = slot.participants;
