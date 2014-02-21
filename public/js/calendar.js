@@ -57,11 +57,11 @@ $(function() {
     if (inDecision) {
       $.post("/events/" + eventId + "/decide", { slot: data });
       $("#mask").show();
-      $("#dialog-send").fadeIn(200);        
+      $("#dialog-send").fadeIn(200);
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
       $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
-    }    
+    }
     saved = true;
   });
 
@@ -93,10 +93,10 @@ $(function() {
         } else {
           $.post("/events/" + eventId + "/slots", { slot: data });
         }
-         $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500, function(){window.location.href = "/events";}); });       
+         $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500, function(){window.location.href = "/events";}); });
         $("#mask").hide();
         saved = true;
-        
+
       })
     }
     else{
@@ -120,7 +120,9 @@ $(function() {
         '" end="' + (startTime + duration - 1) + '"></p>'
       );
       $day.prepend($slot);
-      blockHookup($slot);
+      if (eventType === "ongoing") {
+        blockHookup($slot);
+      }
     })
   };
 
@@ -503,7 +505,8 @@ $(function() {
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
   dayHookup();
-  slotHookup();
-
+  if (eventType === "ongoing") {
+    slotHookup();
+  }
 });
 
