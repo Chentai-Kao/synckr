@@ -61,11 +61,11 @@ $(function() {
     if (inDecision) {
       $.post("/events/" + eventId + "/decide", { slot: data });
       $("#mask").show();
-      $("#dialog-send").fadeIn(200);        
+      $("#dialog-send").fadeIn(200);
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
       $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
-    }    
+    }
     saved = true;
   });
 
@@ -124,7 +124,9 @@ $(function() {
         '" end="' + (startTime + duration - 1) + '"></p>'
       );
       $day.prepend($slot);
-      blockHookup($slot);
+      if (eventType === "ongoing") {
+        blockHookup($slot);
+      }
     })
   };
 
@@ -311,12 +313,14 @@ $(function() {
       var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
       console.log(col, gy);
       if (col[0] != gy) return;
-      saved = false;
+      
       if (inDecision) {
         $(".draw").remove();
       }
       if (heatmapToggle) return;
       e.preventDefault();
+
+      saved = false;
 
       var $slot = $('<p id="slot-' + slotID + '"></p>');
       blockHookup($slot);
@@ -449,7 +453,7 @@ $(function() {
       }
       else if(clicks == 4){
         $(".mask-tap").hide();
-        $("#mask").hide();
+        $("#mask").hide().unbind();
         clicks++;
       }
     });
@@ -460,7 +464,8 @@ $(function() {
     $(".mask-decide").show();
     $("#mask").click(function(e){
       $(".mask-decide").hide();
-      $("#mask").hide();
+      $("#mask").hide().unbind();
+
     });
   };
 
@@ -498,16 +503,26 @@ $(function() {
     inDecision = true;
   }
 
-  $.get("/events/" + eventId + "/heatmap", drawHeatmap);
-  if (!inDecision) {
+  if (eventType === "ongoing") {
+    $.get("/events/" + eventId + "/heatmap", drawHeatmap);
+  } else {
+    $.get("/events/" + eventId + "/heatmap?self=true", drawHeatmap);
+  }
+  if (eventType === "ongoing") {
     $.get("/events/" + eventId + "/slots", drawSlot);
+  }
+  if (eventType === "done") {
+    $.get("/events/" + eventId + "/decide", drawSlot).then(function() {
+      $(".draw").addClass("final-decision").html('<p id="star-icon"><span class="glyphicon glyphicon-star"></span></p>');
+    });
   }
   drawCalendar();
 
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
   dayHookup();
-  slotHookup();
-
+  if (eventType === "ongoing" || inDecision) {
+    slotHookup();
+  }
 });
 

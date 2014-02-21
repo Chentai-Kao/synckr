@@ -37,7 +37,8 @@ exports.getHeatmap = function(req, res) {
   var Event = req.app.get('models')('event');
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
-      res.json(record.genHeatmap(id));
+      var self = req.query.self || false;
+      res.json(record.genHeatmap(id, self));
     } else {
       res.send(404);
     }
@@ -197,3 +198,19 @@ exports.decideSlot = function(req, res) {
     }
   );
 }
+
+exports.getDecision = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var Event = req.app.get('models')('event');
+
+  Event.findOne({ eventId: eventId }, function(error, record) {
+    if (record) {
+      res.json([record.decision]);
+    } else {
+      res.send(404);
+    }
+  });
+};

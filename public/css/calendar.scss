@@ -429,3 +429,13 @@ $slot-offset: 3px;
 	width:75%;
 }
 
+.final-decision {
+	background-color: rgba(255,147,0,0.7);
+	text-align: center;
+	display: table;
+}
+
+#star-icon {
+	display: table-cell;
+	vertical-align: middle;
+}
