@@ -500,6 +500,9 @@ $(function() {
   if (!inDecision) {
     $.get("/events/" + eventId + "/slots", drawSlot);
   }
+  if (eventType === "done") {
+    $.get("/events/" + eventId + "/decide", drawSlot);
+  }
   drawCalendar();
 
   $("#scroll-pane").scrollTop(360);

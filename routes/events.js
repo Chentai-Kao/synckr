@@ -197,3 +197,19 @@ exports.decideSlot = function(req, res) {
     }
   );
 }
+
+exports.getDecision = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var Event = req.app.get('models')('event');
+
+  Event.findOne({ eventId: eventId }, function(error, record) {
+    if (record) {
+      res.json([record.decision]);
+    } else {
+      res.send(404);
+    }
+  });
+};
