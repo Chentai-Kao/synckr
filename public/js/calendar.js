@@ -371,6 +371,6 @@ $(function() {
   scrollHookup();
   dayHookup();
   slotHookup();
-  FTUE();
+  //FTUE();
 });
 
