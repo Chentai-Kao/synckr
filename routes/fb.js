@@ -57,10 +57,31 @@ exports.loginCallback = function (req, res, next) {
           console.log(!fb_result ? 'error occurred' : fb_result.error);
           return;
         }
+        var User = req.app.get('models')('user');
+
         req.session.fb_id = fb_result.id;
         req.session.fb_name = fb_result.name;
-        console.log(req.session);
-        return res.redirect('/');
+        User.findOne({fb_id: fb_result.id}, function(error, record) {
+          if (record === null || error) {
+            console.log("Create a new user object");
+            user = new User({
+              fb_id:       fb_result.id,
+              fb_name:     fb_result.name,
+              firstUse:    true,
+              firstDecide: true
+            });
+            user.save(function(error) {
+              if (error) console.log(error);
+              req.session.first_use = true;
+              req.session.first_decide = true;
+              return res.redirect('/');
+            });
+          } else {
+            req.session.first_use = record.firstUse;
+            req.session.first_decide = record.firstDecide;
+            return res.redirect('/');
+          }
+        });
       });
     }
   );

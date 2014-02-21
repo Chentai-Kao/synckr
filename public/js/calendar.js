@@ -348,29 +348,30 @@ $(function() {
   var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var startDate = new Date($("meta[name=startDate]").attr("content"));
-  var endDate = new Date($("meta[name=endDate]").attr("content"));
+  var eventId = $("meta[name=eventId]").attr("content"),
+      startDate = new Date($("meta[name=startDate]").attr("content")),
+      endDate = new Date($("meta[name=endDate]").attr("content")),
+      eventType = $("meta[name=eventType]").attr("content"),
+      firstUse = $("meta[name=firstUse]").attr("content"),
+      firstDecide = $("meta[name=firstDecide]").attr("content");
+
   $("#month").html(showMonth[startDate.getMonth()]);
   for (var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
     $("#day-stretch").append('<div class="day"><div class="date">' + d.getDate()
       + '</div><div class="date-day">' + showDay[d.getDay()] + '</div>');
     drawGrid(d);
   }
-  $.get(
-    "/events/" + $("meta[name=eventId]").attr("content") + "/heatmap",
-    drawHeatmap
-  );
-  $.get(
-    "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
-    drawSlot
-  );
+  $.get("/events/" + eventId + "/heatmap", drawHeatmap);
+  $.get("/events/" + eventId + "/slots", drawSlot);
   drawCalendar();
-
 
   $("#scroll-pane").scrollTop(360);
   scrollHookup();
   dayHookup();
   slotHookup();
-  FTUE();
+
+  if (firstUse === "true") {
+    FTUE();
+  }
 });
 

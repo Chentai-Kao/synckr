@@ -16,7 +16,9 @@ exports.getEvent = function(req, res) {
         eventId: eventId,
         eventType: record.getType(),
         startDate: record.startDate,
-        endDate: record.endDate
+        endDate: record.endDate,
+        firstUse: req.session.first_use,
+        firstDecide: req.session.first_decide
       });
     } else {
       res.send(404);
@@ -159,10 +161,16 @@ exports.updateSlot = function(req, res) {
     { eventId: eventId, "participants.personId": id },
     { $set: { "participants.$.slot": slot } },
     function(error) {
-      if (error) {
-        console.log(error);
-      }
-      res.json("");
+      if (error) console.log(error);
+
+      var User = req.app.get('models')('user');
+      console
+      User.update( {fb_id: id}, {$set: {firstUse: false}}, function(error) {
+        console.log("Updated: not first time");
+        req.session.first_use = false;
+        if (error) console.log(error);
+        res.json("");
+      })
     }
   );
 };
