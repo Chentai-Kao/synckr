@@ -148,6 +148,14 @@ $draw-color: #5BCAFF;
 	text-align: center;
 }
 
+#stats-icon.hm-toggle {
+	width: 22px;
+	background-color: $blue;
+	color: white;
+	border-radius: 3px;
+	padding: 3px;
+}
+
 .count {
 	display: table-cell;
 	vertical-align: middle;
