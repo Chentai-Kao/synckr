@@ -97,6 +97,10 @@ EventSchema.methods.votedCount = function() {
   return num;
 }
 
+EventSchema.methods.allVoted = function() {
+  return this.totalCount() === this.votedCount();
+}
+
 EventSchema.methods.isMine = function(id) {
   if (!this.host) return false;
   return this.host.personId === id;

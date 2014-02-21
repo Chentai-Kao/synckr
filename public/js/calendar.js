@@ -7,7 +7,8 @@ $(function() {
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var eventId = $("meta[name=eventId]").attr("content"),
-      eventType = $("meta[name=eventType]").attr("content")
+      eventType = $("meta[name=eventType]").attr("content"),
+      allVoted = $("meta[name=allVoted]").attr("content"),
       startDate = new Date($("meta[name=startDate]").attr("content")),
       endDate = new Date($("meta[name=endDate]").attr("content")),
       notVoted = $("meta[name=notVoted]").attr("content"),
@@ -458,7 +459,7 @@ $(function() {
   if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
-  if (notDecided === "true" && eventType === "ongoing") {
+  if (notDecided === "true" && eventType === "ongoing" && allVoted === "true") {
       $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Everyone has voted! Decide now?");
