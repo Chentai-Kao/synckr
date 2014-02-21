@@ -323,7 +323,7 @@ $slot-offset: 3px;
 	opacity: 1;
 	border-radius: 5px;
 }
-#dialog, #dialog-button{
+#dialog, #dialog-button, #dialog-send{
 	width:60%;
 	height:22%;
 	top:40%;
@@ -333,11 +333,14 @@ $slot-offset: 3px;
 	background-color: rgba(255, 219, 76, 0.7);
 	text-align: center;
 	border-radius: 10px;
-	z-index: 100;
+	z-index: 200;
 	display: none;
 	color:#8E8E93;
 	font-weight: normal;
 }
+// #dialog-send{
+// 	display:block;
+// }
 #decide-indication{
 	position: fixed;
 	top: 45%;
@@ -364,7 +367,7 @@ $slot-offset: 3px;
 #dialog img{
 	padding-top: 10%;
 }
-#ok-button, #cancel-button{
+#ok-button, #cancel-button, #send-button{
 	float: left;
 	height: 28%;
 	width: 45%;
@@ -376,7 +379,13 @@ $slot-offset: 3px;
 	color: white;
 	font-size: 15px;
 }
-
+#send-button{
+	width: 95%;
+}
+#dialog-send p{
+	padding-top: 10%;
+	font-size: 17px;
+}
 #friendList{
 	float:left;
 	width: 100%;
