@@ -55,10 +55,12 @@ $(function() {
     });
     if (inDecision) {
       $.post("/events/" + eventId + "/decide", { slot: data });
+      $("#mask").show();
+      $("#dialog-send").fadeIn(200);        
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
-    }
-    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+      $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+    }    
     saved = true;
   });
 
@@ -100,6 +102,11 @@ $(function() {
       window.location.href = "/events";
       $("#mask").hide();
     }
+  });
+
+  $("#send-button").click(function(){
+    $("#dialog-send").fadeOut(200);
+    $("#mask").hide();
   });
 
   var drawSlot = function(slots) {
@@ -398,6 +405,7 @@ $(function() {
     $("#mask").show();
     $(".mask-scroll").show();
     $("#mask").click(function(e){
+      console.log("mask click");
       if (clicks == 0){
         $(".mask-scroll").hide();
         $(".mask-drag-frame").show();
