@@ -122,6 +122,7 @@ EventSchema.methods.genHeatmap = function(id) {
       if (user.personId === id) {
         continue;
       }
+      if (!user.slot) continue;
       for (var j = 0; j < user.slot.length; ++j) {
         var slot = user.slot[j];
         slotByDate[slot.startDate] = slotByDate[slot.startDate] || [];
