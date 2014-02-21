@@ -127,6 +127,7 @@ EventSchema.methods.genHeatmap = function(id) {
         slotByDate[slot.startDate] = slotByDate[slot.startDate] || [];
         slotByDate[slot.startDate].push({
           personId: user.personId,
+          name: user.name,
           startTime: slot.startTime,
           duration: slot.duration
         });
@@ -212,7 +213,10 @@ EventSchema.methods.genHeatmap = function(id) {
           var p = [];
           // add all the slots in queue to the array
           for (var j = 0; j < queue.length; ++j) {
-            p.push(queue[j].personId);
+            p.push({
+              name: queue[j].name,
+              personId: queue[j].personId
+            });
           }
           // create time slot for [i-1, i]
           if (queue.length > 0) {

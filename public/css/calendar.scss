@@ -153,7 +153,7 @@ $draw-color: #5BCAFF;
 	vertical-align: middle;
 	height: 100%;
 	margin: 0;
-	font-size: 14px;
+	font-size: 12px;
 	word-wrap: break-word;
 }
 
@@ -376,3 +376,37 @@ $slot-offset: 3px;
 	color: white;
 	font-size: 15px;
 }
+
+#friendList{
+	float:left;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	font-size: 20px;
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: lighter;
+}
+
+.friends{
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #aaa;
+	padding: 0 $left-right-margin;
+	margin-top: 10px;
+
+}
+.friend-intro{
+	float: left;
+	height: 30px;
+}
+
+.friend-pic{
+	margin-left: 10%;
+	width:15%;
+}
+
+.friend-name{
+	width:75%;
+}
+
