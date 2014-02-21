@@ -73,10 +73,27 @@ $(function() {
         window.location.href = "/events";
         $("#mask").hide();
       })
-      $("#cancel-button").html("Stay")
+      $("#cancel-button").html("Save")
       $("#cancel-button").click(function(){
         $("#dialog-button").fadeOut(150);
+        var data = [];
+        $.each($(".draw"), function(i, d) {
+          var $d = $(d);
+          data.push({
+            "startDate": $d.parent().attr("id"),
+            "startTime": parseInt($d.attr("start")),
+            "duration": parseInt($d.attr("end")) - parseInt($d.attr("start")) + 1
+          });
+        });
+        if (inDecision) {
+          $.post("/events/" + eventId + "/decide", { slot: data });
+        } else {
+          $.post("/events/" + eventId + "/slots", { slot: data });
+        }
+         $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500, function(){window.location.href = "/events";}); });       
         $("#mask").hide();
+        saved = true;
+        
       })
     }
     else{
