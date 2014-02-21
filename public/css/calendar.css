@@ -1083,14 +1083,15 @@ a:hover {
   width: 75%;
 }
 
-/* line 422, calendar.scss */
+/* line 432, calendar.scss */
 .final-decision {
-  background-color: rgba(255, 147, 0, 0.7);
+  background-color: #33465d;
+  color: white;
   text-align: center;
   display: table;
 }
 
-/* line 428, calendar.scss */
+/* line 439, calendar.scss */
 #star-icon {
   display: table-cell;
   vertical-align: middle;

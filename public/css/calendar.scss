@@ -430,7 +430,8 @@ $slot-offset: 3px;
 }
 
 .final-decision {
-	background-color: rgba(255,147,0,0.7);
+	background-color: $blue;
+	color: white;
 	text-align: center;
 	display: table;
 }
