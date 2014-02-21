@@ -60,10 +60,12 @@ $(function() {
     });
     if (inDecision) {
       $.post("/events/" + eventId + "/decide", { slot: data });
+      $("#mask").show();
+      $("#dialog-send").fadeIn(200);        
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
-    }
-    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+      $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+    }    
     saved = true;
   });
 
@@ -105,6 +107,11 @@ $(function() {
       window.location.href = "/events";
       $("#mask").hide();
     }
+  });
+
+  $("#send-button").click(function(){
+    $("#dialog-send").fadeOut(200);
+    $("#mask").hide();
   });
 
   var drawSlot = function(slots) {
@@ -152,10 +159,13 @@ $(function() {
     $.each(map, function(date, slots) {
       var $day = $("[id='" + date + "']");
       $.each(slots, function(i, slot) {
+        var hm;
+        if (maxCount === 0) hm = 1;
+        else hm = Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1);
         $day.prepend(
           '<p class="slot data gridtop-' + parseInt(slot.startTime) +
           ' gridheight-' + parseInt(slot.duration) +
-          ' heatmap-' + Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1) +
+          ' heatmap-' + hm +
           '" count="' + parseInt(slot.count) + '" id="hm-' + (++hmId) + '"></p>'
         );
         heatmapParticipants["hm-" + hmId] = slot.participants;
@@ -403,6 +413,7 @@ $(function() {
     $("#mask").show();
     $(".mask-scroll").show();
     $("#mask").click(function(e){
+      console.log("mask click");
       if (clicks == 0){
         $(".mask-scroll").hide();
         $(".mask-drag-frame").show();

@@ -973,7 +973,7 @@ a:hover {
 }
 
 /* line 334, calendar.scss */
-#dialog, #dialog-button {
+#dialog, #dialog-button, #dialog-send {
   width: 60%;
   height: 22%;
   top: 40%;
@@ -982,20 +982,20 @@ a:hover {
   background-color: #748089;
   text-align: center;
   border-radius: 10px;
-  z-index: 100;
+  z-index: 200;
   display: none;
   color: #33465d;
   font-weight: normal;
 }
 
-/* line 349, calendar.scss */
+/* line 352, calendar.scss */
 #decide-indication {
   position: fixed;
   top: 45%;
   left: 30%;
 }
 
-/* line 354, calendar.scss */
+/* line 357, calendar.scss */
 .calendar {
   background-color: #55bc8a;
   word-wrap: break-word;
@@ -1004,7 +1004,7 @@ a:hover {
   color: white;
 }
 
-/* line 362, calendar.scss */
+/* line 365, calendar.scss */
 #dialog-button p {
   display: block;
   height: 65%;
@@ -1014,13 +1014,13 @@ a:hover {
   font-size: 17px;
 }
 
-/* line 373, calendar.scss */
+/* line 376, calendar.scss */
 #dialog img {
   padding-top: 10%;
 }
 
-/* line 376, calendar.scss */
-#ok-button, #cancel-button {
+/* line 379, calendar.scss */
+#ok-button, #cancel-button, #send-button {
   float: left;
   height: 28%;
   width: 45%;
@@ -1033,7 +1033,18 @@ a:hover {
   font-size: 15px;
 }
 
-/* line 389, calendar.scss */
+/* line 391, calendar.scss */
+#send-button {
+  width: 95%;
+}
+
+/* line 394, calendar.scss */
+#dialog-send p {
+  padding-top: 10%;
+  font-size: 17px;
+}
+
+/* line 398, calendar.scss */
 #friendList {
   float: left;
   width: 100%;
@@ -1046,7 +1057,7 @@ a:hover {
   z-index: 1;
 }
 
-/* line 401, calendar.scss */
+/* line 410, calendar.scss */
 .friends {
   width: 100%;
   height: 40px;
@@ -1055,19 +1066,19 @@ a:hover {
   margin-top: 10px;
 }
 
-/* line 409, calendar.scss */
+/* line 418, calendar.scss */
 .friend-intro {
   float: left;
   height: 30px;
 }
 
-/* line 414, calendar.scss */
+/* line 423, calendar.scss */
 .friend-pic {
   margin-left: 10%;
   width: 15%;
 }
 
-/* line 419, calendar.scss */
+/* line 428, calendar.scss */
 .friend-name {
   width: 75%;
 }
