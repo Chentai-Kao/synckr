@@ -956,7 +956,7 @@ a:hover {
 /* line 326, calendar.scss */
 #dialog, #dialog-button {
   width: 60%;
-  height: 20%;
+  height: 22%;
   top: 40%;
   position: fixed;
   left: 20%;
@@ -1002,7 +1002,7 @@ a:hover {
 /* line 367, calendar.scss */
 #ok-button, #cancel-button {
   float: left;
-  height: 30%;
+  height: 28%;
   width: 45%;
   margin: 0 2.5%;
   border-radius: 10px;
