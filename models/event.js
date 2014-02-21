@@ -79,7 +79,7 @@ EventSchema.methods.isOngoing = function() {
 EventSchema.methods.daysLeft = function() {
   var now = new Date(),
       deadline = new Date(this.deadline);
-  return Math.round(Math.abs((now.getTime() - deadline.getTime())/(86400000)))
+  return Math.ceil(Math.abs((now.getTime() - deadline.getTime())/(86400000)))
 }
 
 EventSchema.methods.totalCount = function() {
