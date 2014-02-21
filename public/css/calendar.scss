@@ -330,12 +330,12 @@ $slot-offset: 3px;
 	position:fixed;
 	left:20%;
 	//background-color: rgba(26, 214, 253, 0.5);
-	background-color: rgba(255, 219, 76, 0.7);
+	background-color: $gray;
 	text-align: center;
 	border-radius: 10px;
 	z-index: 100;
 	display: none;
-	color:#8E8E93;
+	color: $blue;
 	font-weight: normal;
 }
 #decide-indication{
@@ -371,7 +371,7 @@ $slot-offset: 3px;
 	width: 45%;
 	margin: 0 2.5%;
 	border-radius: 10px;
-	background-color: rgba(26, 214, 253, 0.6);
+	background-color: $blue;
 	padding: 6px 0;
 	text-align: center;
 	color: white;
@@ -387,6 +387,7 @@ $slot-offset: 3px;
 	font-size: 20px;
 	font-family: "Helvetica Neue", sans-serif;
 	font-weight: lighter;
+	z-index: 1;
 }
 
 .friends{

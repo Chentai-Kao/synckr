@@ -970,12 +970,12 @@ a:hover {
   top: 40%;
   position: fixed;
   left: 20%;
-  background-color: rgba(255, 219, 76, 0.7);
+  background-color: #748089;
   text-align: center;
   border-radius: 10px;
   z-index: 100;
   display: none;
-  color: #8E8E93;
+  color: #33465d;
   font-weight: normal;
 }
 
@@ -995,7 +995,7 @@ a:hover {
   color: white;
 }
 
-/* line 353, calendar.scss */
+/* line 354, calendar.scss */
 #dialog-button p {
   display: block;
   height: 65%;
@@ -1005,26 +1005,26 @@ a:hover {
   font-size: 17px;
 }
 
-/* line 364, calendar.scss */
+/* line 365, calendar.scss */
 #dialog img {
   padding-top: 10%;
 }
 
-/* line 367, calendar.scss */
+/* line 368, calendar.scss */
 #ok-button, #cancel-button {
   float: left;
   height: 28%;
   width: 45%;
   margin: 0 2.5%;
   border-radius: 10px;
-  background-color: rgba(26, 214, 253, 0.6);
+  background-color: #33465d;
   padding: 6px 0;
   text-align: center;
   color: white;
   font-size: 15px;
 }
 
-/* line 386, calendar.scss */
+/* line 381, calendar.scss */
 #friendList {
   float: left;
   width: 100%;
@@ -1034,9 +1034,10 @@ a:hover {
   font-size: 20px;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
+  z-index: 1;
 }
 
-/* line 397, calendar.scss */
+/* line 393, calendar.scss */
 .friends {
   width: 100%;
   height: 40px;
@@ -1045,19 +1046,19 @@ a:hover {
   margin-top: 10px;
 }
 
-/* line 405, calendar.scss */
+/* line 401, calendar.scss */
 .friend-intro {
   float: left;
   height: 30px;
 }
 
-/* line 410, calendar.scss */
+/* line 406, calendar.scss */
 .friend-pic {
   margin-left: 10%;
   width: 15%;
 }
 
-/* line 415, calendar.scss */
+/* line 411, calendar.scss */
 .friend-name {
   width: 75%;
 }

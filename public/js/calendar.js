@@ -38,6 +38,7 @@ $(function() {
   });
 
   $('#back-new').click(function(e) {
+    console.log("here");
     e.preventDefault();
     $('#friendList').animate({left: friendWidth}, 200);
     $('#placeholder').animate({left: 0}, 200);
