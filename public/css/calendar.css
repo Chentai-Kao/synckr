@@ -964,6 +964,13 @@ a:hover {
 }
 
 /* line 337, calendar.scss */
+#decide-indication {
+  position: fixed;
+  top: 45%;
+  left: 30%;
+}
+
+/* line 342, calendar.scss */
 .calendar {
   background-color: rgba(255, 149, 0, 0.8);
   word-wrap: break-word;
@@ -971,7 +978,7 @@ a:hover {
   text-align: center;
 }
 
-/* line 358, calendar.scss */
+/* line 363, calendar.scss */
 #dialog-button p {
   display: block;
   height: 65%;
@@ -983,7 +990,7 @@ a:hover {
   font-size: 17px;
 }
 
-/* line 368, calendar.scss */
+/* line 373, calendar.scss */
 #ok-button, #cancel-button {
   float: left;
   height: 30%;

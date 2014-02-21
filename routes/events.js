@@ -15,6 +15,8 @@ exports.getEvent = function(req, res) {
       res.render("event", {
         eventId: eventId,
         eventType: record.getType(),
+        notVoted: record.notVoted(id),
+        notDecided: record.notDecided(id),
         startDate: record.startDate,
         endDate: record.endDate,
         firstUse: req.session.first_use,
@@ -180,7 +182,7 @@ exports.decideSlot = function(req, res) {
   if (!id) return res.redirect('/login');
 
   var eventId = req.params.id;
-  var decision = req.body.decision;
+  var decision = req.body.slot[0];
 
   var Event = req.app.get('models')('event');
   Event.update(

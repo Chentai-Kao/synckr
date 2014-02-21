@@ -17,7 +17,7 @@
 
 input, select{
 	font-family: "Helvetica Neue", sans-serif;
-	font-weight: lighter;	
+	font-weight: lighter;
 	border-radius: 0;
 	padding: 0;
 }
@@ -97,20 +97,23 @@ input[type="text"]{
 	height: 30px;
 }
 
-#friend-check{
+.friend-check{
 	width:10%;
 }
-#friend-pic{
+
+.friend-pic{
 	width:15%;
 }
 
-#friend-name{
+.friend-name{
 	width:75%;
 }
+
 .invitees{
 	width:100%;
 	height:100%;
 }
+
 .invitees img{
 	margin: 10px;
 }

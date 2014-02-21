@@ -1,6 +1,18 @@
 $(function() {
   var slotID = 0;
   var saved = true;
+  var inDecision = false;
+  var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
+                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var eventId = $("meta[name=eventId]").attr("content"),
+      eventType = $("meta[name=eventType]").attr("content")
+      startDate = new Date($("meta[name=startDate]").attr("content")),
+      endDate = new Date($("meta[name=endDate]").attr("content")),
+      notVoted = $("meta[name=notVoted]").attr("content"),
+      notDecided = $("meta[name=notDecided]").attr("content"),
+      firstUse = $("meta[name=firstUse]").attr("content"),
+      firstDecide = $("meta[name=firstDecide]").attr("content");
 
   $("#overlay-toggle").click(function(){
     var $slot = $(".data");
@@ -27,10 +39,11 @@ $(function() {
         "duration": parseInt($d.attr("end")) - parseInt($d.attr("start")) + 1
       });
     });
-    $.post(
-      "/events/" + $("meta[name=eventId]").attr("content") + "/slots",
-      { slot: data }
-    );
+    if (inDecision) {
+      $.post("/events/" + eventId + "/decide", { slot: data });
+    } else {
+      $.post("/events/" + eventId + "/slots", { slot: data });
+    }
     $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
     saved = true;
   });
@@ -233,6 +246,9 @@ $(function() {
       console.log(col, gy);
       if (col[0] != gy) return;
       saved = false;
+      if (inDecision) {
+        $(".draw").remove();
+      }
       e.preventDefault();
 
       var $slot = $('<p id="slot-' + slotID + '"></p>');
@@ -313,7 +329,7 @@ $(function() {
       e.stopImmediatePropagation();
       saved = false;
     });
-  }
+  };
 
   var FTUE = function(){
     var clicks = 0
@@ -367,17 +383,16 @@ $(function() {
         clicks++;
       }
     });
-  }
+  };
 
-  var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
-                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var eventId = $("meta[name=eventId]").attr("content"),
-      startDate = new Date($("meta[name=startDate]").attr("content")),
-      endDate = new Date($("meta[name=endDate]").attr("content")),
-      eventType = $("meta[name=eventType]").attr("content"),
-      firstUse = $("meta[name=firstUse]").attr("content"),
-      firstDecide = $("meta[name=firstDecide]").attr("content");
+  var decideGuide = function() {
+    $("#mask").show();
+    $(".mask-decide").show();
+    $("#mask").click(function(e){
+      $(".mask-decide").hide();
+      $("#mask").hide();
+    });
+  };
 
   $("#month").html(showMonth[startDate.getMonth()]);
   for (var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
@@ -385,8 +400,20 @@ $(function() {
       + '</div><div class="date-day">' + showDay[d.getDay()] + '</div>');
     drawGrid(d);
   }
+
+  if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
+    FTUE();
+  }
+  if (notDecided === "true" && eventType === "pending") {
+    // TODO: check when all voted are done
+    decideGuide();
+    inDecision = true;
+  }
+
   $.get("/events/" + eventId + "/heatmap", drawHeatmap);
-  $.get("/events/" + eventId + "/slots", drawSlot);
+  if (!inDecision) {
+    $.get("/events/" + eventId + "/slots", drawSlot);
+  }
   drawCalendar();
 
   $("#scroll-pane").scrollTop(360);
@@ -394,8 +421,5 @@ $(function() {
   dayHookup();
   slotHookup();
 
-  if (firstUse === "true") {
-    //FTUE();
-  }
 });
 

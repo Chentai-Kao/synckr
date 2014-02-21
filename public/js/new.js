@@ -48,7 +48,11 @@ $(document).ready(function(){
 
   });
 
-  $('.friends').click(function(){
+  $('.friend-box').click(function(e) {
+    e.stopPropagation();
+  })
+
+  $('.friends').click(function(e){
     var checkbox = $(this).find(':checkbox');
     checkbox.click();
   });
