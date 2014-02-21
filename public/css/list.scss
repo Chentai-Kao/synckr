@@ -147,7 +147,7 @@ $event-done-text: #052D6E;
 	@include box-align(center);
 }
 
-.decide, .deadline, .pending {
+.decide, .deadline, .pending, .done {
 	border-radius: 5px;
 	padding: 5px;
 	color: white;
@@ -162,5 +162,9 @@ $event-done-text: #052D6E;
 }
 
 .pending {
+	background-color: $green;
+}
+
+.done {
 	background-color: $green;
 }

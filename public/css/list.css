@@ -250,7 +250,7 @@ a:hover {
 }
 
 /* line 150, list.scss */
-.decide, .deadline, .pending {
+.decide, .deadline, .pending, .done {
   border-radius: 5px;
   padding: 5px;
   color: white;
@@ -268,5 +268,10 @@ a:hover {
 
 /* line 164, list.scss */
 .pending {
+  background-color: #55bc8a;
+}
+
+/* line 168, list.scss */
+.done {
   background-color: #55bc8a;
 }

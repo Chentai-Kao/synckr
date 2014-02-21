@@ -981,8 +981,9 @@ a:hover {
 
 /* line 340, calendar.scss */
 .calendar {
-  background-color: rgba(255, 149, 0, 0.8);
+  background-color: #55bc8a;
   word-wrap: break-word;
   display: table;
   text-align: center;
+  color: white;
 }
