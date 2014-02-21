@@ -191,3 +191,14 @@ input[type="text"] {
 #friend-name {
   width: 75%;
 }
+
+/* line 110, new.scss */
+.invitees {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 114, new.scss */
+.invitees img {
+  margin: 10px;
+}
