@@ -14,8 +14,13 @@ exports.getEvent = function(req, res) {
     if (record) {
       res.render("event", {
         eventId: eventId,
+        eventType: record.getType(),
+        notVoted: record.notVoted(id),
+        notDecided: record.notDecided(id),
         startDate: record.startDate,
-        endDate: record.endDate
+        endDate: record.endDate,
+        firstUse: req.session.first_use,
+        firstDecide: req.session.first_decide
       });
     } else {
       res.send(404);
@@ -158,10 +163,36 @@ exports.updateSlot = function(req, res) {
     { eventId: eventId, "participants.personId": id },
     { $set: { "participants.$.slot": slot } },
     function(error) {
+      if (error) console.log(error);
+
+      var User = req.app.get('models')('user');
+      console
+      User.update( {fb_id: id}, {$set: {firstUse: false}}, function(error) {
+        console.log("Updated: not first time");
+        req.session.first_use = false;
+        if (error) console.log(error);
+        res.json("");
+      })
+    }
+  );
+};
+
+exports.decideSlot = function(req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var eventId = req.params.id;
+  var decision = req.body.slot[0];
+
+  var Event = req.app.get('models')('event');
+  Event.update(
+    { eventId: eventId },
+    { $set: { "decision": decision } },
+    function(error) {
       if (error) {
         console.log(error);
       }
       res.json("");
     }
   );
-};
+}

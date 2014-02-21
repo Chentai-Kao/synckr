@@ -154,6 +154,7 @@ $draw-color: #5BCAFF;
 	height: 100%;
 	margin: 0;
 	font-size: 14px;
+	word-wrap: break-word;
 }
 
 $slot-offset: 3px;
@@ -235,7 +236,7 @@ $slot-offset: 3px;
 	margin-left:29.6%;
 }
 .mask-drag{
-	position: absolute;	
+	position: absolute;
 	height: $row-height;
 	width: 100%;
 	background-color: black;
@@ -284,14 +285,24 @@ $slot-offset: 3px;
 #heat-indication{
 	position: absolute;
 	margin-left: 53%;
-	margin-top: 15%;	
+	margin-top: 15%;
 	opacity: 1;
 	width: 45%;
 	height: 40px;
 }
+#heat-indication-wrap{
+	height: 50%;
+	width: 100%;
+	background-color: white;
+}
+#votes-indication{
+	position: fixed;
+	top: 65%;
+	left: 30%;
+}
 .heat-level{
 	width: 20%;
-	height: 50%;
+	height: 100%;
 	display: inline-block;
 }
 .level{
@@ -320,4 +331,15 @@ $slot-offset: 3px;
 	border-radius: 10px;
 	z-index: 100;
 	display: none;
+}
+#decide-indication{
+	position: fixed;
+	top: 45%;
+	left: 30%;
+}
+.calendar{
+	background-color: rgba(255, 149, 0, 0.8);
+	word-wrap: break-word;
+	display: table;
+	text-align: center;
 }

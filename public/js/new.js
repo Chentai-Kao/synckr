@@ -33,6 +33,24 @@ $(document).ready(function(){
     e.preventDefault();
     $('#friendList').animate({left: width}, 200);
     $('#placeholder').animate({left: 0}, 200);
+
+
+    var n = $('input:checked');
+    var invitees = $('.invitees');
+
+    invitees.html('');
+
+    for(var i = 0; i < n.length; i++){
+      var img = n.eq(i).val();
+      // console.log(img);
+      invitees.append($("#"+img).clone());
+    }
+
+  });
+
+  $('.friends').click(function(){
+    var checkbox = $(this).find(':checkbox');
+    checkbox.click();
   });
 
   // $("#mainform").submit(function(e) {
