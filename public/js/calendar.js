@@ -44,7 +44,7 @@ $(function() {
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
     }
-    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(1000); });
+    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
     saved = true;
   });
 
@@ -53,6 +53,7 @@ $(function() {
       $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Not saved yet!");
+      $("#dialog-button p").css("padding-top",'30px');
       $("#ok-button").html("Leave")
       $("#ok-button").click(function(){
         window.location.href = "/events";
@@ -412,6 +413,7 @@ $(function() {
       $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Everyone has voted! Decide now?");
+      $("#dialog-button p").css("padding-top",'15px');
       $("#ok-button").html("Decide")
       $("#ok-button").click(function(){
         decideGuide();
