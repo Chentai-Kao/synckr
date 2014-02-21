@@ -1,5 +1,6 @@
 $(function() {
   var slotID = 0;
+  var saved = true;
   var inDecision = false;
   var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
@@ -44,8 +45,28 @@ $(function() {
       $.post("/events/" + eventId + "/slots", { slot: data });
     }
     $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+    saved = true;
+  });
+
+  $("#nav-left").click(function(){
+   if(!saved){
+      $("#dialog-button").fadeIn(150);
+      $("#dialog-button p").html("Not saved yet!");
+      $("#ok-button").html("Leave")
+      $("#ok-button").click(function(){
+        window.location.href = "/events";
+      })
+      $("#cancel-button").html("Stay")
+      $("#cancel-button").click(function(){
+        $("#dialog-button").fadeOut(150);
+      })
+    }
+    else{
+      window.location.href = "/events";
+    }
 
   });
+ 
 
   var drawSlot = function(slots) {
     $.each(slots, function(i, slot) {
@@ -224,6 +245,7 @@ $(function() {
       var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
       console.log(col, gy);
       if (col[0] != gy) return;
+      saved = false;
       if (inDecision) {
         $(".draw").remove();
       }
@@ -285,6 +307,7 @@ $(function() {
       var y = e.originalEvent.touches[0].pageY - parentOffset.top;
       if (ygrid(y) != parseInt(that.attr("start")) &&
           ygrid(y) != parseInt(that.attr("end"))) return;
+      saved = false;
       var fixed = drawSlot(that, y, false);
 
       var touchmove = function(e) {
@@ -304,6 +327,7 @@ $(function() {
     }).hammer().on("doubletap", function(e) {
       $(this).remove();
       e.stopImmediatePropagation();
+      saved = false;
     });
   };
 
@@ -396,5 +420,6 @@ $(function() {
   scrollHookup();
   dayHookup();
   slotHookup();
+
 });
 
