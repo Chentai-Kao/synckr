@@ -216,9 +216,6 @@ $(function() {
         };
 
     $column.on("touchstart", function(e) {
-      if (inDecision) {
-        $(".draw").remove();
-      }
       console.log("column drag start");
       slotID++;
       mouseStart = true;
@@ -227,6 +224,9 @@ $(function() {
       var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
       console.log(col, gy);
       if (col[0] != gy) return;
+      if (inDecision) {
+        $(".draw").remove();
+      }
       e.preventDefault();
 
       var $slot = $('<p id="slot-' + slotID + '"></p>');
