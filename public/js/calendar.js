@@ -44,25 +44,29 @@ $(function() {
     } else {
       $.post("/events/" + eventId + "/slots", { slot: data });
     }
-    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(500); });
+    $("#dialog").fadeIn(500, function(){ $("#dialog").fadeOut(1000); });
     saved = true;
   });
 
   $("#nav-left").click(function(){
    if(!saved){
+      $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Not saved yet!");
       $("#ok-button").html("Leave")
       $("#ok-button").click(function(){
         window.location.href = "/events";
+        $("#mask").hide();
       })
       $("#cancel-button").html("Stay")
       $("#cancel-button").click(function(){
         $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
       })
     }
     else{
       window.location.href = "/events";
+      $("#mask").hide();
     }
 
   });
@@ -404,8 +408,25 @@ $(function() {
   if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
+  if (notDecided === "true" && eventType === "ongoing") {
+      $("#mask").show();
+      $("#dialog-button").fadeIn(150);
+      $("#dialog-button p").html("Everyone has voted! Decide now?");
+      $("#ok-button").html("Decide")
+      $("#ok-button").click(function(){
+        decideGuide();
+        $(".draw").remove();
+        inDecision = true;
+        $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
+      })
+      $("#cancel-button").html("No")
+      $("#cancel-button").click(function(){
+        $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
+      })
+  }
   if (notDecided === "true" && eventType === "pending") {
-    // TODO: check when all voted are done
     decideGuide();
     inDecision = true;
   }

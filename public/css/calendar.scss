@@ -273,6 +273,9 @@ $slot-offset: 3px;
 	height: $row-height;
 	margin-left: 47.2%;
 }
+.mask-decide{
+	display:none;
+}
 #mask-slot-1{
 	margin-top:224px;
 }
@@ -321,11 +324,11 @@ $slot-offset: 3px;
 	border-radius: 5px;
 }
 #dialog, #dialog-button{
-	width:50%;
+	width:60%;
 	height:20%;
 	top:40%;
 	position:fixed;
-	left:25%;
+	left:20%;
 	//background-color: rgba(26, 214, 253, 0.5);
 	background-color: rgba(255, 219, 76, 0.7);
 	text-align: center;
@@ -333,6 +336,7 @@ $slot-offset: 3px;
 	z-index: 100;
 	display: none;
 	color:#8E8E93;
+	font-weight: normal;
 }
 #decide-indication{
 	position: fixed;
@@ -345,20 +349,6 @@ $slot-offset: 3px;
 	display: table;
 	text-align: center;
 }
-// #dialog-button{
-// 	position: fixed;
-// 	width:50%;
-// 	height:20%;
-// 	top:40%;
-// 	left:25%;
-// 	//background-color: rgba(26, 214, 253, 0.5);
-// 	background-color: rgba(255, 219, 76, 0.7);
-// 	text-align: center;
-// 	border-radius: 10px;
-// 	z-index: 100;
-// 	color:#8E8E93;
-// 	display: none;
-// }
 
 #dialog-button p{
 	display: block;
@@ -369,6 +359,10 @@ $slot-offset: 3px;
 	margin: 0;
 	padding-top: 30px;
 	font-size: 17px;
+}
+
+#dialog img{
+	padding-top: 10%;
 }
 #ok-button, #cancel-button{
 	float: left;
