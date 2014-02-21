@@ -881,21 +881,26 @@ a:hover {
 }
 
 /* line 276, calendar.scss */
+.mask-decide {
+  display: none;
+}
+
+/* line 279, calendar.scss */
 #mask-slot-1 {
   margin-top: 224px;
 }
 
-/* line 279, calendar.scss */
+/* line 282, calendar.scss */
 #mask-slot-2 {
   margin-top: 264px;
 }
 
-/* line 282, calendar.scss */
+/* line 285, calendar.scss */
 #mask-slot-3 {
   margin-top: 304px;
 }
 
-/* line 285, calendar.scss */
+/* line 288, calendar.scss */
 #heat-indication {
   position: absolute;
   margin-left: 53%;
@@ -905,72 +910,73 @@ a:hover {
   height: 40px;
 }
 
-/* line 293, calendar.scss */
+/* line 296, calendar.scss */
 #heat-indication-wrap {
   height: 50%;
   width: 100%;
   background-color: white;
 }
 
-/* line 298, calendar.scss */
+/* line 301, calendar.scss */
 #votes-indication {
   position: fixed;
   top: 65%;
   left: 30%;
 }
 
-/* line 303, calendar.scss */
+/* line 306, calendar.scss */
 .heat-level {
   width: 20%;
   height: 100%;
   display: inline-block;
 }
 
-/* line 308, calendar.scss */
+/* line 311, calendar.scss */
 .level {
   width: 100%;
   height: 50%;
 }
 
-/* line 312, calendar.scss */
+/* line 315, calendar.scss */
 .level p {
   display: inline-block;
 }
 
-/* line 315, calendar.scss */
+/* line 318, calendar.scss */
 #level-max {
   margin-left: 58%;
 }
 
-/* line 318, calendar.scss */
+/* line 321, calendar.scss */
 .data {
   opacity: 1;
   border-radius: 5px;
 }
 
-/* line 323, calendar.scss */
+/* line 326, calendar.scss */
 #dialog, #dialog-button {
-  width: 50%;
-  height: 20%;
+  width: 60%;
+  height: 22%;
   top: 40%;
   position: fixed;
-  left: 25%;
+  left: 20%;
   background-color: rgba(255, 219, 76, 0.7);
   text-align: center;
   border-radius: 10px;
   z-index: 100;
   display: none;
   color: #8E8E93;
+  font-weight: normal;
 }
 
-/* line 337, calendar.scss */
+/* line 341, calendar.scss */
 #decide-indication {
   position: fixed;
   top: 45%;
   left: 30%;
 }
 
-/* line 342, calendar.scss */
+/* line 346, calendar.scss */
 .calendar {
   background-color: rgba(255, 149, 0, 0.8);
   word-wrap: break-word;
@@ -978,22 +984,25 @@ a:hover {
   text-align: center;
 }
 
-/* line 363, calendar.scss */
+/* line 353, calendar.scss */
 #dialog-button p {
   display: block;
   height: 65%;
   width: 100%;
   text-align: center;
-  margin: 5px 0;
   margin: 0;
-  padding-top: 30px;
   font-size: 17px;
 }
 
-/* line 373, calendar.scss */
+/* line 364, calendar.scss */
+#dialog img {
+  padding-top: 10%;
+}
+
+/* line 367, calendar.scss */
 #ok-button, #cancel-button {
   float: left;
-  height: 30%;
+  height: 28%;
   width: 45%;
   margin: 0 2.5%;
   border-radius: 10px;

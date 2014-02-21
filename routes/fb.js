@@ -7,6 +7,12 @@ FB.options({
   redirectUri:    process.env.FACEBOOK_REDIRECT_URI || "http://localhost:3000/callback"
 });
 
+exports.index = function(req, res) {
+  var id = req.session.fb_id;
+  if (id) return res.redirect('/events');
+  res.render("index");
+}
+
 exports.login = function(req, res) {
   var accessToken = req.session.access_token;
   if(!accessToken) {
@@ -88,6 +94,6 @@ exports.loginCallback = function (req, res, next) {
 };
 
 exports.logout = function (req, res) {
-    req.session = null; // clear session
-    res.redirect('/');
-  };
+  req.session.destroy(); // clear session
+  res.redirect('/');
+};
