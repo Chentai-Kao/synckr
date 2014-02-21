@@ -105,13 +105,13 @@ a:hover {
 
 /* line 39, list.scss */
 .event-title {
-  width: 65%;
+  width: 60%;
 }
 
 /* line 43, list.scss */
 .event-info {
   position: relative;
-  width: 35%;
+  width: 40%;
   line-height: 80px;
   min-height: 80px;
   font-size: 18px;

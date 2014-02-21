@@ -37,12 +37,12 @@ $event-done-text: #052D6E;
 	//float:left;
 }
 .event-title{
-	width:65%;
+	width:60%;
 }
 
 .event-info{
 	position:relative;
-	width:35%;
+	width:40%;
 	line-height: $event-height;
 	min-height: $event-height;
 	font-size: 18px;
@@ -132,3 +132,11 @@ $event-done-text: #052D6E;
 	bottom: $bottom-margin;
 	width: 100%;
 }
+
+// .decide {
+// 	// background-color: #fff;
+// 	// border-radius: 5px;
+// 	// padding: 10px;
+// 	font-weight: normal;
+// 	color: #1D77EF;
+// }

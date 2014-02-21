@@ -949,23 +949,50 @@ a:hover {
 }
 
 /* line 323, calendar.scss */
-#dialog {
-  width: 40%;
-  height: 18%;
-  top: 43%;
+#dialog, #dialog-button {
+  width: 50%;
+  height: 20%;
+  top: 40%;
   position: fixed;
-  left: 30%;
-  background-color: rgba(26, 214, 253, 0.5);
+  left: 25%;
+  background-color: rgba(255, 219, 76, 0.7);
   text-align: center;
   border-radius: 10px;
   z-index: 100;
   display: none;
+  color: #8E8E93;
 }
 
-/* line 335, calendar.scss */
+/* line 337, calendar.scss */
 .calendar {
   background-color: rgba(255, 149, 0, 0.8);
   word-wrap: break-word;
   display: table;
   text-align: center;
+}
+
+/* line 358, calendar.scss */
+#dialog-button p {
+  display: block;
+  height: 65%;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+  margin: 0;
+  padding-top: 30px;
+  font-size: 17px;
+}
+
+/* line 368, calendar.scss */
+#ok-button, #cancel-button {
+  float: left;
+  height: 30%;
+  width: 45%;
+  margin: 0 2.5%;
+  border-radius: 10px;
+  background-color: rgba(26, 214, 253, 0.6);
+  padding: 6px 0;
+  text-align: center;
+  color: white;
+  font-size: 15px;
 }
