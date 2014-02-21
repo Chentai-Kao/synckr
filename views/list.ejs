@@ -51,7 +51,7 @@
 									<div class="event-info"><span class="pending">Pending</span></div>
 								<% } %>
 							<% } %>
-							<% if (events[i].isMine(fb_id)) { %>
+							<% if ((events[i].isMine(fb_id) && events[i].isPending()) || (events[i].isOngoing() && events[i].notVoted(fb_id))) { %>
 								<div class="arrow"><span class="glyphicon glyphicon-chevron-right"></span></div>
 							<% } %>
 						</div>
