@@ -2,6 +2,7 @@ $(function() {
   var slotID = 0;
   var saved = true;
   var inDecision = false;
+  var heatmapToggle = false;
   var showDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var showMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'Mar', 'Jun',
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -14,19 +15,32 @@ $(function() {
       firstUse = $("meta[name=firstUse]").attr("content"),
       firstDecide = $("meta[name=firstDecide]").attr("content");
 
+  var friendWidth = $('#friendList').width();
+  $("#friendList").offset({left: friendWidth});
+
   $("#overlay-toggle").click(function(){
     var $slot = $(".data");
     $.each($slot, function(i, s){
       if($(s).hasClass("clicked")){
         $(s).removeClass("clicked");
         $(s).find(".count").remove();
+        $(s).unbind();
+        heatmapToggle = false;
       }
       else{
         $(s).addClass("clicked");
         var level = $(s).attr("count");
         $(s).append("<p class='count'>"+level+"</p>");
+        $(s).click(heatmapSlotHookup);
+        heatmapToggle = true;
       }
     })
+  });
+
+  $('#back-new').click(function(e) {
+    e.preventDefault();
+    $('#friendList').animate({left: friendWidth}, 200);
+    $('#placeholder').animate({left: 0}, 200);
   });
 
   $("#nav-right").click(function(){
@@ -50,23 +64,26 @@ $(function() {
 
   $("#nav-left").click(function(){
    if(!saved){
+      $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Not saved yet!");
+      $("#dialog-button p").css("padding-top",'30px');
       $("#ok-button").html("Leave")
       $("#ok-button").click(function(){
         window.location.href = "/events";
+        $("#mask").hide();
       })
       $("#cancel-button").html("Stay")
       $("#cancel-button").click(function(){
         $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
       })
     }
     else{
       window.location.href = "/events";
+      $("#mask").hide();
     }
-
   });
- 
 
   var drawSlot = function(slots) {
     $.each(slots, function(i, slot) {
@@ -95,7 +112,10 @@ $(function() {
     $day2.prepend($slot);
   };
 
+  var hmId = 0;
+  var heatmapParticipants = {};
   var drawHeatmap = function(map) {
+    console.log(map);
     var maxCount = 0;
     $.each(map, function(date, slots) {
       $.each(slots, function(i, slot) {
@@ -114,8 +134,9 @@ $(function() {
           '<p class="slot data gridtop-' + parseInt(slot.startTime) +
           ' gridheight-' + parseInt(slot.duration) +
           ' heatmap-' + Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1) +
-          '" count="' + parseInt(slot.count) + '"></p>'
+          '" count="' + parseInt(slot.count) + '" id="hm-' + (++hmId) + '"></p>'
         );
+        heatmapParticipants["hm-" + hmId] = slot.participants;
       });
     });
   };
@@ -213,6 +234,19 @@ $(function() {
     return [y1, y2];
   };
 
+  var heatmapSlotHookup = function() {
+    console.log("clicked!");
+    $('#friendList').animate({left: 0}, 200);
+    $('#placeholder').animate({left: -friendWidth}, 200);
+
+    console.log(heatmapParticipants[$(this).attr('id')]);
+    var participants = heatmapParticipants[$(this).attr('id')];
+    $("#list").find("*").remove();
+    $.each(participants, function(i, p) {
+      $("#list").append('<div class="friends"><div class="friend-intro friend-pic"><img src="https://graph.facebook.com/' + p.personId + '/picture" width="30px" height="30px"/></div><div class="friend-intro friend-name"><p>' + p.name + '</br></p></div></div>');
+    });
+  };
+
   var slotHookup = function() {
     var $column = $(".grid-column"),
         mouseMove = false,
@@ -249,6 +283,7 @@ $(function() {
       if (inDecision) {
         $(".draw").remove();
       }
+      if (heatmapToggle) return;
       e.preventDefault();
 
       var $slot = $('<p id="slot-' + slotID + '"></p>');
@@ -307,6 +342,7 @@ $(function() {
       var y = e.originalEvent.touches[0].pageY - parentOffset.top;
       if (ygrid(y) != parseInt(that.attr("start")) &&
           ygrid(y) != parseInt(that.attr("end"))) return;
+      if (heatmapToggle) return;
       saved = false;
       var fixed = drawSlot(that, y, false);
 
@@ -325,6 +361,7 @@ $(function() {
     }).hammer().on("tap", function(e) {
       e.stopImmediatePropagation();
     }).hammer().on("doubletap", function(e) {
+      if (heatmapToggle) return;
       $(this).remove();
       e.stopImmediatePropagation();
       saved = false;
@@ -404,8 +441,26 @@ $(function() {
   if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
+  if (notDecided === "true" && eventType === "ongoing") {
+      $("#mask").show();
+      $("#dialog-button").fadeIn(150);
+      $("#dialog-button p").html("Everyone has voted! Decide now?");
+      $("#dialog-button p").css("padding-top",'15px');
+      $("#ok-button").html("Decide")
+      $("#ok-button").click(function(){
+        decideGuide();
+        $(".draw").remove();
+        inDecision = true;
+        $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
+      })
+      $("#cancel-button").html("No")
+      $("#cancel-button").click(function(){
+        $("#dialog-button").fadeOut(150);
+        $("#mask").hide();
+      })
+  }
   if (notDecided === "true" && eventType === "pending") {
-    // TODO: check when all voted are done
     decideGuide();
     inDecision = true;
   }
