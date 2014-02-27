@@ -13,7 +13,11 @@
     <meta name="firstUse" content="<%= firstUse %>">
     <meta name="firstDecide" content="<%= firstDecide %>">
 		<link rel="stylesheet" href="/css/bootstrap.css">
-		<link rel="stylesheet" href="/css/calendar.css">
+		<% if (theme === "light") { %>
+			<link rel="stylesheet" href="/css/calendar-light.css">
+		<% } else { %>
+			<link rel="stylesheet" href="/css/calendar-dark.css">
+		<% } %>
 	</head>
 	<body>
 		<div id="placeholder">

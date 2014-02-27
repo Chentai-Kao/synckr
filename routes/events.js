@@ -13,6 +13,7 @@ exports.getEvent = function(req, res) {
   Event.findOne({ eventId: eventId }, function(error, record) {
     if (record) {
       res.render("event", {
+        theme: req.session.theme,
         eventId: eventId,
         eventType: record.getType(),
         allVoted: record.allVoted(),
@@ -85,6 +86,7 @@ exports.listEvent = function(req, res) {
         return (acode + a.deadline) > (bcode + b.deadline);
       });
       res.render('list', {
+        theme: req.session.theme,
         fb_id: req.session.fb_id,
         fb_name: req.session.fb_name,
         events: record
@@ -101,7 +103,7 @@ exports.createEventPage = function(req, res) {
   var id = req.session.fb_id;
   if (!id) return res.redirect('/login');
 
-  res.render("new");
+  res.render("new", {theme: req.session.theme});
 }
 
 exports.createEvent = function(req, res) {

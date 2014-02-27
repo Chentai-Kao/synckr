@@ -4,8 +4,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" href="/css/bootstrap.css">
-		<link rel="stylesheet" href="/css/new.css">
 		<link rel="stylesheet" href="/css/datepicker.css">
+		<% if (theme === "light") { %>
+			<link rel="stylesheet" href="/css/new-light.css">
+		<% } else { %>
+			<link rel="stylesheet" href="/css/new-dark.css">
+		<% } %>
 	</head>
 	<body>
 		<div id="placeholder">

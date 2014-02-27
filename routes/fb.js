@@ -10,7 +10,7 @@ FB.options({
 exports.index = function(req, res) {
   var id = req.session.fb_id;
   if (id) return res.redirect('/events');
-  res.render("index");
+  res.render("index", {theme: req.session.theme});
 }
 
 exports.login = function(req, res) {
@@ -97,3 +97,8 @@ exports.logout = function (req, res) {
   req.session.destroy(); // clear session
   res.redirect('/');
 };
+
+exports.theme = function (req, res) {
+  req.session.theme = req.params.id;
+  res.redirect('/');
+}
