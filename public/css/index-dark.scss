@@ -1,0 +1,36 @@
+@import "synckr.scss";
+
+#placeholder {
+	background-color: $blue;
+}
+
+#logo {
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	top: 25%;
+	color: white;
+	font-size: 35px;
+}
+
+#login {
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	top: 60%;
+}
+
+#wrapper {
+	font-size: 35px;
+	padding: 10px;
+	background-color: $cyan;
+	border-radius: 5px;
+	padding-left: 60px;
+	position: relative;
+}
+
+#fb {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}

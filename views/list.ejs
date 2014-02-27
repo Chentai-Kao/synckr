@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/css/list.css">
 	</head>
 	<body>
@@ -11,7 +12,7 @@
 			<div id="navbar">
 				<div id="nav-left">Edit</div>
 				<div id="nav-middle">Synckr</div>
-				<div id="nav-right"><a href="/events/new">+</a></div>
+				<a href="/events/new"><div id="nav-right"><span class="glyphicon glyphicon-plus"></span></div></a>
 			</div>
 			<div id="list">
 			<% for (var i = 0; i < events.length; ++i) { %>
@@ -30,25 +31,28 @@
 						<div class="event">
 							<div class="event-title"><%= events[i].title %></div>
 							<% if (events[i].isDone()) { %>
-								<div class="event-info done">Done</div>
+								<div class="event-info"><span class="done">Done</span></div>
 							<% } else if (events[i].isOngoing()) { %>
 								<div class="event-info ongoing">
-									<div class="event-deadline"><%= events[i].daysLeft() %> days left</div>
+									<% if (events[i].notVoted(fb_id)) { %>
+										<div class="event-deadline"><span class="deadline">Go vote!</span></div>
+									<% } else { %>
+										<div class="event-deadline"><span class="deadline"><%= events[i].daysLeft() %> days left</span></div>
+									<% } %>
 									<div class="event-people">
-										<img src="images/person-icon.png"/>
+										<span class="glyphicon glyphicon-user"></span>
 										<%= events[i].votedCount() %>/<%= events[i].totalCount() %>
 									</div>
 								</div>
 							<% } else if (events[i].isPending()) { %>
 								<% if (events[i].isMine(fb_id)) { %>
-<!-- 									<div class="event-info"><span class="decide">Go decide!</span></div> -->
-										<div class="event-info decide">Go decide!</div>
+									<div class="event-info"><span class="decide">Go decide!</span></div>
 								<% } else { %>
-									<div class="event-info pending">Pending...</div>
+									<div class="event-info"><span class="pending">Pending</span></div>
 								<% } %>
 							<% } %>
 							<% if ((events[i].isMine(fb_id) && events[i].isPending()) || (events[i].isOngoing() && events[i].notVoted(fb_id))) { %>
-								<div class="arrow"><img src="images/ios7-arrow.png" width="20px"/></div>
+								<div class="arrow"><span class="glyphicon glyphicon-chevron-right"></span></div>
 							<% } %>
 						</div>
 					</a>

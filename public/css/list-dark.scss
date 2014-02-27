@@ -1,0 +1,172 @@
+@import "compass/css3/box";
+@import "synckr.scss";
+
+$event-height: 80px;
+$event-not-voted: $blue;
+//#FF5B37;
+$event-not-decided: $blue;
+//24709f
+$event-dark-text: white;
+// $event-not-voted: rgba(255, 149, 0, 0.4);
+// $event-not-decided: rgba(255, 149, 0, 0.4);
+
+//$event-done:rgba(209, 238, 252, 0.6);
+$event-done:white;
+// yellow rgba(255, 219, 76, 0.5);
+$event-done-text: #052D6E;
+
+.out-event{
+	min-height: $event-height;
+	width: 100%;
+	border-bottom: 1px dashed #aaa;
+	padding: 0 $left-right-margin;
+	background-color: $event-done;
+}
+
+.out-event a{
+	color: $event-done-text;
+}
+
+.not-decided{
+	background-color: $event-not-decided;
+}
+.not-voted {
+	background-color: $event-not-voted;
+}
+
+.event {
+	min-height: $event-height;
+	@include display-box;
+	@include box-align(center);
+
+
+	//float:left;
+}
+.event-title{
+	width:60%;
+}
+
+.event-info{
+	position:relative;
+	width:40%;
+	line-height: $event-height;
+	min-height: $event-height;
+	font-size: 18px;
+}
+.arrow{
+	width:5%;
+	display: none;
+}
+.arrow-move{
+	display:block;
+}
+.not-decided .arrow, .not-voted .arrow{
+	display:block;
+}
+.not-decided a, .not-voted a {
+	color: $event-dark-text;
+}
+
+.not-decided, .not-voted {
+	border-bottom: 1px dashed #738596;
+}
+
+.event-deadline{
+	position: absolute;
+	left: 0;
+	top: 10%;
+	height: 40%;
+	width: 100%;
+	line-height: $event-height/2;
+}
+.event-people{
+	position: absolute;
+	left:0;
+	height: 40%;
+	width:100%;
+	top: 50%;
+	line-height: $event-height/2;
+}
+.event-people img{
+	width:30px;
+	margin: 0 0 0 -5px;
+}
+
+#user-info{
+	position: absolute;
+	width: 100%;
+	height: $bottom-margin;
+	bottom: 0;
+	left: 0;
+	// border-top: 1px solid #aaa;
+	background-color: $navbar-background;
+	color:$navbar-color;
+}
+#user-pic{
+	width:14%;
+	float:left;
+}
+#user-name{
+	width:86%;
+	float:left;
+}
+
+.cancel-icon{
+	display: none;
+}
+
+
+.cancel-icon-move{
+	margin:0 $left-right-margin 0 0;
+	display: block;
+	width: 5%;
+	float:left;
+	height: $event-height;
+	padding-top:30px;
+}
+
+#navbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#list {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: absolute;
+	top: $navbar-margin;
+	bottom: $bottom-margin;
+	width: 100%;
+}
+
+#nav-right {
+	height: 100%;
+	font-size: 18px;
+	@include display-box;
+	@include box-align(center);
+}
+
+.decide, .deadline, .pending, .done {
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+}
+
+.decide {
+	background-color: $red;
+}
+
+.deadline {
+	background-color: $yellow;
+}
+
+.pending {
+	background-color: $green;
+}
+
+.done {
+	background-color: $green;
+}
+

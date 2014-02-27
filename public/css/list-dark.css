@@ -1,0 +1,277 @@
+/* line 20, synckr.scss */
+#placeholder {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 30, synckr.scss */
+#navbar {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  font-weight: normal;
+  height: 40px;
+  line-height: 40px;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 42, synckr.scss */
+#nav-left {
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+  font-size: 15px;
+}
+
+/* line 49, synckr.scss */
+#nav-middle {
+  text-align: center;
+}
+
+/* line 53, synckr.scss */
+#nav-right {
+  position: absolute;
+  top: 0;
+  right: 12.5px;
+  font-size: 15px;
+}
+
+/* line 60, synckr.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 65, synckr.scss */
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 70, synckr.scss */
+#navbar a {
+  color: #748089;
+}
+
+/* line 73, synckr.scss */
+#navbar a:hover {
+  color: #748089;
+}
+
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 18, list.scss */
+.out-event {
+  min-height: 80px;
+  width: 100%;
+  border-bottom: 1px dashed #aaa;
+  padding: 0 25px;
+  background-color: white;
+}
+
+/* line 26, list.scss */
+.out-event a {
+  color: #052d6e;
+}
+
+/* line 30, list.scss */
+.not-decided {
+  background-color: #33465d;
+}
+
+/* line 33, list.scss */
+.not-voted {
+  background-color: #33465d;
+}
+
+/* line 37, list.scss */
+.event {
+  min-height: 80px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+/* line 45, list.scss */
+.event-title {
+  width: 60%;
+}
+
+/* line 49, list.scss */
+.event-info {
+  position: relative;
+  width: 40%;
+  line-height: 80px;
+  min-height: 80px;
+  font-size: 18px;
+}
+
+/* line 56, list.scss */
+.arrow {
+  width: 5%;
+  display: none;
+}
+
+/* line 60, list.scss */
+.arrow-move {
+  display: block;
+}
+
+/* line 63, list.scss */
+.not-decided .arrow, .not-voted .arrow {
+  display: block;
+}
+
+/* line 66, list.scss */
+.not-decided a, .not-voted a {
+  color: white;
+}
+
+/* line 70, list.scss */
+.not-decided, .not-voted {
+  border-bottom: 1px dashed #738596;
+}
+
+/* line 74, list.scss */
+.event-deadline {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 40%;
+  width: 100%;
+  line-height: 40px;
+}
+
+/* line 82, list.scss */
+.event-people {
+  position: absolute;
+  left: 0;
+  height: 40%;
+  width: 100%;
+  top: 50%;
+  line-height: 40px;
+}
+
+/* line 90, list.scss */
+.event-people img {
+  width: 30px;
+  margin: 0 0 0 -5px;
+}
+
+/* line 95, list.scss */
+#user-info {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  left: 0;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 105, list.scss */
+#user-pic {
+  width: 14%;
+  float: left;
+}
+
+/* line 109, list.scss */
+#user-name {
+  width: 86%;
+  float: left;
+}
+
+/* line 114, list.scss */
+.cancel-icon {
+  display: none;
+}
+
+/* line 119, list.scss */
+.cancel-icon-move {
+  margin: 0 25px 0 0;
+  display: block;
+  width: 5%;
+  float: left;
+  height: 80px;
+  padding-top: 30px;
+}
+
+/* line 128, list.scss */
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 135, list.scss */
+#list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 40px;
+  bottom: 30px;
+  width: 100%;
+}
+
+/* line 144, list.scss */
+#nav-right {
+  height: 100%;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+/* line 151, list.scss */
+.decide, .deadline, .pending, .done {
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+/* line 157, list.scss */
+.decide {
+  background-color: #a34730;
+}
+
+/* line 161, list.scss */
+.deadline {
+  background-color: #f2992e;
+}
+
+/* line 165, list.scss */
+.pending {
+  background-color: #55bc8a;
+}
+
+/* line 169, list.scss */
+.done {
+  background-color: #55bc8a;
+}

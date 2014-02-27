@@ -1,0 +1,442 @@
+@import "compass/css3/box";
+@import "synckr.scss";
+
+@mixin hide-scrollbar {
+	overflow: -moz-scrollbars-none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+$row-height: 40px;
+$first-end-height: 15px;
+$day-bar-height: 45px;
+$navbar-top-margin: 5px;
+
+$heatmap-1: #E7E7E7;
+$heatmap-5: #7F7F93;
+$heatmap-3: mix($heatmap-1, $heatmap-5);
+$heatmap-2: mix($heatmap-1, $heatmap-3);
+$heatmap-4: mix($heatmap-3, $heatmap-5);
+
+$heatmaps:$heatmap-1, $heatmap-2, $heatmap-3, $heatmap-4, $heatmap-5;
+
+//$draw-color: lighten(rgb(242, 56, 90), 20);
+$draw-color: #5BCAFF;
+
+#placeholder, #pane {
+	height: 100%;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
+	@include clearfix;
+}
+
+#scroll-pane {
+	height: 100%;
+	padding-bottom: $navbar-top-margin + $day-bar-height + $navbar-margin;
+	overflow-y: scroll;
+	@include hide-scrollbar;
+}
+
+#day-bar {
+	margin-top: $navbar-top-margin;
+	height: $day-bar-height;
+}
+
+#overlay-toggle {
+	float: left;
+	text-align: center;
+	width: 12%;
+	font-size: 15px;
+}
+
+#day-scroll, #grid-holder {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 88%;
+	@include hide-scrollbar;
+}
+
+#day-stretch, #grid-stretch {
+	width: auto;
+	white-space: nowrap;
+}
+
+#handle-bar, #grid-holder {
+	float: left;
+}
+
+#handle-bar{
+	margin-top: $first-end-height - $row-height / 2;
+	padding-right: 5px;
+	width: 12%;
+	font-size: 15px;
+}
+
+.handle, .grid {
+	height: $row-height;
+}
+
+.handle {
+	line-height: $row-height;
+	text-align: right;
+}
+
+.day {
+	// position: relative;
+	height: $row-height;
+	width: 20%;
+	display: inline-block;
+}
+
+.date-day, .date {
+	// position: absolute;
+	height: $row-height/2;
+	text-align: center;
+	width: 100%;
+	float: left;
+	font-size: 15px;
+}
+
+
+.grid-column {
+	position: relative;
+	display: inline-block;
+	width: 20%;
+}
+
+.grid {
+	text-align: center;
+}
+
+.hour {
+	box-sizing: border-box;
+	border-right: 1px solid $line-color;
+	border-bottom: 1px solid $line-color;
+}
+
+.hour:first-of-type, .hour:last-of-type {
+	height: $first-end-height;
+}
+
+.hour:last-child {
+	border-bottom: none;
+}
+
+.grid-column:last-child div {
+	border-right: none;
+}
+
+.slot {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+.draw {
+	background-color: $draw-color;
+	opacity: 0.5;
+	z-index: 10;
+}
+
+.clicked {
+	display: table;
+	text-align: center;
+}
+
+#stats-icon.hm-toggle {
+	width: 22px;
+	background-color: $blue;
+	color: white;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+.count {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	margin: 0;
+	font-size: 12px;
+	word-wrap: break-word;
+}
+
+$slot-offset: 3px;
+@for $i from 1 through 5 {
+	.heatmap-#{$i} {
+		background-color: rgba(nth($heatmaps, $i), 0.5);
+		//background-color: darken(rgba(200, 200, 200, 0.5), 30%);
+	}
+}
+
+@for $i from 1 through 50 {
+	.gridtop-#{$i} {
+		top: $row-height / 2 * ($i - 1) + $first-end-height;
+	}
+}
+
+@for $i from 1 through 50 {
+	.gridheight-#{$i} {
+		height: $row-height / 2 * $i - $slot-offset;
+	}
+
+}
+#mask{
+	position:fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #aaa;
+	opacity: 0.7;
+	z-index: 100;
+}
+
+.mask-side{
+	position:relative;
+	width:12%;
+	height:100%;
+	margin-top: $navbar-margin;
+	float: left;
+}
+#mask-top{
+	position:relative;
+	float:left;
+	margin-top: $navbar-margin+5;
+	height: $day-bar-height;
+	width: 88%;
+}
+#mask-topleft{
+	width:100%;
+	height: $day-bar-height;
+}
+#mask-left{
+	width:100%;
+	height:100%;
+}
+#mask-left img{
+	margin-top: 140px;
+	margin-left: -50%;
+}
+#mask p{
+	white-space: nowrap;
+	font-weight: bold;
+	color:black;
+}
+#mask-top img{
+	margin-left: 30%;
+}
+#mask-top p{
+	margin-left: 50%;
+}
+.mask-scroll, .mask-tap{
+	display:none;
+}
+.mask-drag-frame{
+	position: relative;
+	display:none;
+	height: $row-height*2;
+	width: 17.6%;
+	margin-top:224px;
+	margin-left:29.6%;
+}
+.mask-drag{
+	position: absolute;
+	height: $row-height;
+	width: 100%;
+	background-color: black;
+	top: 0;
+	left: 0;
+}
+.mask-drag img{
+	margin-left:40%;
+	margin-top:10%;
+}
+#mask-drag-move{
+	z-index: 100;
+}
+.mask-double-click{
+	position: relative;
+	display: none;
+	height: $row-height*2;
+	width: 17.6%;
+	margin-top: 224px;
+	margin-left: 47.2%;
+	background-color: black;
+}
+.mask-double-click img{
+	margin-top: 25%;
+	margin-left: -10%;
+}
+.mask-heatmap{
+	position: relative;
+	display: none;
+}
+.mask-slot{
+	position: absolute;
+	width: 17.6%;
+	height: $row-height;
+	margin-left: 47.2%;
+}
+.mask-decide{
+	display:none;
+}
+#mask-slot-1{
+	margin-top:224px;
+}
+#mask-slot-2{
+	margin-top:224+$row-height;
+}
+#mask-slot-3{
+	margin-top:224+$row-height*2;
+}
+#heat-indication{
+	position: absolute;
+	margin-left: 53%;
+	margin-top: 15%;
+	opacity: 1;
+	width: 45%;
+	height: 40px;
+}
+#heat-indication-wrap{
+	height: 50%;
+	width: 100%;
+	background-color: white;
+}
+#votes-indication{
+	position: fixed;
+	top: 65%;
+	left: 30%;
+}
+.heat-level{
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+}
+.level{
+	width: 100%;
+	height: 50%;
+}
+.level p{
+	display: inline-block;
+}
+#level-max{
+	margin-left: 58%;
+}
+.data{
+	// z-index: 100;
+	opacity: 1;
+	border-radius: 5px;
+}
+#dialog, #dialog-button, #dialog-send{
+	width:60%;
+	height:22%;
+	top:40%;
+	position:fixed;
+	left:20%;
+	//background-color: rgba(26, 214, 253, 0.5);
+	background-color: $gray;
+	text-align: center;
+	border-radius: 10px;
+	z-index: 200;
+	display: none;
+	color: $blue;
+	font-weight: normal;
+}
+// #dialog-send{
+// 	display:block;
+// }
+#decide-indication{
+	position: fixed;
+	top: 45%;
+	left: 30%;
+}
+.calendar{
+	background-color: $green;
+	word-wrap: break-word;
+	display: table;
+	text-align: center;
+	color: white;
+}
+
+#dialog-button p{
+	display: block;
+	height: 65%;
+	width: 100%;
+	text-align: center;
+	// margin: 5px 0;
+	margin: 0;
+	// padding-top: 30px;
+	font-size: 17px;
+}
+
+#dialog img{
+	padding-top: 10%;
+}
+#ok-button, #cancel-button, #send-button{
+	float: left;
+	height: 28%;
+	width: 45%;
+	margin: 0 2.5%;
+	border-radius: 10px;
+	background-color: $blue;
+	padding: 6px 0;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+}
+#send-button{
+	width: 95%;
+}
+#dialog-send p{
+	padding-top: 10%;
+	font-size: 17px;
+}
+#friendList{
+	float:left;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	font-size: 20px;
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: lighter;
+	z-index: 1;
+}
+
+.friends{
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #aaa;
+	padding: 0 $left-right-margin;
+	margin-top: 10px;
+
+}
+.friend-intro{
+	float: left;
+	height: 30px;
+}
+
+.friend-pic{
+	margin-left: 10%;
+	width:15%;
+}
+
+.friend-name{
+	width:75%;
+}
+
+.final-decision {
+	background-color: $blue;
+	color: white;
+	text-align: center;
+	display: table;
+}
+
+#star-icon {
+	display: table-cell;
+	vertical-align: middle;
+}
