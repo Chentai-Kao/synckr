@@ -35,7 +35,9 @@
 						<div class="event">
 							<div class="event-title"><%= events[i].title %></div>
 							<% if (events[i].isDone()) { %>
-								<div class="event-info"><span class="done">Done</span></div>
+								<div class="event-info"><span class="done">
+									<%= new Date(events[i].decision.startDate).toDateString().substring(4,10) %>
+								</span></div>
 							<% } else if (events[i].isOngoing()) { %>
 								<div class="event-info ongoing">
 									<% if (events[i].notVoted(fb_id)) { %>
@@ -52,7 +54,7 @@
 								<% if (events[i].isMine(fb_id)) { %>
 									<div class="event-info"><span class="decide">Go decide!</span></div>
 								<% } else { %>
-									<div class="event-info"><span class="pending">Pending</span></div>
+									<div class="event-info"><span class="pending">Voted</span></div>
 								<% } %>
 							<% } %>
 							<% if ((events[i].isMine(fb_id) && events[i].isPending()) || (events[i].isOngoing() && events[i].notVoted(fb_id))) { %>
