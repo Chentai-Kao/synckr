@@ -1,0 +1,81 @@
+{
+   deadline:"Thu Feb 20 2014 00:00:00 GMT-0800 (PST)",
+   description:"Let's play mini golf!",
+   duration:"2hr00min",
+   endDate:"Mon Mar 3 2014 00:00:00 GMT-0800 (PST)",
+   eventId:"demo_decide",
+   participants:[
+      {
+         name:"Jocelin Ho",
+         personId:"100000010285733",
+         slot:[
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"27",
+               duration:"9",
+
+            },
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"20",
+               duration:"9",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"ChenTai Kao",
+         personId:"1327617691",
+         slot:[
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"31",
+               duration:"12",
+
+            },
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"22",
+               duration:"10",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"Andrew Liu",
+         personId:"766485187",
+         slot:[       
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"22",
+               duration:"10",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }    
+         ]
+      }
+   ],
+   startDate:"Sun Feb 23 2014 00:00:00 GMT-0800 (PST)",
+   title:"Mini golf",
+   host:{
+      name:"Andrew Liu",
+      personId:"766485187",
+   }
+}
