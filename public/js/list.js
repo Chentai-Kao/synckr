@@ -14,10 +14,22 @@ $(document).ready(function(){
 	});
 
 	$(".out-event:not(not-decided,not-voted)").click(function(e) {
-		ga('send', 'event', 'list', 'click', 'event-done');
+		e.preventDefault();
+		var link = $(this).find('a').attr('href');
+		ga('send', 'event', 'list', 'click', 'event-done', {
+			'hitCallback': function() {
+				window.location.href = link;
+			}
+		});
 	});
 
 	$(".out-event.not-decided.not-voted").click(function(e) {
-		ga('send', 'event', 'list', 'click', 'event-ongoing');
+		e.preventDefault();
+		var link = $(this).find('a').attr('href');
+		ga('send', 'event', 'list', 'click', 'event-ongoing', {
+			'hitCallback': function() {
+				window.location.href = link;
+			}
+		});
 	});
 });
