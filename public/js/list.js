@@ -14,10 +14,10 @@ $(document).ready(function(){
 	});
 
 	$(".out-event:not(not-decided,not-voted)").click(function(e) {
-		_gaq.push(['_trackEvent', 'list', 'click', 'event-done']);
+		ga('send', 'event', 'list', 'click', 'event-done');
 	});
 
 	$(".out-event.not-decided.not-voted").click(function(e) {
-		_gaq.push(['_trackEvent', 'list', 'click', 'event-ongoing']);
+		ga('send', 'event', 'list', 'click', 'event-ongoing');
 	});
 });
