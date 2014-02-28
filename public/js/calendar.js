@@ -313,7 +313,7 @@ $(function() {
       var gy = ygrid(mousey), col = collide($(this), gy, gy, gy);
       console.log(col, gy);
       if (col[0] != gy) return;
-      
+
       if (inDecision) {
         $(".draw").remove();
       }
@@ -476,10 +476,12 @@ $(function() {
     drawGrid(d);
   }
 
-  if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
+  //if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
+  if (notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
-  if (notDecided === "true" && eventType === "ongoing" && allVoted === "true") {
+  //if (notDecided === "true" && eventType === "ongoing" && allVoted === "true") {
+  if (eventType === "ongoing" && allVoted === "true") {
       $("#mask").show();
       $("#dialog-button").fadeIn(150);
       $("#dialog-button p").html("Everyone has voted! Decide now?");
