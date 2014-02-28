@@ -1,0 +1,136 @@
+{
+   deadline:"Sat Mar 1 2014 00:00:00 GMT-0800 (PST)",
+   description:"Discuss for project!",
+   duration:"2hr00min",
+   endDate:"Mon Mar 3 2014 00:00:00 GMT-0800 (PST)",
+   eventId:"demo_vote",
+   participants:[
+      {
+         name:"Mark",
+         personId:"4",
+         slot:[
+            {
+               startDate:"Mon Feb 24 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"25",
+               duration:"8",
+
+            },
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"25",
+               duration:"10",
+
+            },
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"20",
+               duration:"9",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"Jocelin Ho",
+         personId:"100000010285733",
+         slot:[
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"27",
+               duration:"9",
+
+            },
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"20",
+               duration:"9",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"ChenTai Kao",
+         personId:"1327617691",
+         slot:[
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"31",
+               duration:"12",
+
+            },
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"22",
+               duration:"10",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"Ron",
+         personId:"5",
+         slot:[
+            {
+               startDate:"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"31",
+               duration:"12",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"Daniel",
+         personId:"1244220210",
+         slot:[
+            {
+               startDate:"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"22",
+               duration:"10",
+
+            },
+            {
+               startDate:"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
+               startTime:"24",
+               duration:"5",
+
+            }
+         ]
+      },
+      {
+         name:"Andrew Liu",
+         personId:"766485187",
+         slot:[           
+         ]
+      }
+   ],
+   startDate:"Sun Feb 23 2014 00:00:00 GMT-0800 (PST)",
+   title:"CS147 discussion",
+   host:{
+		name: "Jocelin Ho",
+		personId:"100000010285733",
+	}
+
+}
