@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 	});
 
-	$(".out-event:not(not-decided,not-voted)").click(function(e) {
+	$(".out-event:not(.not-decided,.not-voted)").click(function(e) {
 		e.preventDefault();
 		var link = $(this).find('a').attr('href');
 		ga('send', 'event', 'list', 'click', 'event-done', {
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		});
 	});
 
-	$(".out-event.not-decided.not-voted").click(function(e) {
+	$(".out-event.not-decided,.out-event.not-voted").click(function(e) {
 		e.preventDefault();
 		var link = $(this).find('a').attr('href');
 		ga('send', 'event', 'list', 'click', 'event-ongoing', {
