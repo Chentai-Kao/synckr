@@ -76,40 +76,40 @@ a:hover {
   color: #49a8d8;
 }
 
-/* line 3, index.scss */
+/* line 3, index-dark.scss */
 #placeholder {
   background-color: #33465d;
 }
 
-/* line 7, index.scss */
+/* line 7, index-dark.scss */
 #logo {
   width: 100%;
   position: fixed;
   text-align: center;
-  top: 25%;
+  top: 20%;
   color: white;
   font-size: 35px;
 }
 
-/* line 16, index.scss */
+/* line 16, index-dark.scss */
 #login {
   width: 100%;
   position: fixed;
   text-align: center;
-  top: 60%;
+  top: 67%;
 }
 
-/* line 23, index.scss */
+/* line 23, index-dark.scss */
 #wrapper {
-  font-size: 35px;
+  font-size: 25px;
   padding: 10px;
   background-color: #49a8d8;
   border-radius: 5px;
-  padding-left: 60px;
+  padding-left: 45px;
   position: relative;
 }
 
-/* line 32, index.scss */
+/* line 32, index-dark.scss */
 #fb {
   position: absolute;
   top: 10px;
