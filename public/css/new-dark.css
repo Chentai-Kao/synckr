@@ -76,13 +76,13 @@ a:hover {
   color: #49a8d8;
 }
 
-/* line 5, new.scss */
+/* line 5, new-dark.scss */
 .field {
   padding: 0 25px;
   margin: 30px 0;
 }
 
-/* line 11, new.scss */
+/* line 11, new-dark.scss */
 .field input {
   width: 100%;
   margin: 5px 0;
@@ -90,7 +90,7 @@ a:hover {
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 18, new.scss */
+/* line 18, new-dark.scss */
 input, select {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
@@ -98,20 +98,20 @@ input, select {
   padding: 0;
 }
 
-/* line 25, new.scss */
+/* line 25, new-dark.scss */
 input[type="text"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-/* line 29, new.scss */
+/* line 29, new-dark.scss */
 .dur {
   float: left;
   width: 33.3%;
 }
 
-/* line 34, new.scss */
+/* line 34, new-dark.scss */
 #duration-min, #duration-hr {
   width: 100%;
   margin: 0;
@@ -123,19 +123,20 @@ input[type="text"] {
   direction: rtl;
 }
 
-/* line 43, new.scss */
+/* line 43, new-dark.scss */
 #duration {
   border-bottom: 1px solid #aaaaaa;
   height: 30px;
 }
 
-/* line 48, new.scss */
+/* line 48, new-dark.scss */
 .dates {
+  color: #a9a9a9;
   float: left;
   width: 50%;
 }
 
-/* line 53, new.scss */
+/* line 54, new-dark.scss */
 #startdate, #enddate, #deadlinedate {
   position: relative;
   border-bottom: 1px solid #aaaaaa;
@@ -143,7 +144,7 @@ input[type="text"] {
   margin: 10px 0;
 }
 
-/* line 60, new.scss */
+/* line 61, new-dark.scss */
 #st-date, #en-date, #de-date {
   position: absolute;
   left: 0;
@@ -154,7 +155,7 @@ input[type="text"] {
   background-color: transparent;
 }
 
-/* line 70, new.scss */
+/* line 71, new-dark.scss */
 #friendList {
   float: left;
   width: 100%;
@@ -166,13 +167,13 @@ input[type="text"] {
   font-weight: lighter;
 }
 
-/* line 82, new.scss */
+/* line 83, new-dark.scss */
 #search-bar input {
   width: 90%;
   margin: 10px 5%;
 }
 
-/* line 87, new.scss */
+/* line 88, new-dark.scss */
 .friends {
   width: 100%;
   height: 40px;
@@ -181,34 +182,34 @@ input[type="text"] {
   margin-top: 10px;
 }
 
-/* line 95, new.scss */
+/* line 96, new-dark.scss */
 .friend-intro {
   float: left;
   height: 30px;
 }
 
-/* line 100, new.scss */
+/* line 101, new-dark.scss */
 .friend-check {
   width: 10%;
 }
 
-/* line 104, new.scss */
+/* line 105, new-dark.scss */
 .friend-pic {
   width: 15%;
 }
 
-/* line 108, new.scss */
+/* line 109, new-dark.scss */
 .friend-name {
   width: 75%;
 }
 
-/* line 112, new.scss */
+/* line 113, new-dark.scss */
 .invitees {
   width: 100%;
   height: 100%;
 }
 
-/* line 117, new.scss */
+/* line 118, new-dark.scss */
 .invitees img {
   margin: 10px;
 }
