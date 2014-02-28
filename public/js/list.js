@@ -12,4 +12,12 @@ $(document).ready(function(){
 		$(this).parent().remove();
 
 	});
+
+	$(".out-event:not(not-decided,not-voted)").click(function(e) {
+		_gaq.push(['_trackEvent', 'list', 'click', 'event-done']);
+	});
+
+	$(".out-event.not-decided.not-voted").click(function(e) {
+		_gaq.push(['_trackEvent', 'list', 'click', 'event-ongoing']);
+	});
 });
