@@ -21,24 +21,28 @@ $(function() {
 
   $("#overlay-toggle").click(function(){
     var $slot = $(".data");
-    $.each($slot, function(i, s){
-      if($(s).hasClass("clicked")){
+    if(heatmapToggle) {
+      $.each($slot, function(i, s){
         $(s).removeClass("clicked");
         $(s).find(".count").remove();
         $(s).unbind();
+        $("#stats-icon").removeClass("hm-toggle");
         heatmapToggle = false;
-      }
-      else{
+      });
+    } else {
+      $.each($slot, function(i, s){
         $(s).addClass("clicked");
         var level = $(s).attr("count");
         $(s).append("<p class='count'>"+level+"</p>");
         $(s).click(heatmapSlotHookup);
+        $("#stats-icon").addClass("hm-toggle");
         heatmapToggle = true;
-      }
-    })
+      });
+    }
   });
 
   $('#back-new').click(function(e) {
+    console.log("here");
     e.preventDefault();
     $('#friendList').animate({left: friendWidth}, 200);
     $('#placeholder').animate({left: 0}, 200);

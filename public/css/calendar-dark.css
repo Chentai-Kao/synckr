@@ -1,0 +1,1098 @@
+/* line 20, synckr.scss */
+#placeholder {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 30, synckr.scss */
+#navbar {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  font-weight: normal;
+  height: 40px;
+  line-height: 40px;
+  background-color: #2d3f53;
+  color: white;
+}
+
+/* line 42, synckr.scss */
+#nav-left {
+  position: absolute;
+  top: 0;
+  left: 12.5px;
+  font-size: 15px;
+}
+
+/* line 49, synckr.scss */
+#nav-middle {
+  text-align: center;
+}
+
+/* line 53, synckr.scss */
+#nav-right {
+  position: absolute;
+  top: 0;
+  right: 12.5px;
+  font-size: 15px;
+}
+
+/* line 60, synckr.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 65, synckr.scss */
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 70, synckr.scss */
+#navbar a {
+  color: #748089;
+}
+
+/* line 73, synckr.scss */
+#navbar a:hover {
+  color: #748089;
+}
+
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 8, calendar.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 28, calendar.scss */
+#placeholder, #pane {
+  height: 100%;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+/* line 34, calendar.scss */
+#day-bar, .grid-row, #scroll-pane, #grid-holder {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 38, calendar.scss */
+#scroll-pane {
+  height: 100%;
+  padding-bottom: 90px;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+}
+
+/* line 45, calendar.scss */
+#day-bar {
+  margin-top: 5px;
+  height: 45px;
+}
+
+/* line 50, calendar.scss */
+#overlay-toggle {
+  float: left;
+  text-align: center;
+  width: 12%;
+  font-size: 15px;
+}
+
+/* line 57, calendar.scss */
+#day-scroll, #grid-holder {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 88%;
+  overflow: -moz-scrollbars-none;
+}
+
+/* line 64, calendar.scss */
+#day-stretch, #grid-stretch {
+  width: auto;
+  white-space: nowrap;
+}
+
+/* line 69, calendar.scss */
+#handle-bar, #grid-holder {
+  float: left;
+}
+
+/* line 73, calendar.scss */
+#handle-bar {
+  margin-top: -5px;
+  padding-right: 5px;
+  width: 12%;
+  font-size: 15px;
+}
+
+/* line 80, calendar.scss */
+.handle, .grid {
+  height: 40px;
+}
+
+/* line 84, calendar.scss */
+.handle {
+  line-height: 40px;
+  text-align: right;
+}
+
+/* line 89, calendar.scss */
+.day {
+  height: 40px;
+  width: 20%;
+  display: inline-block;
+}
+
+/* line 96, calendar.scss */
+.date-day, .date {
+  height: 20px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  font-size: 15px;
+}
+
+/* line 106, calendar.scss */
+.grid-column {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+}
+
+/* line 112, calendar.scss */
+.grid {
+  text-align: center;
+}
+
+/* line 116, calendar.scss */
+.hour {
+  box-sizing: border-box;
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+/* line 122, calendar.scss */
+.hour:first-of-type, .hour:last-of-type {
+  height: 15px;
+}
+
+/* line 126, calendar.scss */
+.hour:last-child {
+  border-bottom: none;
+}
+
+/* line 130, calendar.scss */
+.grid-column:last-child div {
+  border-right: none;
+}
+
+/* line 134, calendar.scss */
+.slot {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+/* line 140, calendar.scss */
+.draw {
+  background-color: #5bcaff;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+/* line 146, calendar.scss */
+.clicked {
+  display: table;
+  text-align: center;
+}
+
+/* line 151, calendar.scss */
+#stats-icon.hm-toggle {
+  width: 22px;
+  background-color: #33465d;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+/* line 159, calendar.scss */
+.count {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  margin: 0;
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+/* line 170, calendar.scss */
+.heatmap-1 {
+  background-color: rgba(231, 231, 231, 0.5);
+}
+
+/* line 170, calendar.scss */
+.heatmap-2 {
+  background-color: rgba(205, 205, 210, 0.5);
+}
+
+/* line 170, calendar.scss */
+.heatmap-3 {
+  background-color: rgba(179, 179, 189, 0.5);
+}
+
+/* line 170, calendar.scss */
+.heatmap-4 {
+  background-color: rgba(153, 153, 168, 0.5);
+}
+
+/* line 170, calendar.scss */
+.heatmap-5 {
+  background-color: rgba(127, 127, 147, 0.5);
+}
+
+/* line 177, calendar.scss */
+.gridtop-1 {
+  top: 15px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-2 {
+  top: 35px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-3 {
+  top: 55px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-4 {
+  top: 75px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-5 {
+  top: 95px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-6 {
+  top: 115px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-7 {
+  top: 135px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-8 {
+  top: 155px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-9 {
+  top: 175px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-10 {
+  top: 195px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-11 {
+  top: 215px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-12 {
+  top: 235px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-13 {
+  top: 255px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-14 {
+  top: 275px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-15 {
+  top: 295px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-16 {
+  top: 315px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-17 {
+  top: 335px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-18 {
+  top: 355px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-19 {
+  top: 375px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-20 {
+  top: 395px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-21 {
+  top: 415px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-22 {
+  top: 435px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-23 {
+  top: 455px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-24 {
+  top: 475px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-25 {
+  top: 495px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-26 {
+  top: 515px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-27 {
+  top: 535px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-28 {
+  top: 555px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-29 {
+  top: 575px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-30 {
+  top: 595px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-31 {
+  top: 615px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-32 {
+  top: 635px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-33 {
+  top: 655px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-34 {
+  top: 675px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-35 {
+  top: 695px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-36 {
+  top: 715px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-37 {
+  top: 735px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-38 {
+  top: 755px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-39 {
+  top: 775px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-40 {
+  top: 795px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-41 {
+  top: 815px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-42 {
+  top: 835px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-43 {
+  top: 855px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-44 {
+  top: 875px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-45 {
+  top: 895px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-46 {
+  top: 915px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-47 {
+  top: 935px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-48 {
+  top: 955px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-49 {
+  top: 975px;
+}
+
+/* line 177, calendar.scss */
+.gridtop-50 {
+  top: 995px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-1 {
+  height: 17px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-2 {
+  height: 37px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-3 {
+  height: 57px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-4 {
+  height: 77px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-5 {
+  height: 97px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-6 {
+  height: 117px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-7 {
+  height: 137px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-8 {
+  height: 157px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-9 {
+  height: 177px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-10 {
+  height: 197px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-11 {
+  height: 217px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-12 {
+  height: 237px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-13 {
+  height: 257px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-14 {
+  height: 277px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-15 {
+  height: 297px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-16 {
+  height: 317px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-17 {
+  height: 337px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-18 {
+  height: 357px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-19 {
+  height: 377px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-20 {
+  height: 397px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-21 {
+  height: 417px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-22 {
+  height: 437px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-23 {
+  height: 457px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-24 {
+  height: 477px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-25 {
+  height: 497px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-26 {
+  height: 517px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-27 {
+  height: 537px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-28 {
+  height: 557px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-29 {
+  height: 577px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-30 {
+  height: 597px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-31 {
+  height: 617px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-32 {
+  height: 637px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-33 {
+  height: 657px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-34 {
+  height: 677px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-35 {
+  height: 697px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-36 {
+  height: 717px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-37 {
+  height: 737px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-38 {
+  height: 757px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-39 {
+  height: 777px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-40 {
+  height: 797px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-41 {
+  height: 817px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-42 {
+  height: 837px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-43 {
+  height: 857px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-44 {
+  height: 877px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-45 {
+  height: 897px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-46 {
+  height: 917px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-47 {
+  height: 937px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-48 {
+  height: 957px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-49 {
+  height: 977px;
+}
+
+/* line 183, calendar.scss */
+.gridheight-50 {
+  height: 997px;
+}
+
+/* line 188, calendar.scss */
+#mask {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #aaa;
+  opacity: 0.7;
+  z-index: 100;
+}
+
+/* line 198, calendar.scss */
+.mask-side {
+  position: relative;
+  width: 12%;
+  height: 100%;
+  margin-top: 40px;
+  float: left;
+}
+
+/* line 205, calendar.scss */
+#mask-top {
+  position: relative;
+  float: left;
+  margin-top: 45px;
+  height: 45px;
+  width: 88%;
+}
+
+/* line 212, calendar.scss */
+#mask-topleft {
+  width: 100%;
+  height: 45px;
+}
+
+/* line 216, calendar.scss */
+#mask-left {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 220, calendar.scss */
+#mask-left img {
+  margin-top: 140px;
+  margin-left: -50%;
+}
+
+/* line 224, calendar.scss */
+#mask p {
+  white-space: nowrap;
+  font-weight: bold;
+  color: black;
+}
+
+/* line 229, calendar.scss */
+#mask-top img {
+  margin-left: 30%;
+}
+
+/* line 232, calendar.scss */
+#mask-top p {
+  margin-left: 50%;
+}
+
+/* line 235, calendar.scss */
+.mask-scroll, .mask-tap {
+  display: none;
+}
+
+/* line 238, calendar.scss */
+.mask-drag-frame {
+  position: relative;
+  display: none;
+  height: 80px;
+  width: 17.6%;
+  margin-top: 224px;
+  margin-left: 29.6%;
+}
+
+/* line 246, calendar.scss */
+.mask-drag {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+}
+
+/* line 254, calendar.scss */
+.mask-drag img {
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+/* line 258, calendar.scss */
+#mask-drag-move {
+  z-index: 100;
+}
+
+/* line 261, calendar.scss */
+.mask-double-click {
+  position: relative;
+  display: none;
+  height: 80px;
+  width: 17.6%;
+  margin-top: 224px;
+  margin-left: 47.2%;
+  background-color: black;
+}
+
+/* line 270, calendar.scss */
+.mask-double-click img {
+  margin-top: 25%;
+  margin-left: -10%;
+}
+
+/* line 274, calendar.scss */
+.mask-heatmap {
+  position: relative;
+  display: none;
+}
+
+/* line 278, calendar.scss */
+.mask-slot {
+  position: absolute;
+  width: 17.6%;
+  height: 40px;
+  margin-left: 47.2%;
+}
+
+/* line 284, calendar.scss */
+.mask-decide {
+  display: none;
+}
+
+/* line 287, calendar.scss */
+#mask-slot-1 {
+  margin-top: 224px;
+}
+
+/* line 290, calendar.scss */
+#mask-slot-2 {
+  margin-top: 264px;
+}
+
+/* line 293, calendar.scss */
+#mask-slot-3 {
+  margin-top: 304px;
+}
+
+/* line 296, calendar.scss */
+#heat-indication {
+  position: absolute;
+  margin-left: 53%;
+  margin-top: 15%;
+  opacity: 1;
+  width: 45%;
+  height: 40px;
+}
+
+/* line 304, calendar.scss */
+#heat-indication-wrap {
+  height: 50%;
+  width: 100%;
+  background-color: white;
+}
+
+/* line 309, calendar.scss */
+#votes-indication {
+  position: fixed;
+  top: 65%;
+  left: 30%;
+}
+
+/* line 314, calendar.scss */
+.heat-level {
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+}
+
+/* line 319, calendar.scss */
+.level {
+  width: 100%;
+  height: 50%;
+}
+
+/* line 323, calendar.scss */
+.level p {
+  display: inline-block;
+}
+
+/* line 326, calendar.scss */
+#level-max {
+  margin-left: 58%;
+}
+
+/* line 329, calendar.scss */
+.data {
+  opacity: 1;
+  border-radius: 5px;
+}
+
+/* line 334, calendar.scss */
+#dialog, #dialog-button, #dialog-send {
+  width: 60%;
+  height: 22%;
+  top: 40%;
+  position: fixed;
+  left: 20%;
+  background-color: #748089;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 200;
+  display: none;
+  color: #33465d;
+  font-weight: normal;
+}
+
+/* line 352, calendar.scss */
+#decide-indication {
+  position: fixed;
+  top: 45%;
+  left: 30%;
+}
+
+/* line 357, calendar.scss */
+.calendar {
+  background-color: #55bc8a;
+  word-wrap: break-word;
+  display: table;
+  text-align: center;
+  color: white;
+}
+
+/* line 365, calendar.scss */
+#dialog-button p {
+  display: block;
+  height: 65%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 17px;
+}
+
+/* line 376, calendar.scss */
+#dialog img {
+  padding-top: 10%;
+}
+
+/* line 379, calendar.scss */
+#ok-button, #cancel-button, #send-button {
+  float: left;
+  height: 28%;
+  width: 45%;
+  margin: 0 2.5%;
+  border-radius: 10px;
+  background-color: #33465d;
+  padding: 6px 0;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+
+/* line 391, calendar.scss */
+#send-button {
+  width: 95%;
+}
+
+/* line 394, calendar.scss */
+#dialog-send p {
+  padding-top: 10%;
+  font-size: 17px;
+}
+
+/* line 398, calendar.scss */
+#friendList {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  font-size: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  z-index: 1;
+}
+
+/* line 410, calendar.scss */
+.friends {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #aaa;
+  padding: 0 25px;
+  margin-top: 10px;
+}
+
+/* line 418, calendar.scss */
+.friend-intro {
+  float: left;
+  height: 30px;
+}
+
+/* line 423, calendar.scss */
+.friend-pic {
+  margin-left: 10%;
+  width: 15%;
+}
+
+/* line 428, calendar.scss */
+.friend-name {
+  width: 75%;
+}
+
+/* line 432, calendar.scss */
+.final-decision {
+  background-color: #33465d;
+  color: white;
+  text-align: center;
+  display: table;
+}
+
+/* line 439, calendar.scss */
+#star-icon {
+  display: table-cell;
+  vertical-align: middle;
+}

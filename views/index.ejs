@@ -4,8 +4,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" href="/css/bootstrap.css">
-		<link rel="stylesheet" href="/css/index.css">
-		<link rel="stylesheet" href="/css/datepicker.css">
+		<% if (theme === "light") { %>
+			<link rel="stylesheet" href="/css/index-light.css">
+		<% } else { %>
+			<link rel="stylesheet" href="/css/index-dark.css">
+		<% } %>
 	</head>
 	<body>
 		<div id="placeholder">
@@ -16,7 +19,7 @@
 			<a href="/login">
 				<div id="login">
 					<span id="wrapper">
-						<img src="/images/fb.png" alt="FB" width="25" id="fb">
+						<img src="/images/fb.png" alt="FB" width="40" id="fb">
 						Login
 					</span>
 				</div>
