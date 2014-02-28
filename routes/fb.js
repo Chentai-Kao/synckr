@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 var FB = require('fb'),
     Step = require('step');
 
@@ -31,6 +32,36 @@ exports.loginCallback = function (req, res, next) {
   } else if(!code) {
     return res.redirect('/');
   }
+
+  var insertFakeData = function() { // insert fake data
+    var fakeData = [];
+    fakeData.push(require('../fake_data/data-decide.json'));
+    fakeData.push(require('../fake_data/data-done.json'));
+    fakeData.push(require('../fake_data/data-pending.json'));
+    fakeData.push(require('../fake_data/data-voting.json'));
+    fakeData.push(require('../fake_data/data-vote.json'));
+
+    var Event = req.app.get('models')('event');
+    var numSaved = 0;
+    for (var i = 0; i < fakeData.length; ++i) {
+      var dataStr = JSON.stringify(fakeData[i])
+                        .replace(/Andrew Liu/g, req.session.fb_name)
+                        .replace(/766485187/g, req.session.fb_id);
+      var data = JSON.parse(dataStr);
+      console.log(data);
+      data.eventId = crypto.randomBytes(20).toString('hex');
+      data.participants.push({
+        name: req.session.fb_name,
+        personId: req.session.fb_id
+      });
+      var newEvent = new Event(data);
+      newEvent.save(function(error) {
+        if (error) {
+          console.log(error);
+        }
+      });
+    }
+  };
 
   Step(
     function exchangeCodeForAccessToken() {
@@ -80,11 +111,13 @@ exports.loginCallback = function (req, res, next) {
               if (error) console.log(error);
               req.session.first_use = true;
               req.session.first_decide = true;
+              insertFakeData();
               return res.redirect('/');
             });
           } else {
             req.session.first_use = record.firstUse;
             req.session.first_decide = record.firstDecide;
+            insertFakeData();
             return res.redirect('/');
           }
         });

@@ -75,36 +75,6 @@ exports.listEvent = function(req, res) {
   if (!id) return res.redirect('/login');
 
   var Event = req.app.get('models')('event');
-  ////////////////// Fake data of new user //////////////////
-  var fakeData = []; // TODO
-  var saveCount = 0;
-  for (var i = 0; i < fakeData.length; ++i) {
-    var data = fakeData[i];
-    data.eventId = crypto.randomBytes(20).toString('hex');
-    data.participants.push({
-      name: req.session.fb_name,
-      personId: req.session.fb_id
-    });
-    data.duration = data["duration-hr"] + data["duration-min"];
-    if (/*TODO*/) {
-      data.host = {
-        name: req.session.fb_name,
-        personId: req.session.fb_id
-      };
-    }
-    var newEvent = new Event(data);
-    newEvent.save(function(error) {
-      if (error) {
-        console.log(error);
-      }
-      saveCount++;
-    }
-  }
-  // infinite loop to synchronize saving fake data
-  while (saveCount < length) {
-    ;
-  }
-  //////////////////////// Fake end /////////////////////////
   Event.find({ 'participants.personId': id },
     function(error, record) {
       record.sort(function(a, b) {

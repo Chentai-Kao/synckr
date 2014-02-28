@@ -1,5 +1,10 @@
 {
    "deadline":"Sat Feb 15 2014 00:00:00 GMT-0800 (PST)",
+   "decision":{
+     "startDate":"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
+     "startTime":"28",
+     "duration":"7"
+   },
    "description":"It's movie time!",
    "duration":"2hr00min",
    "endDate":"Mon Mar 3 2014 00:00:00 GMT-0800 (PST)",
