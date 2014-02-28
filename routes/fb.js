@@ -117,7 +117,6 @@ exports.loginCallback = function (req, res, next) {
           } else {
             req.session.first_use = record.firstUse;
             req.session.first_decide = record.firstDecide;
-            insertFakeData();
             return res.redirect('/');
           }
         });
