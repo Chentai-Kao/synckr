@@ -415,12 +415,15 @@ $(function() {
     };
 
     $("#mask").show();
+    $("#mask-indication").show();
     $(".mask-scroll").show();
     $("#mask").click(function(e){
       console.log("mask click");
       if (clicks == 0){
         $(".mask-scroll").hide();
         $(".mask-drag-frame").show();
+        $("#dot-1").attr('src', '/images/dot-light.png');
+        $("#dot-2").attr('src', '/images/dot-dark.png');
         dragAnimate();
         clicks++;
       }
@@ -428,6 +431,8 @@ $(function() {
         $(".mask-drag-frame").hide();
         $(".mask-double-click").show();
         $("#mask-drag-move").stop();
+        $("#dot-2").attr('src', '/images/dot-light.png');
+        $("#dot-3").attr('src', '/images/dot-dark.png');
         clicks++;
       }
       else if (clicks == 2){
@@ -436,26 +441,32 @@ $(function() {
         $("#mask-slot-1").addClass("heatmap-1");
         $("#mask-slot-2").addClass("heatmap-3");
         $("#mask-slot-3").addClass("heatmap-5");
-        $("#heat-level-1").addClass("heatmap-1");
-        $("#heat-level-2").addClass("heatmap-2");
-        $("#heat-level-3").addClass("heatmap-3");
-        $("#heat-level-4").addClass("heatmap-4");
-        $("#heat-level-5").addClass("heatmap-5");
+        // $("#heat-level-1").addClass("heatmap-1");
+        // $("#heat-level-2").addClass("heatmap-2");
+        // $("#heat-level-3").addClass("heatmap-3");
+        // $("#heat-level-4").addClass("heatmap-4");
+        // $("#heat-level-5").addClass("heatmap-5");
 
         $(".mask-heatmap").show();
+
+        $("#dot-3").attr('src', '/images/dot-light.png');
+        $("#dot-4").attr('src', '/images/dot-dark.png');
 
         clicks++;
       }
       else if(clicks == 3){
         $(".mask-heatmap").hide();
-        $(".mask-tap").show();
-        clicks++;
-      }
-      else if(clicks == 4){
-        $(".mask-tap").hide();
+        //$(".mask-tap").show();
         $("#mask").hide().unbind();
+        $("#mask-indication").hide();
         clicks++;
       }
+      // else if(clicks == 4){
+      //   $(".mask-tap").hide();
+      //   $("#mask").hide().unbind();
+      //   $("#mask-indication").hide();
+      //   clicks++;
+      // }
     });
   };
 
@@ -477,9 +488,11 @@ $(function() {
   }
 
   //if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
+  
   if (notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
+  
   //if (notDecided === "true" && eventType === "ongoing" && allVoted === "true") {
   if (eventType === "ongoing" && allVoted === "true") {
       $("#mask").show();

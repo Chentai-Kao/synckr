@@ -79,11 +79,20 @@
 			</div>
 		</div>
 		<div id="mask">
+			<div id="mask-indication">
+				<div class="indication" id="tutorial">Tap to continue</div>	
+				<div class="indication" id="steps">
+					<div class="dot"><img  id="dot-1" src="/images/dot-dark.png" width="10px"></div>
+					<div class="dot"><img id="dot-2" src="/images/dot-light.png" width="10px"></div>
+					<div class="dot"><img id="dot-3" src="/images/dot-light.png" width="10px"></div>
+					<div class="dot"><img id="dot-4" src="/images/dot-light.png" width="10px"></div>
+				</div>
+			</div>
 			<div class="mask-side">
-				<div class="mask-tap" id="mask-topleft">
+				<!-- <div class="mask-tap" id="mask-topleft">
 					<img src="/images/tap-icon.png"/>
 					<p>Tap to show votes</p>
-				</div>
+				</div> -->
 				<div class="mask-scroll" id="mask-left">
 					<img src="/images/scroll-icon-black.png"/>
 					<p>Scroll to show time</p>
@@ -107,18 +116,18 @@
 			</div>
 			<div class="mask-heatmap">
 				<div id="heat-indication">
-					<div id="heat-indication-wrap">
+					<!-- <div id="heat-indication-wrap">
 						<div class="heat-level" id="heat-level-1"></div><div class="heat-level" id="heat-level-2"></div><div class="heat-level" id="heat-level-3"></div><div class="heat-level" id="heat-level-4"></div><div class="heat-level" id="heat-level-5"></div>
-					</div>
-					<div class="level">
+					</div> -->
+<!-- 					<div class="level">
 						<p id="level-min">min</p>
 						<p id="level-max">max</p>
-					</div>
+					</div> -->
 				</div>
-				<div class="mask-slot" id="mask-slot-1"></div>
-				<div class="mask-slot" id="mask-slot-2"></div>
-				<div class="mask-slot" id="mask-slot-3"></div>
-				<p id="votes-indication"> Votes shown as heatmap</p>
+				<div class="mask-slot" id="mask-slot-1"><p class="count">1</p></div>
+				<div class="mask-slot" id="mask-slot-2"><p class="count">3</p></div>
+				<div class="mask-slot" id="mask-slot-3"><p class="count">5</p></div>
+				<p id="votes-indication"> Votes shown on gray slots</p>
 			</div>
 			<div class="mask-decide">
 				<p id="decide-indication"> Drag to decide time</p>
