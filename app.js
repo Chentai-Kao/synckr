@@ -41,7 +41,8 @@ if ('development' == app.get('env')) {
 // Add routes here
 // Example route
 // app.get('/users', user.list);
-app.get('/', fb.index);
+app.get('/', fb.ga);
+app.get('/index', fb.index);
 app.get('/login', fb.login);
 app.get('/callback', fb.loginCallback);
 app.get('/logout', fb.logout);
