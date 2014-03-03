@@ -1106,26 +1106,22 @@ a:hover {
   width: 100%;
   height: 10%;
   display: none;
+  text-align: center;
 }
 
-/* line 453, calendar-dark.scss */
+/* line 454, calendar-dark.scss */
 .indication {
   height: 50%;
 }
 
-/* line 456, calendar-dark.scss */
+/* line 457, calendar-dark.scss */
 #tutorial {
   color: #111111;
   text-align: center;
 }
 
-/* line 460, calendar-dark.scss */
-#steps {
-  padding: 0 30%;
-}
-
-/* line 463, calendar-dark.scss */
+/* line 461, calendar-dark.scss */
 .dot {
-  float: left;
+  display: inline-block;
   margin: 0 10px;
 }

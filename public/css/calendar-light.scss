@@ -438,6 +438,7 @@ $slot-offset: 3px;
 	width: 100%;
 	height: 10%;
 	display: none;
+	text-align: center;
 }
 .indication {
 	height: 50%;
@@ -446,11 +447,7 @@ $slot-offset: 3px;
  	color: #111111;
 	text-align: center;
 }
-#steps{
-	padding:0 30%;
-}
 .dot{
-	float: left;
+	display: inline-block;
 	margin:0 10px;
-
 }
