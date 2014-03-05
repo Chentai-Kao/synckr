@@ -1,4 +1,4 @@
-/* line 13, synckr.scss */
+/* line 20, synckr.scss */
 #placeholder {
   position: absolute;
   width: 100%;
@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-/* line 23, synckr.scss */
+/* line 30, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -19,11 +19,11 @@
   font-weight: normal;
   height: 40px;
   line-height: 40px;
-  background-color: rgba(52, 170, 220, 0.7);
+  background-color: #2d3f53;
   color: white;
 }
 
-/* line 35, synckr.scss */
+/* line 42, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
@@ -31,12 +31,12 @@
   font-size: 15px;
 }
 
-/* line 42, synckr.scss */
+/* line 49, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 46, synckr.scss */
+/* line 53, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -44,35 +44,50 @@
   font-size: 15px;
 }
 
-/* line 53, synckr.scss */
+/* line 60, synckr.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 58, synckr.scss */
+/* line 65, synckr.scss */
 a:hover {
   text-decoration: none;
   color: black;
 }
 
-/* line 63, synckr.scss */
+/* line 70, synckr.scss */
 #navbar a {
-  color: white;
+  color: #748089;
 }
 
-/* line 66, synckr.scss */
+/* line 73, synckr.scss */
 #navbar a:hover {
-  color: white;
+  color: #748089;
 }
 
-/* line 5, new.scss */
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 6, new-light.scss */
+#navbar {
+  background-color: rgba(52, 170, 220, 0.7);
+}
+
+/* line 10, new-light.scss */
 .field {
   padding: 0 25px;
   margin: 30px 0;
 }
 
-/* line 11, new.scss */
+/* line 16, new-light.scss */
 .field input {
   width: 100%;
   margin: 5px 0;
@@ -80,7 +95,7 @@ a:hover {
   border-bottom: 1px solid #aaaaaa;
 }
 
-/* line 18, new.scss */
+/* line 23, new-light.scss */
 input, select {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: lighter;
@@ -88,20 +103,20 @@ input, select {
   padding: 0;
 }
 
-/* line 25, new.scss */
+/* line 30, new-light.scss */
 input[type="text"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-/* line 29, new.scss */
+/* line 34, new-light.scss */
 .dur {
   float: left;
   width: 33.3%;
 }
 
-/* line 34, new.scss */
+/* line 39, new-light.scss */
 #duration-min, #duration-hr {
   width: 100%;
   margin: 0;
@@ -113,19 +128,19 @@ input[type="text"] {
   direction: rtl;
 }
 
-/* line 43, new.scss */
+/* line 48, new-light.scss */
 #duration {
   border-bottom: 1px solid #aaaaaa;
   height: 30px;
 }
 
-/* line 48, new.scss */
+/* line 53, new-light.scss */
 .dates {
   float: left;
   width: 50%;
 }
 
-/* line 53, new.scss */
+/* line 58, new-light.scss */
 #startdate, #enddate, #deadlinedate {
   position: relative;
   border-bottom: 1px solid #aaaaaa;
@@ -133,7 +148,7 @@ input[type="text"] {
   margin: 10px 0;
 }
 
-/* line 60, new.scss */
+/* line 65, new-light.scss */
 #st-date, #en-date, #de-date {
   position: absolute;
   left: 0;
@@ -144,7 +159,7 @@ input[type="text"] {
   background-color: transparent;
 }
 
-/* line 70, new.scss */
+/* line 75, new-light.scss */
 #friendList {
   float: left;
   width: 100%;
@@ -156,13 +171,13 @@ input[type="text"] {
   font-weight: lighter;
 }
 
-/* line 82, new.scss */
+/* line 87, new-light.scss */
 #search-bar input {
   width: 90%;
   margin: 10px 5%;
 }
 
-/* line 87, new.scss */
+/* line 92, new-light.scss */
 .friends {
   width: 100%;
   height: 40px;
@@ -171,34 +186,34 @@ input[type="text"] {
   margin-top: 10px;
 }
 
-/* line 95, new.scss */
+/* line 100, new-light.scss */
 .friend-intro {
   float: left;
   height: 30px;
 }
 
-/* line 100, new.scss */
+/* line 105, new-light.scss */
 .friend-check {
   width: 10%;
 }
 
-/* line 104, new.scss */
+/* line 109, new-light.scss */
 .friend-pic {
   width: 15%;
 }
 
-/* line 108, new.scss */
+/* line 113, new-light.scss */
 .friend-name {
   width: 75%;
 }
 
-/* line 112, new.scss */
+/* line 117, new-light.scss */
 .invitees {
   width: 100%;
   height: 100%;
 }
 
-/* line 117, new.scss */
+/* line 122, new-light.scss */
 .invitees img {
   margin: 10px;
 }

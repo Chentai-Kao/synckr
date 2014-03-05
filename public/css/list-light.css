@@ -1,4 +1,4 @@
-/* line 13, synckr.scss */
+/* line 20, synckr.scss */
 #placeholder {
   position: absolute;
   width: 100%;
@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-/* line 23, synckr.scss */
+/* line 30, synckr.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -19,11 +19,11 @@
   font-weight: normal;
   height: 40px;
   line-height: 40px;
-  background-color: rgba(52, 170, 220, 0.7);
+  background-color: #2d3f53;
   color: white;
 }
 
-/* line 35, synckr.scss */
+/* line 42, synckr.scss */
 #nav-left {
   position: absolute;
   top: 0;
@@ -31,12 +31,12 @@
   font-size: 15px;
 }
 
-/* line 42, synckr.scss */
+/* line 49, synckr.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 46, synckr.scss */
+/* line 53, synckr.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -44,29 +44,44 @@
   font-size: 15px;
 }
 
-/* line 53, synckr.scss */
+/* line 60, synckr.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 58, synckr.scss */
+/* line 65, synckr.scss */
 a:hover {
   text-decoration: none;
   color: black;
 }
 
-/* line 63, synckr.scss */
+/* line 70, synckr.scss */
 #navbar a {
-  color: white;
+  color: #748089;
 }
 
-/* line 66, synckr.scss */
+/* line 73, synckr.scss */
 #navbar a:hover {
-  color: white;
+  color: #748089;
 }
 
-/* line 13, list.scss */
+/* line 76, synckr.scss */
+#nav-left {
+  color: #748089;
+}
+
+/* line 79, synckr.scss */
+#nav-right {
+  color: #49a8d8;
+}
+
+/* line 5, list-light.scss */
+#navbar {
+  background-color: rgba(52, 170, 220, 0.7);
+}
+
+/* line 18, list-light.scss */
 .out-event {
   min-height: 80px;
   width: 100%;
@@ -75,22 +90,22 @@ a:hover {
   background-color: white;
 }
 
-/* line 21, list.scss */
+/* line 26, list-light.scss */
 .out-event a {
   color: #052d6e;
 }
 
-/* line 25, list.scss */
+/* line 30, list-light.scss */
 .not-decided {
   background-color: rgba(255, 149, 0, 0.4);
 }
 
-/* line 28, list.scss */
+/* line 33, list-light.scss */
 .not-voted {
   background-color: rgba(255, 149, 0, 0.4);
 }
 
-/* line 32, list.scss */
+/* line 37, list-light.scss */
 .event {
   min-height: 80px;
   display: -webkit-box;
@@ -103,12 +118,12 @@ a:hover {
   box-align: center;
 }
 
-/* line 40, list.scss */
+/* line 45, list-light.scss */
 .event-title {
   width: 60%;
 }
 
-/* line 44, list.scss */
+/* line 49, list-light.scss */
 .event-info {
   position: relative;
   width: 40%;
@@ -117,24 +132,24 @@ a:hover {
   font-size: 18px;
 }
 
-/* line 51, list.scss */
+/* line 56, list-light.scss */
 .arrow {
   width: 5%;
   display: none;
   margin-left: 10px;
 }
 
-/* line 56, list.scss */
+/* line 61, list-light.scss */
 .arrow-move {
   display: block;
 }
 
-/* line 59, list.scss */
+/* line 64, list-light.scss */
 .not-decided .arrow, .not-voted .arrow {
   display: block;
 }
 
-/* line 63, list.scss */
+/* line 68, list-light.scss */
 .event-deadline {
   position: absolute;
   left: 0;
@@ -143,7 +158,7 @@ a:hover {
   line-height: 40px;
 }
 
-/* line 70, list.scss */
+/* line 75, list-light.scss */
 .event-people {
   position: absolute;
   left: 0;
@@ -153,20 +168,20 @@ a:hover {
   line-height: 40px;
 }
 
-/* line 78, list.scss */
+/* line 83, list-light.scss */
 .event-people img {
   width: 30px;
   margin: 0 0 0 -5px;
 }
 
-/* line 82, list.scss */
+/* line 87, list-light.scss */
 #nav-right {
   font-size: 30px;
   font-weight: 200;
   line-height: 30px;
 }
 
-/* line 88, list.scss */
+/* line 93, list-light.scss */
 #user-info {
   position: absolute;
   width: 100%;
@@ -177,24 +192,24 @@ a:hover {
   color: white;
 }
 
-/* line 98, list.scss */
+/* line 103, list-light.scss */
 #user-pic {
   width: 14%;
   float: left;
 }
 
-/* line 102, list.scss */
+/* line 107, list-light.scss */
 #user-name {
   width: 86%;
   float: left;
 }
 
-/* line 107, list.scss */
+/* line 112, list-light.scss */
 .cancel-icon {
   display: none;
 }
 
-/* line 112, list.scss */
+/* line 117, list-light.scss */
 .cancel-icon-move {
   margin: 0 25px 0 0;
   display: block;
@@ -204,7 +219,7 @@ a:hover {
   padding-top: 30px;
 }
 
-/* line 121, list.scss */
+/* line 126, list-light.scss */
 #navbar {
   position: absolute;
   top: 0;
@@ -212,7 +227,7 @@ a:hover {
   width: 100%;
 }
 
-/* line 128, list.scss */
+/* line 133, list-light.scss */
 #list {
   overflow-y: scroll;
   overflow-x: hidden;

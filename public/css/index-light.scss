@@ -1,5 +1,10 @@
 @import "synckr.scss";
 
+$navbar-background: rgba(52, 170, 220, 0.7);
+#navbar {
+	background-color: rgba(52, 170, 220, 0.7);
+}
+
 #placeholder {
 	background-color: $navbar-background;
 }

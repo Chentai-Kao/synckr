@@ -2,6 +2,11 @@
 @import "compass/css3/appearance";
 @import "synckr.scss";
 
+$navbar-background: rgba(52, 170, 220, 0.7);
+#navbar {
+	background-color: rgba(52, 170, 220, 0.7);
+}
+
 .field{
     padding: 0 $left-right-margin;
     // background-color: #efefef;

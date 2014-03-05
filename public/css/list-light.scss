@@ -1,6 +1,11 @@
 @import "compass/css3/box";
 @import "synckr.scss";
 
+$navbar-background: rgba(52, 170, 220, 0.7);
+#navbar {
+	background-color: rgba(52, 170, 220, 0.7);
+}
+
 $event-height: 80px;
 $event-not-voted: rgba(255, 149, 0, 0.4);
 $event-not-decided: rgba(255, 149, 0, 0.4);
