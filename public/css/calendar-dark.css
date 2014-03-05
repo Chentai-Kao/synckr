@@ -1,4 +1,4 @@
-/* line 20, synckr.scss */
+/* line 20, synckr-dark.scss */
 #placeholder {
   position: absolute;
   width: 100%;
@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-/* line 30, synckr.scss */
+/* line 30, synckr-dark.scss */
 #navbar {
   position: relative;
   overflow: hidden;
@@ -23,7 +23,7 @@
   color: white;
 }
 
-/* line 42, synckr.scss */
+/* line 42, synckr-dark.scss */
 #nav-left {
   position: absolute;
   top: 0;
@@ -31,12 +31,12 @@
   font-size: 15px;
 }
 
-/* line 49, synckr.scss */
+/* line 49, synckr-dark.scss */
 #nav-middle {
   text-align: center;
 }
 
-/* line 53, synckr.scss */
+/* line 53, synckr-dark.scss */
 #nav-right {
   position: absolute;
   top: 0;
@@ -44,34 +44,34 @@
   font-size: 15px;
 }
 
-/* line 60, synckr.scss */
+/* line 60, synckr-dark.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 65, synckr.scss */
+/* line 65, synckr-dark.scss */
 a:hover {
   text-decoration: none;
   color: black;
 }
 
-/* line 70, synckr.scss */
+/* line 70, synckr-dark.scss */
 #navbar a {
   color: #748089;
 }
 
-/* line 73, synckr.scss */
+/* line 73, synckr-dark.scss */
 #navbar a:hover {
   color: #748089;
 }
 
-/* line 76, synckr.scss */
+/* line 76, synckr-dark.scss */
 #nav-left {
   color: #748089;
 }
 
-/* line 79, synckr.scss */
+/* line 79, synckr-dark.scss */
 #nav-right {
   color: #49a8d8;
 }

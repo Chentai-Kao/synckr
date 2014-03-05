@@ -1,9 +1,5 @@
 @import "compass/css3/box";
-@import "synckr.scss";
-
-#navbar {
-	background-color: rgba(52, 170, 220, 0.7);
-}
+@import "synckr-light.scss";
 
 @mixin hide-scrollbar {
 	overflow: -moz-scrollbars-none;
