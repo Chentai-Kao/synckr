@@ -79,10 +79,10 @@ exports.listEvent = function(req, res) {
     function(error, record) {
       record.sort(function(a, b) {
         var acode = 2, bcode = 2;
-        if (a.notDecided(id) && a.isPending()) acode = 0;
-        if (a.notVoted(id) && a.isOngoing()) acode = 1;
-        if (b.notDecided(id) && b.isPending()) bcode = 0;
-        if (b.notVoted(id) && b.isOngoing()) bcode = 1;
+        if (a.notDecided(id) && a.isPending()) acode = 1;
+        if (a.notVoted(id) && a.isOngoing()) acode = 0;
+        if (b.notDecided(id) && b.isPending()) bcode = 1;
+        if (b.notVoted(id) && b.isOngoing()) bcode = 0;
         return (acode + a.deadline) > (bcode + b.deadline);
       });
       res.render('list', {
