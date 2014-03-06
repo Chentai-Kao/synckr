@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var UserClickScheme = new Scheme({
+var UserClickScheme = new Schema({
 	duration:    { type: String, required: true},
 	type:        { type: String, required: true},
 	theme:       { type: String, required: true}

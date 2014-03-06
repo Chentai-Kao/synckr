@@ -226,7 +226,7 @@ exports.logClick = function (req, res) {
   var User = req.app.get('models')('user');
 
   User.update({ fb_id: id },
-    { $push: { "records": { duration: duration, type: type, theme: theme }}}
+    { $push: { "records": { duration: duration, type: type, theme: theme }}},
     function(error) {
       if (error) {
         res.send(500);
@@ -234,5 +234,5 @@ exports.logClick = function (req, res) {
         res.send(200);
       }
     }
-  })
+  );
 }
