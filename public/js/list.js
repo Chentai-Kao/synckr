@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var entryTime = new Date();
+
 	$("#nav-left").click(function(e){
 		$(".event-title").toggleClass("event-title-move");
 		//$(".event-info").toggleClass("event-info-move");
@@ -18,7 +20,11 @@ $(document).ready(function(){
 		var link = $(this).find('a').attr('href');
 		ga('send', 'event', 'list', 'click', 'event-done', {
 			'hitCallback': function() {
-				window.location.href = link;
+				var rightNow = new Date(),
+						duration = rightNow - entryTime;
+				$.post('/log', {type: 'event-done', duration: duration}, function() {
+					window.location.href = link;
+				});
 			}
 		});
 	});
@@ -28,7 +34,11 @@ $(document).ready(function(){
 		var link = $(this).find('a').attr('href');
 		ga('send', 'event', 'list', 'click', 'event-ongoing', {
 			'hitCallback': function() {
-				window.location.href = link;
+				var rightNow = new Date(),
+						duration = rightNow - entryTime;
+				$.post('/log', {type: 'event-ongoing', duration: duration}, function() {
+					window.location.href = link;
+				});
 			}
 		});
 	});

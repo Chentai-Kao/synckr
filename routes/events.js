@@ -215,3 +215,24 @@ exports.getDecision = function(req, res) {
     }
   });
 };
+
+exports.logClick = function (req, res) {
+  var id = req.session.fb_id;
+  if (!id) return res.redirect('/login');
+
+  var duration = req.body.duration;
+  var type = req.body.type;
+  var theme = req.session.theme;
+  var User = req.app.get('models')('user');
+
+  User.update({ fb_id: id },
+    { $push: { "records": { duration: duration, type: type, theme: theme }}}
+    function(error) {
+      if (error) {
+        res.send(500);
+      } else {
+        res.send(200);
+      }
+    }
+  })
+}

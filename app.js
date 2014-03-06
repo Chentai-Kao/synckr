@@ -47,6 +47,7 @@ app.get('/login', fb.login);
 app.get('/callback', fb.loginCallback);
 app.get('/logout', fb.logout);
 app.get('/theme/:id', fb.theme);
+app.post('/log', events.logClick);
 app.get('/events', events.listEvent);
 app.post('/events', events.createEvent);
 app.get('/events/new', events.createEventPage);
