@@ -1,0 +1,68 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/user-interface";
+
+$line-color: #aaa;
+
+$left-right-margin: 25px;
+$navbar-margin: 40px;
+$bottom-margin: 30px;
+
+$navbar-color: #FFFFFF;
+$navbar-background: rgba(52, 170, 220, 0.7);
+
+#placeholder {
+	position:absolute;
+	width: 100%;
+	font-size: 20px;
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: lighter;
+	height: 100%;
+	@include user-select(none);
+}
+
+#navbar {
+	position: relative;
+	@include clearfix;
+	font-weight: normal;
+	// border-bottom: 1px solid $line-color;
+	height: $navbar-margin;
+	line-height: $navbar-margin;
+	//background-color: rgba(245, 165, 3, 0.7);
+	background-color: $navbar-background;
+	color: $navbar-color;
+}
+
+#nav-left {
+	position: absolute;
+	top: 0;
+	left: $left-right-margin/2;
+	font-size:15px;
+}
+
+#nav-middle {
+	text-align: center;
+}
+
+#nav-right {
+	position: absolute;
+	top: 0;
+	right: $left-right-margin/2;
+	font-size: 15px;
+}
+
+a {
+	text-decoration: none;
+	color:black;
+}
+
+a:hover {
+	text-decoration: none;
+	color:black;
+}
+
+#navbar a{
+	color: $navbar-color;
+}
+#navbar a:hover{
+	color: $navbar-color;
+}
