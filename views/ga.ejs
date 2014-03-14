@@ -3,31 +3,14 @@
 		<title>Synckr</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<link rel="stylesheet" href="/css/bootstrap.css">
-		<% if (theme === "light") { %>
-			<link rel="stylesheet" href="/css/index-dark.css">
-		<% } else { %>
-			<link rel="stylesheet" href="/css/index-dark.css">
-		<% } %>
 	</head>
 	<body>
-		<div id="placeholder">
-			<div id="logo">
-				<img src="/images/logo.png" alt="logo" width="120"><br/>
-				Synckr
-			</div>
-			<a href="/login">
-				<div id="login">
-					<span id="wrapper">
-						<img src="/images/fb.png" alt="FB" width="25" id="fb">
-						Login
-					</span>
-				</div>
-			</a>
-		</div>
 		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
-		<script src="/js/bootstrap-datepicker.js"></script>
+		<script>
+			$(function() {
+				window.location.href = "/theme/dark"
+			});
+		</script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

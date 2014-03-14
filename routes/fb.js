@@ -112,12 +112,12 @@ exports.loginCallback = function (req, res, next) {
               req.session.first_use = true;
               req.session.first_decide = true;
               insertFakeData();
-              return res.redirect('/');
+              return res.redirect('/index');
             });
           } else {
             req.session.first_use = record.firstUse;
             req.session.first_decide = record.firstDecide;
-            return res.redirect('/');
+            return res.redirect('/index');
           }
         });
       });
@@ -127,10 +127,14 @@ exports.loginCallback = function (req, res, next) {
 
 exports.logout = function (req, res) {
   req.session.destroy(); // clear session
-  res.redirect('/');
+  res.redirect('/index');
 };
 
 exports.theme = function (req, res) {
   req.session.theme = req.params.id;
-  res.redirect('/');
+  res.redirect('/index');
+}
+
+exports.ga = function (req, res) {
+  res.render('ga');
 }

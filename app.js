@@ -41,11 +41,13 @@ if ('development' == app.get('env')) {
 // Add routes here
 // Example route
 // app.get('/users', user.list);
-app.get('/', fb.index);
+app.get('/', fb.ga);
+app.get('/index', fb.index);
 app.get('/login', fb.login);
 app.get('/callback', fb.loginCallback);
 app.get('/logout', fb.logout);
 app.get('/theme/:id', fb.theme);
+app.post('/log', events.logClick);
 app.get('/events', events.listEvent);
 app.post('/events', events.createEvent);
 app.get('/events/new', events.createEventPage);

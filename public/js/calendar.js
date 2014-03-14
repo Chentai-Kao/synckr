@@ -21,22 +21,17 @@ $(function() {
 
   $("#overlay-toggle").click(function(){
     var $slot = $(".data");
-    if(heatmapToggle) {
+    if(!heatmapToggle) {
       $.each($slot, function(i, s){
-        $(s).removeClass("clicked");
-        $(s).find(".count").remove();
-        $(s).unbind();
-        $("#stats-icon").removeClass("hm-toggle");
-        heatmapToggle = false;
-      });
-    } else {
-      $.each($slot, function(i, s){
-        $(s).addClass("clicked");
-        var level = $(s).attr("count");
-        $(s).append("<p class='count'>"+level+"</p>");
         $(s).click(heatmapSlotHookup);
         $("#stats-icon").addClass("hm-toggle");
         heatmapToggle = true;
+      });
+    } else {
+      $.each($slot, function(i, s){
+        $(s).unbind();
+        $("#stats-icon").removeClass("hm-toggle");
+        heatmapToggle = false;
       });
     }
   });
@@ -164,12 +159,22 @@ $(function() {
         var hm;
         if (maxCount === 0) hm = 1;
         else hm = Math.ceil((parseInt(slot.count)-1) / maxCount * 4 + 1);
-        $day.prepend(
-          '<p class="slot data gridtop-' + parseInt(slot.startTime) +
-          ' gridheight-' + parseInt(slot.duration) +
-          ' heatmap-' + hm +
-          '" count="' + parseInt(slot.count) + '" id="hm-' + (++hmId) + '"></p>'
-        );
+        var $heatslot = $('<p class="slot data gridtop-' + parseInt(slot.startTime) +
+          ' clicked gridheight-' + parseInt(slot.duration) +
+          ' heatmap-' + hm + '" count="' + parseInt(slot.count) +
+          '" id="hm-' + (++hmId) + '"></p>');
+        $day.prepend($heatslot);
+        $heatslot.prepend('<p class="count">' + parseInt(slot.count) + '</p>');
+/*
+        $.each($slot, function(i, s){
+        $(s).addClass("clicked");
+        var level = $(s).attr("count");
+        $(s).append("<p class='count'>"+level+"</p>");
+        $(s).click(heatmapSlotHookup);
+        $("#stats-icon").addClass("hm-toggle");
+        heatmapToggle = true;
+      });
+        */
         heatmapParticipants["hm-" + hmId] = slot.participants;
       });
     });
@@ -488,11 +493,11 @@ $(function() {
   }
 
   //if (firstUse === "true" && notVoted === "true" && eventType === "ongoing") {
-  
+
   if (notVoted === "true" && eventType === "ongoing") {
     FTUE();
   }
-  
+
   //if (notDecided === "true" && eventType === "ongoing" && allVoted === "true") {
   if (eventType === "ongoing" && allVoted === "true") {
       $("#mask").show();

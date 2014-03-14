@@ -6,7 +6,18 @@
 		<link rel="stylesheet" href="/css/bootstrap.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<% if (theme === "light") { %>
-			<link rel="stylesheet" href="/css/list-light.css">
+			<link rel="stylesheet" href="/css/list-dark.css">
+			<style>
+				.not-decided{
+					background-color: white;
+				}
+				.not-voted {
+					background-color: white;
+				}
+				.not-decided a, .not-voted a {
+					color: inherit;
+				}
+			</style>
 		<% } else { %>
 			<link rel="stylesheet" href="/css/list-dark.css">
 		<% } %>
