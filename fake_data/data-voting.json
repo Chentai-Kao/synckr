@@ -32,8 +32,8 @@
          ]
       },
       {
-         "name":"Jocelin Ho",
-         "personId":"100000010285733",
+         "name":"Chun-Kai Chen",
+         "personId":"100000256031551",
          "slot":[
             {
                "startDate":"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
@@ -53,8 +53,8 @@
          ]
       },
       {
-         "name":"ChenTai Kao",
-         "personId":"1327617691",
+         "name":"Sharon Cheng",
+         "personId":"100001502123762",
          "slot":[
             {
                "startDate":"Tue Feb 25 2014 00:00:00 GMT-0800 (PST)",
@@ -92,7 +92,7 @@
       {
          "name":"Andrew Liu",
          "personId":"766485187",
-         "slot":[  
+         "slot":[
             {
                "startDate":"Wed Feb 26 2014 00:00:00 GMT-0800 (PST)",
                "startTime":"22",
@@ -102,14 +102,14 @@
                "startDate":"Thu Feb 27 2014 00:00:00 GMT-0800 (PST)",
                "startTime":"24",
                "duration":"5"
-            }         
+            }
          ]
       }
    ],
    "startDate":"Sun Feb 23 2014 00:00:00 GMT-0800 (PST)",
    "title":"Spring break trip planning",
    "host":{
-		"name": "Jocelin Ho",
-		"personId":"100000010285733"
+		"name": "Chun-Kai Chen",
+		"personId":"100000256031551"
 	}
 }
